@@ -1,0 +1,22 @@
+.navbar-root {
+  background-color: rgb(232, 232, 232);
+  height: 100px;
+  color: black;
+  padding-top: 10px;
+}
+
+.grid-nav {
+}
+
+.list-navbar {
+  display: inline-block;
+}
+.list-navbar:hover {
+  background-color: blue;
+}
+
+.navbar-elements {
+  width: 700px;
+}
+.search-bar {
+}
