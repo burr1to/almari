@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import "./navbar.css";
+
 const pages = [
   "Home",
   "Inspiration",
@@ -12,9 +12,7 @@ function NavBarItems() {
   return (
     <>
       {pages.map((page) => (
-        <div className='list-navbar'>
-          <div className='ok'>{page}</div>
-        </div>
+        <div className='list'>{page}</div>
       ))}
     </>
   );

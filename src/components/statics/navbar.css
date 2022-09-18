@@ -1,0 +1,31 @@
+.navbar-root {
+  background-color: rgb(232, 232, 232);
+  height: 100px;
+  color: black;
+  padding-top: 20px;
+}
+.logo-almari {
+  font-size: 40px;
+}
+
+.grid-nav {
+}
+
+.elements {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.list {
+  width: 100%;
+  text-align: center;
+}
+
+.list:hover {
+  background-color: rgb(88, 199, 88);
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+.search-bar {
+}

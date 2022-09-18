@@ -1,0 +1,29 @@
+.profile-box-con {
+  border-radius: 10px;
+  box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%),
+    0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
+}
+
+.profile-box-bg {
+  /*border: 2px solid red;*/
+  background-color: rgb(243, 174, 186);
+  border-radius: 10px 10px 0px 0px;
+  width: 320px;
+  height: 320px;
+}
+
+.profile-box-info-box {
+  /* border: 2px solid blue; */
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgb(255, 255, 255);
+  width: 320px;
+  height: 100px;
+}
+
+.profile-box-info {
+}
+.profile-box-info text {
+}
+.profile-box-info-avatar {
+  text-align: center;
+}

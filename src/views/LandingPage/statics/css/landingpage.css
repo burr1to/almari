@@ -1,0 +1,16 @@
+.explore-categories {
+  min-height: 30vh;
+}
+
+.profile-showcase {
+  border: 4px solid black;
+}
+
+.profile-showcase .MuiGrid-item {
+  border: 1px solid transparent;
+  padding: 10px;
+}
+
+.popular-items {
+  min-height: 60vh;
+}

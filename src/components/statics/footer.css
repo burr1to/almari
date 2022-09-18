@@ -1,0 +1,38 @@
+.footer {
+  /*
+  
+  display: flex;
+  flex-direction: column-reverse;
+ */
+  position: fixed;
+  padding: none;
+  bottom: 0;
+  width: 100%;
+  visibility: hidden;
+}
+.footer-elements {
+  background-color: rgb(162, 162, 162);
+  height: 300px;
+  padding-top: 30px;
+}
+
+.grid-for-footer {
+  font-size: 25px;
+  font-weight: bolder;
+  color: black;
+  text-align: center;
+}
+
+.footer-bottom {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  color: white;
+}
+.footer-bottom-elements {
+  float: right;
+  position: relative;
+  padding: 6px;
+}

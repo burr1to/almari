@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./navbar.css";
 import TextField from "@mui/material/TextField";
 
 function SearchBar() {
