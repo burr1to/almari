@@ -1,3 +1,28 @@
+body {
+  background-color: rgb(125, 125, 180);
+}
+.asd {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: rgb(190, 185, 185);
+}
+.gap {
+  height: 100vh;
+}
+.img {
+  margin: 0 auto;
+  display: block;
+  height: auto;
+  max-width: 900px;
+  width: 95%;
+}
+
 .footer {
   /*
   
@@ -8,7 +33,7 @@
   padding: none;
   bottom: 0;
   width: 100%;
-  visibility: hidden;
+  visibility: visible;
 }
 .footer-elements {
   background-color: rgb(162, 162, 162);

@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "./../../components/global/Layout";
 import ProfileBox from "./../../components/global/ProfileBox";
+import CatCircle from "./components/CatCircle";
 import "./statics/css/landingpage.css";
 import { Grid } from "@mui/material";
 //profile-showcase ko lagi euta chuttai container banaune. props pass
@@ -13,7 +14,9 @@ function LandingPage() {
       <Grid container direction='column'>
         <Grid item className='explore-categories'>
           Explore
+          <CatCircle />
         </Grid>
+        <Grid item className='idk'></Grid>
         <Grid item className='profile-showcase'>
           <Grid
             container

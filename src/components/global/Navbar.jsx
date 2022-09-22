@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar";
 import { Grid } from "@mui/material";
 import "../statics/navbar.css";
 import NavBarItems from "./navbaritems";
-const categories = ["Furniture", "Furniture", "Furniture", "Furniture"];
+
 const AppBar = () => {
   return (
     <div className='navbar-root'>

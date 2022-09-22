@@ -20,7 +20,7 @@ function ProfileBox(username) {
         <div className='profile-box-info-box'>
           <Grid container direction='row' className='profile-box-info'>
             <Grid className='profile-box-info-avatar' item xs={4}>
-              <IconButton size='large'>
+              <IconButton>
                 <Avatar alt='S' src='#' />
               </IconButton>
             </Grid>
