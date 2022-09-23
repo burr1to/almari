@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import IndividualPage from "./views/IndividualItems/Individual";
 import LandingPage from "./views/LandingPage/LandingPage";
-import Footer from "./components/global/Footer";
+import Footer from "./components/global/Observe";
 const Routedpath = () => {
   return (
     <Routes>

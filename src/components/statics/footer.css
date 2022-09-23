@@ -1,6 +1,3 @@
-body {
-  background-color: rgb(125, 125, 180);
-}
 .asd {
   top: 0;
   left: 0;
@@ -13,7 +10,7 @@ body {
   background-color: rgb(190, 185, 185);
 }
 .gap {
-  height: 100vh;
+  height: 300vh;
 }
 .img {
   margin: 0 auto;
@@ -24,17 +21,13 @@ body {
 }
 
 .footer {
-  /*
-  
-  display: flex;
-  flex-direction: column-reverse;
- */
   position: fixed;
   padding: none;
   bottom: 0;
   width: 100%;
-  visibility: visible;
+  transition: 0.5s ease;
 }
+
 .footer-elements {
   background-color: rgb(162, 162, 162);
   height: 300px;
