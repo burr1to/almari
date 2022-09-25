@@ -6,15 +6,15 @@ import "./catcircle.css";
 const categories = ["Category", "Category", "Category", "Category", "Category"];
 function CatCircle() {
   return (
-    <div className='cat-con'>
+    <ul className='cat-con'>
       {categories.map((category) => (
-        <div className='circle'>
-          <Image className='damn' src={chair} />
+        <li className='cat-list'>
+          <Image className='damn' src={chair} alt='alt' />
           <br />
           <div className='cat-text'>{category}</div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

@@ -1,31 +1,46 @@
 .navbar-root {
-  background-color: rgb(232, 232, 232);
+  background-color: rgb(255, 255, 255);
   height: 100px;
   color: black;
-  padding-top: 20px;
-}
-.logo-almari {
-  font-size: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 14px solid rgb(197, 197, 197);
 }
 
 .grid-nav {
+  width: 95% !important;
+}
+.logo {
+  font-size: 46px;
 }
 
-.elements {
+.categories {
+  font-size: 18px;
+}
+
+.categories ul {
+  text-decoration: none;
+  list-style: none;
   display: flex;
   flex-flow: row nowrap;
 }
-
-.list {
+.categories ul li {
   width: 100%;
+  padding: 2px 8px 2px 8px;
   text-align: center;
 }
 
-.list:hover {
-  background-color: rgb(88, 199, 88);
-  cursor: pointer;
-  border-radius: 40px;
+.categories ul li:nth-child(2) {
+  padding: 2px 15px 2px 15px;
 }
 
-.search-bar {
+.categories ul li:hover {
+  background-color: rgb(88, 199, 88);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.profile {
 }

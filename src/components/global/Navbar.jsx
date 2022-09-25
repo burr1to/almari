@@ -1,9 +1,11 @@
 import SearchBar from "./SearchBar";
 import { Grid } from "@mui/material";
 import "../statics/navbar.css";
-import NavBarItems from "./navbaritems";
-
+import IconButton from "@mui/material/IconButton";
+import { AccountCircle } from "@mui/icons-material";
 const AppBar = () => {
+  const pages = ["Home", "Categories", "Deals", "Sell", "Support"];
+
   return (
     <div className='navbar-root'>
       <Grid
@@ -13,17 +15,24 @@ const AppBar = () => {
         alignItems='center'
         justifyContent='space-around'
       >
-        <Grid xs={1} item className='logo-almari'>
+        <Grid item className='logo'>
           ALMARI
         </Grid>
-        <Grid xs={3} item>
+        <Grid item className='search' xs={4}>
           <SearchBar />
         </Grid>
-        <Grid xs={4} item className='elements'>
-          <NavBarItems />
+        <Grid item className='categories' xs={4}>
+          <ul>
+            {pages.map((page) => (
+              <li className='list'>{page}</li>
+            ))}
+          </ul>
         </Grid>
-        <Grid xs={1} item>
-          Profile
+
+        <Grid item className='profile'>
+          <IconButton size='small'>
+            <AccountCircle fontSize='large' />
+          </IconButton>
         </Grid>
       </Grid>
     </div>

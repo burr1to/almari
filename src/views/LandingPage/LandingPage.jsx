@@ -13,10 +13,12 @@ function LandingPage() {
     <Layout>
       <Grid container direction='column'>
         <Grid item className='explore-categories'>
-          Explore
+          <p>Explore Categories</p>
           <CatCircle />
         </Grid>
-        <Grid item className='idk'></Grid>
+        <Grid item className='what-we-do'>
+          <p>What we do</p>
+        </Grid>
         <Grid item className='profile-showcase'>
           <Grid
             container

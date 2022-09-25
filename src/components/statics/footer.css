@@ -1,6 +1,3 @@
-body {
-  background-color: rgb(125, 125, 180);
-}
 .asd {
   top: 0;
   left: 0;
@@ -33,7 +30,7 @@ body {
   padding: none;
   bottom: 0;
   width: 100%;
-  visibility: visible;
+  visibility: hidden;
 }
 .footer-elements {
   background-color: rgb(162, 162, 162);

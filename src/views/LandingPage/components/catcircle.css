@@ -4,19 +4,21 @@
   align-items: center;
   padding: 10px;
 }
-.circle {
+.cat-list {
   width: 200px;
   height: 200px;
-  border: 1px solid transparent;
+  list-style: none;
 }
 
 .damn {
   width: inherit;
   height: inherit;
   overflow: hidden;
-  border-radius: 50%;
-  padding: 20px;
+  border-radius: 50px;
+  padding: 8px;
 }
 .cat-text {
   text-align: center;
+  position: relative;
+  bottom: 10px;
 }

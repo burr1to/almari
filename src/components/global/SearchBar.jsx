@@ -1,11 +1,22 @@
 import React from "react";
 
-import TextField from "@mui/material/TextField";
+import { FiSearch } from "react-icons/fi";
+import "./../statics/search.css";
 
-function SearchBar() {
+function SearchBar({ placeholder }) {
   return (
     <div className='search-bar'>
-      <TextField fullWidth className='search-bar' />
+      <div item className='search-box'>
+        <input className='search-text' type='text' />
+      </div>
+      <div item className='search-button'>
+        <FiSearch
+          size='2.2em'
+          onClick={() => {
+            console.log("ok");
+          }}
+        />
+      </div>
     </div>
   );
 }

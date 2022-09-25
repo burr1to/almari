@@ -1,0 +1,22 @@
+.search-bar {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.search-box {
+  box-sizing: border-box;
+  width: 100%;
+}
+.search-text {
+  border: 1px solid black;
+  padding: 7px 15px;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 10px;
+  width: inherit;
+}
+
+.search-button {
+  position: relative;
+  left: 5px;
+  top: 2px;
+}

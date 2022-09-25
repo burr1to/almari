@@ -19,12 +19,12 @@ function ProfileBox(username) {
         <div className='profile-box-bg'></div>
         <div className='profile-box-info-box'>
           <Grid container direction='row' className='profile-box-info'>
-            <Grid className='profile-box-info-avatar' item xs={4}>
+            <Grid className='profile-box-info-avatar' item>
               <IconButton>
-                <Avatar alt='S' src='#' />
+                <Avatar alt='S' src='#' size='4em' />
               </IconButton>
             </Grid>
-            <Grid className='profile-box-info text' item xs={8}>
+            <Grid className='profile-box-info text' item>
               <br />
               <p>adsasdasd by burrito</p>
             </Grid>
