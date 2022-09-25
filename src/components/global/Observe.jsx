@@ -17,7 +17,7 @@ function Footer() {
   const options = useMemo(() => {
     return {
       root: null,
-      rootMargin: "0px 0px 400px 0px",
+      rootMargin: "0px 0px 0px 0px",
       threshold: 0.3,
     };
   }, []);
