@@ -20,9 +20,6 @@ function Footer() {
             About
           </Grid>
         </Grid>
-        <div className='footer-bottom'>
-          <div className='footer-bottom-elements'>Almari Group</div>
-        </div>
       </div>
     </div>
   );

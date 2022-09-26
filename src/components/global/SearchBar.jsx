@@ -1,6 +1,5 @@
 import React from "react";
 
-import { FiSearch } from "react-icons/fi";
 import "./../statics/search.css";
 
 function SearchBar({ placeholder }) {
@@ -14,15 +13,7 @@ function SearchBar({ placeholder }) {
         />
       </div>
       <div item className='search-button'>
-        <a href='#'>
-          <FiSearch
-            color='grey'
-            size='1.8em'
-            onClick={() => {
-              console.log("ok");
-            }}
-          />
-        </a>
+        <a href='#'></a>
       </div>
     </div>
   );
