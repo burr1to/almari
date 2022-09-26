@@ -1,19 +1,18 @@
 .navbar-root {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(219, 232, 255);
   height: 100px;
   color: black;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border-bottom: 14px solid rgb(197, 197, 197);
 }
 
 .grid-nav {
-  width: 95% !important;
+  width: 80% !important;
 }
 .logo {
-  font-size: 46px;
+  font-size: 40px;
 }
 
 .categories {
@@ -25,6 +24,7 @@
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  color: rgb(101, 101, 101);
 }
 .categories ul li {
   width: 100%;
@@ -37,7 +37,8 @@
 }
 
 .categories ul li:hover {
-  background-color: rgb(88, 199, 88);
+  background-color: rgb(108, 216, 252);
+  color: black;
   cursor: pointer;
   border-radius: 20px;
 }

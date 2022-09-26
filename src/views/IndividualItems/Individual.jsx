@@ -5,8 +5,13 @@ import Grid from "@mui/material/Grid";
 function individual() {
   return (
     <Layout>
-      <Grid container direction='column'>
-        <Grid item></Grid>
+      <Grid
+        container
+        direction='column'
+        justifyContent='space-around'
+        alignItems='center'
+      >
+        <Grid item className='individual-photo'></Grid>
         <Grid item></Grid>
       </Grid>
     </Layout>
