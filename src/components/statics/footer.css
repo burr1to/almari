@@ -1,19 +1,87 @@
 .footer {
-  position: relative;
-  padding: none;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  visibility: visible;
 }
-.footer-elements {
-  background-color: rgb(162, 162, 162);
-  height: 300px;
-  padding-top: 30px;
+.main {
+  color: white;
+  padding: 50px 0 20px 0;
+  width: 100%;
+  background: rgb(33, 120, 178);
+  background: -moz-linear-gradient(
+    top,
+    rgba(33, 120, 178, 1) 0%,
+    rgba(44, 183, 234, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(33, 120, 178, 1) 0%,
+    rgba(44, 183, 234, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(33, 120, 178, 1) 0%,
+    rgba(44, 183, 234, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2178b2', endColorstr='#2cb7ea',GradientType=0 ); /* IE6-9 */
 }
 
-.grid-for-footer {
-  font-size: 25px;
-  font-weight: bolder;
-  color: black;
+.footer-con {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.footer-grid {
+  width: 280px;
+}
+.footer-grid:nth-child(1) {
+  width: 360px;
+  text-align: justify;
+}
+
+.footer-grid > h4 {
+  text-transform: capitalize;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.footer-grid > ul {
+  list-style: none;
+}
+.footer-grid > ul > li {
+  margin-bottom: 10px;
+  position: relative;
+}
+.footer-grid > ul > li > a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: white;
+  margin-left: 5px;
+}
+
+.footer-social {
+  position: relative;
+  margin-top: 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 150px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-social > a {
+  color: rgb(255, 255, 255);
+
   text-align: center;
+  border-radius: 50%;
+}
+.footer-social > li {
+}
+
+.copy {
+  text-align: center;
+  margin-top: 10px;
 }
