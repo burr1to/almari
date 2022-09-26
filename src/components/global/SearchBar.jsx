@@ -1,6 +1,7 @@
 import React from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./../statics/search.css";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SearchBar({ placeholder }) {
   return (
@@ -13,7 +14,7 @@ function SearchBar({ placeholder }) {
         />
       </div>
       <div item className='search-button'>
-        <a href='#'></a>
+        <a href='#'>Search</a>
       </div>
     </div>
   );

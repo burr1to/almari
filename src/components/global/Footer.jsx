@@ -114,7 +114,7 @@ function Footer() {
           </div>
         </div>
         <div className='copy'>
-          <p>&copy; Almari Group 2022 All Rijgts Reserved</p>
+          <p>&copy; Almari Group 2022 All Rights Reserved</p>
         </div>
       </div>
     </div>

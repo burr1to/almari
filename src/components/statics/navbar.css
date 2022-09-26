@@ -1,22 +1,24 @@
 .navbar-root {
-  background-color: rgb(219, 232, 255);
-  height: 100px;
+  background-color: rgb(255, 255, 255);
+  height: 80px;
   color: black;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(221, 221, 221);
 }
 
 .grid-nav {
   width: 80% !important;
 }
 .logo {
-  font-size: 40px;
+  font-size: 32px;
 }
 
 .categories {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .categories ul {
