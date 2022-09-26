@@ -20,104 +20,102 @@ import {
 
 function Footer() {
   return (
-    <div className='footer-area'>
-      <footer className='footer'>
-        <div className='main'>
-          <div className='footer-con'>
-            <div className='footer-grid'>
-              <h4>About Us</h4>
+    <div className='footer'>
+      <div className='main'>
+        <div className='footer-con'>
+          <div className='footer-grid'>
+            <h4>About Us</h4>
 
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-              <div className='footer-social'>
-                <a href='#'>
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                <a href='#'>
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a href='#'>
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
-                <a href='#'>
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-              </div>
-            </div>
-            <div className='footer-grid'>
-              <h4>Shop</h4>
-
-              <ul>
-                <li>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  <a href='#'>Shop</a>
-                </li>
-              </ul>
-            </div>
-            <div className='footer-grid'>
-              <h4>Sell Your Items</h4>
-              <ul>
-                <li>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  <a href='#'>Shop</a>
-                </li>
-              </ul>
-            </div>
-            <div className='footer-grid'>
-              <h4>Contact Us</h4>
-              <ul>
-                <li>
-                  <FontAwesomeIcon icon={faLocationDot} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faMobileAlt} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  <a href='#'>Shop</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faGlobeAsia} />
-                  <a href='#'>Shop</a>
-                </li>
-              </ul>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+            <div className='footer-social'>
+              <a href='#'>
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+              <a href='#'>
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a href='#'>
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              <a href='#'>
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
             </div>
           </div>
-          <div className='copy'>
-            <p>&copy; Almari Group 2022 All Rijgts Reserved</p>
+          <div className='footer-grid'>
+            <h4>Shop</h4>
+
+            <ul>
+              <li>
+                <FontAwesomeIcon icon={faChevronRight} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faChevronRight} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faChevronRight} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faChevronRight} />
+                <a href='#'>Shop</a>
+              </li>
+            </ul>
+          </div>
+          <div className='footer-grid'>
+            <h4>Sell Your Items</h4>
+            <ul>
+              <li>
+                <FontAwesomeIcon icon={faChevronRight} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faChevronRight} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faChevronRight} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faChevronRight} />
+                <a href='#'>Shop</a>
+              </li>
+            </ul>
+          </div>
+          <div className='footer-grid'>
+            <h4>Contact Us</h4>
+            <ul>
+              <li>
+                <FontAwesomeIcon icon={faLocationDot} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faMobileAlt} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faEnvelope} />
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faGlobeAsia} />
+                <a href='#'>Shop</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
+        <div className='copy'>
+          <p>&copy; Almari Group 2022 All Rijgts Reserved</p>
+        </div>
+      </div>
     </div>
   );
 }

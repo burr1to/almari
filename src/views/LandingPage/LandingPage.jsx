@@ -11,7 +11,7 @@ import { Grid } from "@mui/material";
 function LandingPage() {
   return (
     <Layout>
-      <Grid container direction='column'>
+      <Grid container direction='column' className='landing-content'>
         <Grid item className='explore-categories'>
           Explore
           <CatCircle />
