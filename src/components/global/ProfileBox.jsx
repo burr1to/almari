@@ -14,21 +14,20 @@ function ProfileBox(username) {
       direction='column'
       justifyContent='center'
       alignItems='center'
+      className='profile-box-con'
     >
-      <div className='profile-box-con'>
-        <div className='profile-box-bg'></div>
-        <div className='profile-box-info-box'>
-          <Grid container direction='row' className='profile-box-info'>
-            <Grid className='profile-box-info-avatar' item>
-              <IconButton>
-                <Avatar alt='S' src='#' size='4em' />
-              </IconButton>
-            </Grid>
-            <Grid className='profile-box-info text' item>
-              <br />
-              <p>adsasdasd by burrito</p>
-            </Grid>
-          </Grid>
+      <div className='profile-box-bg'></div>
+      <div className='profile-box-info-box'>
+        <div className='profile-box-info'>
+          <div className='profile-box-info-avatar'>
+            <IconButton>
+              <Avatar alt='S' src='#' size='4em' />
+            </IconButton>
+          </div>
+          <div className='profile-box-info text'>
+            <br />
+            <p>adsasdasd by burrito</p>
+          </div>
         </div>
       </div>
     </Grid>
