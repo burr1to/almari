@@ -33,20 +33,6 @@ function Footer() {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </p>
-            <div className='footer-social'>
-              <a href='#'>
-                <FontAwesomeIcon icon={faFacebook} />
-              </a>
-              <a href='#'>
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a href='#'>
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-              <a href='#'>
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-            </div>
           </div>
           <div className='footer-grid'>
             <h4>Shop</h4>
