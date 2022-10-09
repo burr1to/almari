@@ -3,7 +3,13 @@ import Image from "./../../../components/global/Image";
 import chair from "./../../../components/statics/images/chair.jpg";
 import "./catcircle.css";
 
-const categories = ["Category", "Category", "Category", "Category", "Category"];
+const categories = [
+  "Clothing",
+  "Home Decor",
+  "Handicrafts",
+  "Furniture",
+  "Accessories",
+];
 function CatCircle() {
   return (
     <ul className='cat-con'>

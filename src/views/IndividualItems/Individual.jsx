@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
-import Grid from "@mui/material/Grid";
 import Image from "./../../components/global/Image";
 import photo from "./pexel.jpg";
 function individual() {
