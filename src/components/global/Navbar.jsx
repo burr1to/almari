@@ -1,8 +1,9 @@
-import SearchBar from "./SearchBar";
 import { Grid } from "@mui/material";
 import "../statics/navbar.css";
 import IconButton from "@mui/material/IconButton";
 import { AccountCircle } from "@mui/icons-material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 const AppBar = () => {
   const pages = ["Home", "Categories", "Deals", "Sell", "Support"];
 
@@ -18,10 +19,8 @@ const AppBar = () => {
         <Grid item className='logo'>
           ALMARI
         </Grid>
-        <Grid item className='search' xs={4}>
-          <SearchBar />
-        </Grid>
-        <Grid item className='categories' xs={4}>
+
+        <Grid item className='categories'>
           <ul>
             {pages.map((page) => (
               <li className='list'>{page}</li>
@@ -29,9 +28,12 @@ const AppBar = () => {
           </ul>
         </Grid>
 
-        <Grid item className='profile'>
-          <IconButton size='small'>
+        <Grid item className='profile-icons'>
+          <IconButton size='small' className='icons avatar'>
             <AccountCircle fontSize='large' />
+          </IconButton>
+          <IconButton size='small' className='icons cart'>
+            <FontAwesomeIcon icon={faCartShopping} />
           </IconButton>
         </Grid>
       </Grid>

@@ -2,7 +2,10 @@ import React from "react";
 import Layout from "./../../components/global/Layout";
 import ProfileBox from "./../../components/global/ProfileBox";
 import CatCircle from "./components/CatCircle";
+import OurVision from "./components/OurVision";
+import Popular from "../../components/global/Popular";
 import "./statics/css/landingpage.css";
+import SearchBar from "./../../components/global/SearchBar";
 import { Grid } from "@mui/material";
 //profile-showcase ko lagi euta chuttai container banaune. props pass
 //garepaxi showcase bhaeko profile change hunxa
@@ -16,8 +19,11 @@ function LandingPage() {
           <p>Explore Categories</p>
           <CatCircle />
         </Grid>
-        <Grid item className='what-we-do'>
-          <p>What we do</p>
+        <Grid item className='search-area'>
+          <SearchBar />
+        </Grid>
+        <Grid item className='profile-vision'>
+          <OurVision />
         </Grid>
         <Grid item className='profile-showcase'>
           <Grid
@@ -41,7 +47,7 @@ function LandingPage() {
           </Grid>
         </Grid>
         <Grid item className='popular-items'>
-          Popular Items
+          <Popular />
         </Grid>
       </Grid>
     </Layout>

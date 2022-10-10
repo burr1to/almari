@@ -35,7 +35,7 @@ function Footer() {
             </p>
           </div>
           <div className='footer-grid'>
-            <h4>Shop</h4>
+            <h4>Shop with Us</h4>
 
             <ul>
               <li>

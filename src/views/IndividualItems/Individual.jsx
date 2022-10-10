@@ -3,6 +3,10 @@ import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
 import Image from "./../../components/global/Image";
 import photo from "./pexel.jpg";
+import Reviews from "./../../components/global/Reviews";
+import Popular from "./../../components/global/Popular";
+
+import FeedbackData from "./../../components/data/reviews";
 function individual() {
   return (
     <Layout>
@@ -41,50 +45,14 @@ function individual() {
           </div>
         </div>
         <br />
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. Lorem Ipsum is simply dummy
-          text of the printing and typesetting industry. Lorem Ipsum has been
-          the industry's standard dummy text ever since the 1500s, when an
-          unknown printer took a galley of type and scrambled it to make a type
-          specimen book. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. Lorem Ipsum is
-          simply dummy text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. Lorem Ipsum is simply dummy text of the
-          printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took
-          a galley of type and scrambled it to make a type specimen book.
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. Lorem Ipsum is simply dummy
-          text of the printing and typesetting industry. Lorem Ipsum has been
-          the industry's standard dummy text ever since the 1500s, when an
-          unknown printer took a galley of type and scrambled it to make a type
-          specimen book. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. Lorem Ipsum is
-          simply dummy text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. Lorem Ipsum is simply dummy text of the
-          printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took
-          a galley of type and scrambled it to make a type specimen book.
-        </p>
+        <div className='reviews'>
+          <Reviews data={FeedbackData} />
+        </div>
+        <br></br>
+        <br></br>
+        <div className='related-items'>
+          <Popular />
+        </div>
       </div>
     </Layout>
   );

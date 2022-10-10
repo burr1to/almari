@@ -12,8 +12,3 @@ html {
   box-sizing: inherit;
   font-family: Poppins, sans-serif;
 }
-.profile-box {
-  width: 300;
-  height: 300;
-  background-color: blueviolet;
-}

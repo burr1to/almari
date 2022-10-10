@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "./../../../components/global/Image";
-import chair from "./../../../components/statics/images/chair.jpg";
+import chair from "./../statics/chair.jpg";
 import "./catcircle.css";
 
 const categories = [
@@ -15,7 +15,7 @@ function CatCircle() {
     <ul className='cat-con'>
       {categories.map((category) => (
         <li className='cat-list'>
-          <Image className='damn' src={chair} alt='alt' />
+          <Image className='main_image category-image' src={chair} alt='alt' />
           <br />
           <div className='cat-text'>{category}</div>
         </li>

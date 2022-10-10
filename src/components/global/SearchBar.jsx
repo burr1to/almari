@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./../statics/search.css";
+import { IconButton } from "@mui/material";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SearchBar({ placeholder }) {
@@ -13,9 +14,10 @@ function SearchBar({ placeholder }) {
           placeholder='Search for products'
         />
       </div>
-      <div item className='search-button'>
-        <a href='#'>Search</a>
-      </div>
+
+      <IconButton className='search-button'>
+        <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
+      </IconButton>
     </div>
   );
 }

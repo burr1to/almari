@@ -1,6 +1,8 @@
 .search-bar {
   display: flex;
   flex-flow: row nowrap;
+  width: 50%;
+  margin: 0 auto;
 }
 .search-box {
   box-sizing: border-box;
@@ -17,6 +19,12 @@
 
 .search-button {
   position: relative;
-  left: 8px;
-  top: 3px;
+}
+.search-icon {
+  color: rgb(197, 197, 197);
+  transition: 0.3s ease-in-out;
+}
+
+.search-icon:hover {
+  color: rgb(151, 151, 151);
 }
