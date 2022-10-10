@@ -1,4 +1,9 @@
 .reviews-con {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
+}
+.review-single {
+  padding: 5px;
+  border: 1px solid black;
+  margin: 15px 0;
 }

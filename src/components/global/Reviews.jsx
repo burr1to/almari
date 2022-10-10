@@ -6,7 +6,7 @@ import "./../statics/extra.css";
 function Reviews({ data }) {
   return (
     <div className='reviews-con'>
-      <p>0 Shop Reviews</p>
+      <h1>0 Shop Reviews</h1>
       <p>Average Rating: N/A</p>
       <br />
       <div className='review-list'>

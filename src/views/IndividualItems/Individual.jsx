@@ -5,9 +5,28 @@ import Image from "./../../components/global/Image";
 import photo from "./pexel.jpg";
 import Reviews from "./../../components/global/Reviews";
 import Popular from "./../../components/global/Popular";
+import { Button } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 import FeedbackData from "./../../components/data/reviews";
 function individual() {
+  const CartButton = styled(Button)({
+    boxShadow: "none",
+    color: "black",
+    textTransform: "none",
+    fontSize: 20,
+    border: "1px solid black",
+    borderRadius: 50,
+    fontFamily: "inherit",
+    padding: "4px 30px",
+    backgroundColor: "transparent",
+    /*"&:active": {
+      boxShadow: "none",
+      backgroundColor: "green",
+      color: "white",
+      border: "1px solid transparent",
+    },*/
+  });
   return (
     <Layout>
       <br />
@@ -24,7 +43,6 @@ function individual() {
             <br />
             <div className='company-info'>
               <p className='company-name'>Hattori Enterprises</p>
-              <p className='review'>Review</p>
             </div>
             <p className='description'>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -32,7 +50,7 @@ function individual() {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </p>
-            <button>Add to cart</button>
+
             <div className='product-highlights'>
               <h2>Highlights</h2>
               <ul>
@@ -42,9 +60,9 @@ function individual() {
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
               </ul>
             </div>
+            <CartButton disableElevation>Add to Cart</CartButton>
           </div>
         </div>
-        <br />
         <div className='reviews'>
           <Reviews data={FeedbackData} />
         </div>
