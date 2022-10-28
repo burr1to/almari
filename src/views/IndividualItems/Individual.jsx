@@ -4,9 +4,9 @@ import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
 import Image from "./../../components/global/Image";
 import photo from "./pexel.jpg";
-import Reviews from "./../../components/global/Reviews";
+import Reviews from "./components/Reviews";
 import PopularItemList from "./../../components/global/PopularItemList";
-import ReviewAdd from "../../components/global/ReviewAdd";
+import ReviewAdd from "./components/ReviewAdd";
 import Button from "../../components/global/Button";
 import TestData from "./../../components/data/test.json";
 

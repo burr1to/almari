@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import "./../statics/extra.css";
-import Button from "./Button";
+import "./../../../components/statics/extra.css";
+import Button from "./../../../components/global/Button";
 import NumberRating from "./NumberRating";
 
 function ReviewAdd({ handleAdd }) {

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SingleReview from "./SingleReview";
-import "./../statics/extra.css";
+import "./../../../components/statics/extra.css";
 
 function Reviews({ data }) {
   return (

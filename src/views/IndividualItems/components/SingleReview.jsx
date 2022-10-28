@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./../statics/extra.css";
+import "./../../../components/statics/extra.css";
 function SingleReview({ item }) {
   return (
     <div className='review-single'>
