@@ -8,9 +8,8 @@ import Reviews from "./../../components/global/Reviews";
 import PopularItemList from "./../../components/global/PopularItemList";
 import ReviewAdd from "../../components/global/ReviewAdd";
 import Button from "../../components/global/Button";
-import { styled } from "@mui/material/styles";
+import TestData from "./../../components/data/test.json";
 
-import FeedbackData from "./../../components/data/reviews";
 function individual() {
   const addReview = (newReview) => {
     newReview.id = uuidv4();
@@ -53,7 +52,7 @@ function individual() {
           </div>
         </div>
         <div className='reviews'>
-          <Reviews data={FeedbackData} />
+          <Reviews data={TestData} />
           <br />
           <ReviewAdd handleAdd={addReview} />
         </div>
