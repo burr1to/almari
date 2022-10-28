@@ -11,7 +11,7 @@ function OurVision() {
           <Image src={vision} className='main_image vision' />
         </div>
         <div className='vision-description'>
-          <h3 className='first'>What We Do</h3>
+          <h3 className='first'>Subscribe</h3>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text

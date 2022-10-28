@@ -4,8 +4,9 @@ import IconButton from "@mui/material/IconButton";
 import { AccountCircle } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const AppBar = () => {
-  const pages = ["Home", "Categories", "Deals", "Sell", "Support"];
+  const pages = ["Home", "Deals", "Sell", "Support"];
 
   return (
     <div className='navbar-root'>
@@ -17,7 +18,9 @@ const AppBar = () => {
         justifyContent='space-around'
       >
         <Grid item className='logo'>
-          ALMARI
+          <Link className='logo-link' to='/home'>
+            ALMARI
+          </Link>
         </Grid>
 
         <Grid item className='categories'>

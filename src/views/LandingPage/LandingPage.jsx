@@ -3,10 +3,13 @@ import Layout from "./../../components/global/Layout";
 import ProfileBox from "./../../components/global/ProfileBox";
 import CatCircle from "./components/CatCircle";
 import OurVision from "./components/OurVision";
-import Popular from "../../components/global/Popular";
+import Popular from "../../components/global/PopularItemList";
 import "./statics/css/landingpage.css";
 import SearchBar from "./../../components/global/SearchBar";
 import { Grid } from "@mui/material";
+import { Link } from "react-router-dom";
+import UserProfile from "./../../components/data/userprofile";
+
 //profile-showcase ko lagi euta chuttai container banaune. props pass
 //garepaxi showcase bhaeko profile change hunxa
 //ki ta random bata aeko value pass garera id line
@@ -26,6 +29,7 @@ function LandingPage() {
           <OurVision />
         </Grid>
         <Grid item className='profile-showcase'>
+          <p className='profile-showcase-text'>Discover our Creators</p>
           <Grid
             container
             direction='row'

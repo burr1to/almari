@@ -1,0 +1,21 @@
+.popular-item-box {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 10px 10px;
+}
+.popular-item-img {
+  width: 300px;
+  height: auto;
+  overflow: hidden;
+}
+.popular-item-tag {
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 18px;
+}
+
+.popular-item-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

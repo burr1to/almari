@@ -1,32 +1,21 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
 import Image from "./../../components/global/Image";
 import photo from "./pexel.jpg";
 import Reviews from "./../../components/global/Reviews";
-import Popular from "./../../components/global/Popular";
-import { Button } from "@mui/material";
+import PopularItemList from "./../../components/global/PopularItemList";
+import ReviewAdd from "../../components/global/ReviewAdd";
+import Button from "../../components/global/Button";
 import { styled } from "@mui/material/styles";
 
 import FeedbackData from "./../../components/data/reviews";
 function individual() {
-  const CartButton = styled(Button)({
-    boxShadow: "none",
-    color: "black",
-    textTransform: "none",
-    fontSize: 20,
-    border: "1px solid black",
-    borderRadius: 50,
-    fontFamily: "inherit",
-    padding: "4px 30px",
-    backgroundColor: "transparent",
-    /*"&:active": {
-      boxShadow: "none",
-      backgroundColor: "green",
-      color: "white",
-      border: "1px solid transparent",
-    },*/
-  });
+  const addReview = (newReview) => {
+    newReview.id = uuidv4();
+    console.log(newReview);
+  };
   return (
     <Layout>
       <br />
@@ -60,16 +49,18 @@ function individual() {
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
               </ul>
             </div>
-            <CartButton disableElevation>Add to Cart</CartButton>
+            <Button>Add to Cart</Button>
           </div>
         </div>
         <div className='reviews'>
           <Reviews data={FeedbackData} />
+          <br />
+          <ReviewAdd handleAdd={addReview} />
         </div>
         <br></br>
         <br></br>
-        <div className='related-items'>
-          <Popular />
+        <div className='popular-items-individual'>
+          <PopularItemList />
         </div>
       </div>
     </Layout>

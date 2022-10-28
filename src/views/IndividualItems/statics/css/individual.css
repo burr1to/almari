@@ -50,3 +50,12 @@
 .product-highlights ul {
   padding: 0px 20px;
 }
+
+.reviews {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.popular-items-individual {
+  margin: 20px 0px;
+}
