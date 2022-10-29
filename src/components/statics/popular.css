@@ -1,12 +1,15 @@
 .popular-item-box {
-  border: 1px solid black;
   display: inline-block;
+  box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%),
+    0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
   margin: 10px 10px;
+  border-radius: 40px;
 }
 .popular-item-img {
-  width: 300px;
+  width: 260px;
   height: auto;
   overflow: hidden;
+  border-radius: 40px 40px 0px 0px;
 }
 .popular-item-tag {
   text-align: center;

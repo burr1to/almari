@@ -3,7 +3,7 @@ import Popular from "./Popular";
 import "./../statics/popular.css";
 
 function PopularItemList() {
-  const n = 5; // Or something else
+  const n = 4; // Or something else
 
   return (
     <div className='popular-item-list'>
