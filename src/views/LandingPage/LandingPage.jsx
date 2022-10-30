@@ -25,11 +25,11 @@ function LandingPage() {
         <Grid item className='search-area'>
           <SearchBar />
         </Grid>
-        <Grid item className='profile-vision'>
-          <OurVision />
+        <Grid item className='random-items'>
+          test
         </Grid>
         <Grid item className='profile-showcase'>
-          <p className='profile-showcase-text'>Discover our Creators</p>
+          <p className='landing-text'>Discover our Creators</p>
           <Grid
             container
             direction='row'
@@ -51,6 +51,7 @@ function LandingPage() {
           </Grid>
         </Grid>
         <Grid item className='popular-items'>
+          <p className='landing-text'>Popular Items</p>
           <Popular />
         </Grid>
       </Grid>

@@ -1,26 +1,32 @@
-.individual-product-page {
-}
-
 .product-grid {
   padding-top: 50px;
   display: flex;
   text-align: justify;
+  justify-content: center;
+  align-items: flex-start;
   width: 80%;
   margin: 0 auto !important;
 }
-
+.img-carousel-column {
+  flex: 0.25;
+  border: 1px solid red;
+}
 .img-container {
-  flex: 1.1;
+  border: 1px solid blue;
+  flex: 1.05;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
 }
 .img-for-product {
+  width: 700px !important;
+  height: auto;
+  border-radius: 30px;
 }
 
 .info-container {
-  margin-top: 30px;
-  flex: 0.9;
+  border: 1px solid yellow;
+  flex: 0.75;
 }
 .basic-info {
   list-style: none;
@@ -58,4 +64,11 @@
 
 .popular-items-individual {
   margin: 20px 0px;
+}
+
+.size-dropdown {
+}
+
+.choice {
+  width: 30%;
 }
