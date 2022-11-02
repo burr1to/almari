@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const Login = () => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -32,19 +33,18 @@ const Login = () => {
             p={2}
             sx={{
               display: { xs: "none", sm: "none", md: "block" },
-              backgroundColor: "#cfe1a1",
+              backgroundColor: "primary.light",
               maxHeight: "100%",
             }}
           >
-            <Button
+            <Button 
               disableRipple
               sx={{
                 padding: "40px 0px 0px 50px ",
-                color: "#ABC270",
                 fontWeight: "medium",
                 fontSize: "24px",
                 "&:hover": {
-                  color: "#6e7b4e",
+                  color: "primary.dark",
                   backgroundColor: "transparent",
                 },
               }}
@@ -54,14 +54,14 @@ const Login = () => {
             <Typography
               variant="h5"
               fontWeight={"bold"}
-              sx={{ padding: "20px 0px 0px 50px ", color: "#6e7b4e" }}
+              sx={{ padding: "20px 0px 0px 50px ", color: "primary.dark" }}
             >
               Discover products made
             </Typography>
             <Typography
               variant="h5"
               fontWeight={"bold"}
-              sx={{ padding: "0px 0px 0px 50px ", color: "#6e7b4e" }}
+              sx={{ padding: "0px 0px 0px 50px ", color: "primary.dark" }}
             >
               with love.
             </Typography>
@@ -87,10 +87,11 @@ const Login = () => {
                 <Button
                   disableRipple
                   sx={{
+                    color:"brown.main",
                     textTransform: "none",
                     fontWeight: "normal",
                     "&:hover": {
-                      color: "#ABC270",
+                      color: "primary.main",
                       backgroundColor: "transparent",
                     },
                   }}
@@ -134,13 +135,13 @@ const Login = () => {
                     type="submit"
                     variant="contained"
                     size="large"
+                    color="brown"
                     sx={{
                       width: "50%",
-                      backgroundColor: "#473c33",
                       textTransform: "none",
                       boxShadow: "none",
                       "&:hover": {
-                        backgroundColor: "#6c5746",
+                        backgroundColor: "brown.light",
                         boxShadow: "none",
                       },
                     }}

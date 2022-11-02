@@ -34,7 +34,7 @@ const Signup = () => {
             p={2}
             sx={{
               display: { xs: "none", sm: "none", md: "block" },
-              backgroundColor: "#ffd68f",
+              backgroundColor: "secondary.light",
               maxHeight: "100%",
             }}
           >
@@ -42,11 +42,11 @@ const Signup = () => {
               disableRipple
               sx={{
                 padding: "40px 0px 0px 50px ",
-                color: "#FEC868",
+                color: "secondary.main",
                 fontWeight: "medium",
                 fontSize: "24px",
                 "&:hover": {
-                  color: "#ae7a1f",
+                  color: "secondary.dark",
                   backgroundColor: "transparent",
                 },
               }}
@@ -56,14 +56,14 @@ const Signup = () => {
             <Typography
               variant="h5"
               fontWeight={"bold"}
-              sx={{ padding: "20px 0px 0px 50px ", color: "#ae7a1f" }}
+              sx={{ padding: "20px 0px 0px 50px ", color: "secondary.dark" }}
             >
               Discover products made
             </Typography>
             <Typography
               variant="h5"
               fontWeight={"bold"}
-              sx={{ padding: "0px 0px 0px 50px ", color: "#ae7a1f" }}
+              sx={{ padding: "0px 0px 0px 50px ", color: "secondary.dark" }}
             >
               with love.
             </Typography>
@@ -87,10 +87,11 @@ const Signup = () => {
                 <Button
                   disableRipple
                   sx={{
+                    color:"brown.main",
                     textTransform: "none",
                     fontWeight: "normal",
                     "&:hover": {
-                      color: "#FEC868",
+                      color: "secondary.main",
                       backgroundColor: "transparent",
                     },
                   }}
@@ -150,11 +151,11 @@ const Signup = () => {
                   size="large"
                   sx={{
                     width: "50%",
-                    backgroundColor: "#473c33",
+                    backgroundColor: "brown.main",
                     textTransform: "none",
                     boxShadow: "none",
                     "&:hover": {
-                      backgroundColor: "#6c5746",
+                      backgroundColor: "brown.light",
                       boxShadow: "none",
                     },
                   }}
