@@ -1,13 +1,22 @@
 import { Grid } from "@mui/material";
+import { useRef } from "react";
 import "../statics/navbar.css";
 import IconButton from "@mui/material/IconButton";
 import { AccountCircle } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faBell,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 const AppBar = () => {
-  const pages = ["Home", "Deals", "Sell", "Support"];
+  const navRef = useRef();
 
+  const showCategories = () => {
+    navRef.current.classList.toggle("responsive");
+  };
   return (
     <div className='navbar-root'>
       <Grid
@@ -15,8 +24,14 @@ const AppBar = () => {
         className='grid-nav'
         direction='row'
         alignItems='center'
-        justifyContent='space-around'
+        justifyContent='space-between'
       >
+        <FontAwesomeIcon
+          className='icons nav-button'
+          onClick={showCategories}
+          icon={faBars}
+        />
+
         <Grid item className='logo'>
           <Link className='logo-link' to='/home'>
             ALMARI
@@ -24,19 +39,31 @@ const AppBar = () => {
         </Grid>
 
         <Grid item className='categories'>
-          <ul>
-            {pages.map((page) => (
-              <li className='list'>{page}</li>
-            ))}
-          </ul>
+          <nav ref={navRef}>
+            <Link className='nav-links' to='/home'>
+              Home
+            </Link>
+            <Link className='nav-links' to='/home'>
+              Buy
+            </Link>
+            <Link className='nav-links' to='/home'>
+              Sell
+            </Link>
+            <Link className='nav-links' to='/home'>
+              Support
+            </Link>
+          </nav>
+        </Grid>
+        <Grid item className='searching'>
+          <SearchBar />
         </Grid>
 
-        <Grid item className='profile-icons'>
+        <Grid item className='notif-icons'>
+          <FontAwesomeIcon className='icons bell' icon={faBell} />
+          <FontAwesomeIcon className='icons cart' icon={faCartShopping} />
+
           <IconButton size='small' className='icons avatar'>
             <AccountCircle fontSize='large' />
-          </IconButton>
-          <IconButton size='small' className='icons cart'>
-            <FontAwesomeIcon icon={faCartShopping} />
           </IconButton>
         </Grid>
       </Grid>
