@@ -1,14 +1,13 @@
 import React from "react";
 import "./vision.css";
 import Image from "./../../../components/global/Image";
-import vision from "./../statics/vision.jpg";
 
 function OurVision() {
   return (
     <>
       <div className='vision-con'>
         <div className='vision-img'>
-          <Image src={vision} className='main_image vision' />
+          <Image src='#' className='main_image vision' />
         </div>
         <div className='vision-description'>
           <h3 className='first'>Subscribe</h3>

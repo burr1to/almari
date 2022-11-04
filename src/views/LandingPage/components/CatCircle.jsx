@@ -1,26 +1,13 @@
 import React from "react";
 import Image from "./../../../components/global/Image";
-import chair from "./../statics/chair.jpg";
 import "./catcircle.css";
 
-const categories = [
-  "Clothing",
-  "Home Decor",
-  "Handicrafts",
-  "Furniture",
-  "Accessories",
-];
-function CatCircle() {
+function CatCircle({ item }) {
   return (
-    <ul className='cat-con'>
-      {categories.map((category) => (
-        <li className='cat-list'>
-          <Image className='main_image category-image' src={chair} alt='alt' />
-          <br />
-          <div className='cat-text'>{category}</div>
-        </li>
-      ))}
-    </ul>
+    <div className='cat-list'>
+      <Image src={item.img} className='main_image category-image' />
+      <div className='cat-text'>{item.title}</div>
+    </div>
   );
 }
 

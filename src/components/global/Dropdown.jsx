@@ -7,7 +7,6 @@ import Select from "@mui/material/Select";
 
 export default function BasicSelect({
   children,
-  labelVal,
   val,
   handleChange,
   labelID,
@@ -15,7 +14,6 @@ export default function BasicSelect({
 }) {
   return (
     <FormControl fullWidth>
-      <InputLabel>{labelVal}</InputLabel>
       <Select
         labelId={labelID}
         value={val}

@@ -3,7 +3,7 @@ import Layout from "./../../components/global/Layout";
 import "./statics/css/profilepage.css";
 import PopularItemList from "./../../components/global/PopularItemList";
 import { Grid } from "@mui/material";
-import Jett from "./statics/jett.jpg";
+import Jett from "./../../assets/jett.jpg";
 import Image from "../../components/global/Image";
 import Button from "./../../components/global/Button";
 

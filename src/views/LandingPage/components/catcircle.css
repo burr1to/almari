@@ -1,15 +1,8 @@
-.cat-con {
-  width: 65%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-  margin: 0 auto;
-}
 .cat-list {
   width: 200px;
   height: 200px;
   list-style: none;
+  margin-bottom: 35px;
 }
 
 .category-image {
@@ -20,14 +13,13 @@
   transition: 0.3s ease;
 }
 .category-image:hover {
-  width: 98%;
-  height: 98%;
   box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%),
     0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
 }
 .cat-text {
   text-align: center;
   position: relative;
-  font-weight: 100;
-  font-size: 16px;
+  font-weight: 200;
+  font-size: 17px;
+  letter-spacing: 1.3px;
 }

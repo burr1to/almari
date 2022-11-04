@@ -2,10 +2,9 @@ import React from "react";
 import Layout from "./../../components/global/Layout";
 import ProfileBox from "./../../components/global/ProfileBox";
 import CatCircle from "./components/CatCircle";
-import OurVision from "./components/OurVision";
 import Popular from "../../components/global/PopularItemList";
 import "./statics/css/landingpage.css";
-import SearchBar from "./../../components/global/SearchBar";
+import { categories } from "./../../components/data/testdata.js";
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import UserProfile from "./../../components/data/userprofile";
@@ -20,11 +19,13 @@ function LandingPage() {
       <Grid container direction='column' className='landing-content'>
         <Grid item className='explore-categories'>
           <p>Explore Categories</p>
-          <CatCircle />
+          <div className='cat-con'>
+            {categories.map((item) => (
+              <CatCircle item={item} key={item.id} />
+            ))}
+          </div>
         </Grid>
-        <Grid item className='search-area'>
-          <SearchBar />
-        </Grid>
+
         <Grid item className='random-items'>
           test
         </Grid>

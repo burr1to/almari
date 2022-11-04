@@ -1,15 +1,14 @@
 import React from "react";
 import Popular from "./Popular";
 import "./../statics/popular.css";
+import { popularProducts } from "./../data/testdata.js";
 
 function PopularItemList() {
-  const n = 4; // Or something else
-
   return (
     <div className='popular-item-list'>
-      {[...Array(n)].map((e, i) => (
-        <Popular />
-      ))}
+      {popularProducts.map(
+        (item, index) => index < 5 && <Popular item={item} key={item.key} />
+      )}
     </div>
   );
 }

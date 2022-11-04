@@ -1,11 +1,14 @@
+.individual-page {
+  width: 80%;
+  margin: 0 auto !important;
+}
+
 .product-grid {
   padding-top: 50px;
   display: flex;
   text-align: justify;
   justify-content: center;
   align-items: flex-start;
-  width: 80%;
-  margin: 0 auto !important;
 }
 .img-carousel-column {
   flex: 0.25;
@@ -56,10 +59,16 @@
 .product-highlights ul {
   padding: 0px 20px;
 }
-
+.product-extra {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
 .reviews {
-  width: 90%;
-  margin: 0 auto;
+  flex: 0.7;
+}
+.product-des {
+  flex: 0.3;
 }
 
 .popular-items-individual {
@@ -71,4 +80,7 @@
 
 .choice {
   width: 30%;
+}
+.choice h6 {
+  margin-bottom: 10px;
 }

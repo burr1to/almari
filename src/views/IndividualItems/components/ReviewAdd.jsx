@@ -7,7 +7,7 @@ import NumberRating from "./NumberRating";
 function ReviewAdd({ handleAdd }) {
   const [text, setText] = useState("");
   const [btnDisabled, setbtnDisabled] = useState(true);
-  const [rating, setRating] = useState(5);
+  const [rating, setRating] = useState();
   const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
@@ -41,7 +41,7 @@ function ReviewAdd({ handleAdd }) {
       <div className='reviewform-wrap'>
         <form onSubmit={handleSubmit}>
           <h2>Add a review</h2>
-          <NumberRating select={setRating} selected={rating} />
+          <NumberRating select={(rating) => setRating(rating)} />
           <div className='input-group'>
             <input
               onChange={handleChange}

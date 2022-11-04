@@ -1,7 +1,11 @@
 import React from "react";
 import { useState } from "react";
-function NumberRating({ select, selected }) {
-  const handleChange = (e) => {};
+function NumberRating({ select }) {
+  const [selected, setSelected] = useState(5);
+  const handleChange = (e) => {
+    setSelected(+e.currentTarget.value);
+    select(+e.currentTarget.value);
+  };
   return (
     <ul className='rating'>
       {Array.from({ length: 5 }, (_, i) => (
