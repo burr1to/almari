@@ -4,7 +4,7 @@ import IndividualPage from "./views/IndividualItems/Individual";
 import LandingPage from "./views/LandingPage/LandingPage";
 import Catalog from "./views/CatalogPage/CatalogPage";
 import Profile from "./views/ProfilePage/ProfilePage";
-import Dropdown from "./components/global/Dropdown";
+import ImageSidebar from "./components/global/ImageSidebar";
 import Product from "./components/global/Product";
 import CatCircle from "./views/LandingPage/components/CatCircle";
 
@@ -15,7 +15,7 @@ const Routedpath = () => {
       <Route path='/product' element={<IndividualPage />}></Route>
       <Route path='/catalog' element={<Product />}></Route>
       <Route path='/profile' element={<Profile />}></Route>
-      <Route path='/drop' element={<Dropdown />}></Route>
+      <Route path='/drop' element={<ImageSidebar />}></Route>
     </Routes>
   );
 };

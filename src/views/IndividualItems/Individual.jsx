@@ -11,8 +11,17 @@ import Button from "../../components/global/Button";
 import TestData from "./../../components/data/test.json";
 import MenuItem from "@mui/material/MenuItem";
 import Dropdown from "./../../components/global/Dropdown";
+import ImageSidebar from "../../components/global/ImageSidebar";
 
 function Individual() {
+  const slides = [
+    { url: "http://localhost:3000/image-1.jpg", title: "beach" },
+    { url: "http://localhost:3000/image-2.jpg", title: "boat" },
+    { url: "http://localhost:3000/image-3.jpg", title: "forest" },
+    { url: "http://localhost:3000/image-4.jpg", title: "city" },
+    { url: "http://localhost:3000/image-5.jpg", title: "italy" },
+  ];
+
   const addReview = (newReview) => {
     newReview.id = uuidv4();
     console.log(newReview);
@@ -36,7 +45,9 @@ function Individual() {
       <br />
       <div className='individual-page'>
         <div className='product-grid'>
-          <div className='img-carousel-column'>asdasd</div>
+          <div className='img-carousel-column'>
+            {slides.map((slide) => console.log("1"))}
+          </div>
           <div className='img-container'>
             <Image src={photo} className='main_image img-for-product' />
           </div>
@@ -65,9 +76,15 @@ function Individual() {
                   val={size}
                   handleChange={handleChangeSize}
                 >
-                  <MenuItem value={1}>Small</MenuItem>
-                  <MenuItem value={2}>Medium</MenuItem>
-                  <MenuItem value={3}>Large</MenuItem>
+                  <MenuItem key={1} value={1}>
+                    Small
+                  </MenuItem>
+                  <MenuItem key={2} value={2}>
+                    Medium
+                  </MenuItem>
+                  <MenuItem key={3} value={3}>
+                    Large
+                  </MenuItem>
                 </Dropdown>
 
                 <h6>Color</h6>
@@ -77,15 +94,20 @@ function Individual() {
                   val={color}
                   handleChange={handleChangeColor}
                 >
-                  <MenuItem value={1}>Red</MenuItem>
-                  <MenuItem value={2}>Blue</MenuItem>
-                  <MenuItem value={3}>Yellow</MenuItem>
+                  <MenuItem value={4}>Red</MenuItem>
+                  <MenuItem value={5}>Blue</MenuItem>
+                  <MenuItem value={6}>Yellow</MenuItem>
                 </Dropdown>
               </div>
             </div>
-            <Button type='submit' isDisabled={btnDisabled}>
-              Add to Cart
-            </Button>
+            <div className='submit-btns'>
+              <Button type='submit' isDisabled={btnDisabled}>
+                Add to Cart
+              </Button>
+              <Button type='submit' version='secondary'>
+                Buy it Now
+              </Button>
+            </div>
           </div>
         </div>
         <div className='product-extra'>
@@ -94,7 +116,7 @@ function Individual() {
             <br />
             <ReviewAdd handleAdd={addReview} />
           </div>
-          <div className='product-des'>asdad</div>
+          <div className='product-des'>a</div>
         </div>
 
         <br></br>

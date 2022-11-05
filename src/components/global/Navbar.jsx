@@ -4,11 +4,9 @@ import "../statics/navbar.css";
 import IconButton from "@mui/material/IconButton";
 import { AccountCircle } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCartShopping,
-  faBell,
-  faBars,
-} from "@fortawesome/free-solid-svg-icons";
+import { ShoppingCart } from "@mui/icons-material";
+import { Badge } from "@mui/material";
+import { faBell, faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 const AppBar = () => {
@@ -60,7 +58,12 @@ const AppBar = () => {
 
         <Grid item className='notif-icons'>
           <FontAwesomeIcon className='icons bell' icon={faBell} />
-          <FontAwesomeIcon className='icons cart' icon={faCartShopping} />
+
+          <IconButton aria-label='Show cart items' className='icons cart'>
+            <Badge badgeContent={2} color='primary'>
+              <ShoppingCart />
+            </Badge>
+          </IconButton>
 
           <IconButton size='small' className='icons avatar'>
             <AccountCircle fontSize='large' />
