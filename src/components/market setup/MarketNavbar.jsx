@@ -38,6 +38,7 @@ const MarketNavbar = () => {
   return (
     <div>
       <Box
+        bgcolor="#fff"
         paddingBottom="20px"
         sx={{ borderBottom: 1, borderColor: "lightgrey" }}
       >
@@ -82,6 +83,7 @@ const MarketNavbar = () => {
             <Box>{stepDesciption[activeStep]}</Box>
             <Box
               sx={{
+                bgcolor:"#fff",
                 width: "98vw",
                 display: "flex",
                 justifyContent: "flex-end",
@@ -109,7 +111,6 @@ const MarketNavbar = () => {
                   ? "Finish"
                   : "Save & Continue"}
               </Button>
-
             </Box>
           </>
         )}
