@@ -1,5 +1,6 @@
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import MarketNavbar from "./components/market setup/MarketNavbar";
 
 import {
   createBrowserRouter,
@@ -16,6 +17,10 @@ function App(){
     {
       path: "/signup",
       element: <Signup/>,
+    },
+    {
+      path: "/setup",
+      element: <MarketNavbar/>,
     },
   ]);
   
