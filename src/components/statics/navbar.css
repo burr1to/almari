@@ -1,5 +1,5 @@
 .navbar-root {
-  background-color: rgb(188, 188, 188);
+  background-color: #abc270;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -24,6 +24,7 @@
 .logo {
   cursor: pointer;
   font-size: 32px;
+  letter-spacing: 1.5px;
   text-align: center;
 }
 .logo-link {

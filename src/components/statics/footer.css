@@ -6,23 +6,7 @@
 .main {
   color: white;
   width: 100%;
-  background-color: rgb(33, 128, 218);
-  /*background: rgb(33, 120, 178);
-  background: -moz-linear-gradient(
-    top,
-    rgba(33, 120, 178, 1) 0%,
-    rgba(44, 183, 234, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(33, 120, 178, 1) 0%,
-    rgba(44, 183, 234, 1) 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(33, 120, 178, 1) 0%,
-    rgba(44, 183, 234, 1) 100%
-  );*/
+  background-color: #abc270;
 }
 
 .footer-con {
@@ -68,7 +52,7 @@
 
 .copy {
   margin-top: 10px;
-  background-color: black;
+  background-color: #6e7b4e;
   color: white;
   height: 50px;
   display: flex;

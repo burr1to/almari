@@ -12,21 +12,40 @@ import TestData from "./../../components/data/test.json";
 import MenuItem from "@mui/material/MenuItem";
 import Dropdown from "./../../components/global/Dropdown";
 import ImageSidebar from "../../components/global/ImageSidebar";
+import { Link } from "react-router-dom";
 
 function Individual() {
+  const sellerphoto =
+    "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  const photo2 =
+    "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1600";
   const slides = [
-    { url: "http://localhost:3000/image-1.jpg", title: "beach" },
-    { url: "http://localhost:3000/image-2.jpg", title: "boat" },
-    { url: "http://localhost:3000/image-3.jpg", title: "forest" },
-    { url: "http://localhost:3000/image-4.jpg", title: "city" },
-    { url: "http://localhost:3000/image-5.jpg", title: "italy" },
+    {
+      url: "  https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      title: "forest",
+    },
+    {
+      url: "https://images.pexels.com/photos/5245865/pexels-photo-5245865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "beach",
+    },
+    {
+      url: "https://images.pexels.com/photos/2775196/pexels-photo-2775196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "boat",
+    },
+    {
+      url: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "forest",
+    },
   ];
 
   const addReview = (newReview) => {
     newReview.id = uuidv4();
     console.log(newReview);
   };
-  const [btnDisabled, setbtnDisabled] = useState(true);
+  const [btnDisabled, setbtnDisabled] = useState(false);
+
+  const [text, setText] = useState("Follow");
+
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
 
@@ -40,16 +59,19 @@ function Individual() {
     console.log(event.target.value);
   };
 
+  const handleClick = (e) => {
+    setText("Liked");
+    setbtnDisabled(true);
+  };
+
   return (
     <Layout>
       <br />
       <div className='individual-page'>
         <div className='product-grid'>
-          <div className='img-carousel-column'>
-            {slides.map((slide) => console.log("1"))}
-          </div>
           <div className='img-container'>
-            <Image src={photo} className='main_image img-for-product' />
+            <ImageSidebar slides={slides} />
+            {/* <Image src={photo2} className='main_image img-for-product' /> */}
           </div>
           <div className='info-container'>
             <ul className='basic-info'>
@@ -58,36 +80,30 @@ function Individual() {
             </ul>
             <br />
             <div className='company-info'>
-              <p className='company-name'>Hattori Enterprises</p>
+              <Link to='/profile' className='company-name'>
+                Hattori Enterprises
+              </Link>
+              <br />
+              <Button isDisabled={btnDisabled} onClick={handleClick}>
+                {text}
+              </Button>
             </div>
-            <p className='description'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
 
-            <div className='product-highlights'>
-              <div className='choice'>
-                <h6>Size</h6>
+            <div className='product-main'>
+              <form className='choice'>
+                <p>Size</p>
 
                 <Dropdown
                   className='product-dropdown'
                   val={size}
                   handleChange={handleChangeSize}
                 >
-                  <MenuItem key={1} value={1}>
-                    Small
-                  </MenuItem>
-                  <MenuItem key={2} value={2}>
-                    Medium
-                  </MenuItem>
-                  <MenuItem key={3} value={3}>
-                    Large
-                  </MenuItem>
+                  <MenuItem value={1}>Small</MenuItem>
+                  <MenuItem value={2}>Medium</MenuItem>
+                  <MenuItem value={3}>Large</MenuItem>
                 </Dropdown>
 
-                <h6>Color</h6>
+                <p>Color</p>
 
                 <Dropdown
                   className='product-dropdown'
@@ -98,7 +114,7 @@ function Individual() {
                   <MenuItem value={5}>Blue</MenuItem>
                   <MenuItem value={6}>Yellow</MenuItem>
                 </Dropdown>
-              </div>
+              </form>
             </div>
             <div className='submit-btns'>
               <Button type='submit' isDisabled={btnDisabled}>
@@ -116,12 +132,35 @@ function Individual() {
             <br />
             <ReviewAdd handleAdd={addReview} />
           </div>
-          <div className='product-des'>a</div>
+          <div className='more-shop'>
+            <div className='product-description'>
+              <h6>About this Item</h6>
+              <p className='description'>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+                <br />
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+            </div>
+
+            <div className='meet-your-seller'>
+              <h5>Meet your Seller</h5>
+              <div className='meet-seller-flex-box'>
+                <Image src={sellerphoto} className='main_image seller-img' />
+                <p>Ellie Goulding</p>
+              </div>
+              <Button>View Profile</Button>
+            </div>
+          </div>
         </div>
 
-        <br></br>
-        <br></br>
         <div className='popular-items-individual'>
+          <h5>See Similar Items like this</h5>
           <PopularItemList />
         </div>
       </div>

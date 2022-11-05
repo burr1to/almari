@@ -12,17 +12,19 @@ export default function BasicSelect({
   labelID,
   labelName,
 }) {
+  const selectStyle = {
+    width: "500px",
+  };
   return (
-    <FormControl fullWidth>
-      <Select
-        labelId={labelID}
-        value={val}
-        label={labelName}
-        onChange={handleChange}
-      >
-        {children}
-      </Select>
-    </FormControl>
+    <Select
+      style={selectStyle}
+      labelId={labelID}
+      value={val}
+      label={labelName}
+      onChange={handleChange}
+    >
+      {children}
+    </Select>
   );
 }
 

@@ -31,7 +31,7 @@ const AppBar = () => {
         />
 
         <Grid item className='logo'>
-          <Link className='logo-link' to='/home'>
+          <Link className='logo-link' to='/'>
             ALMARI
           </Link>
         </Grid>
@@ -60,7 +60,7 @@ const AppBar = () => {
           <FontAwesomeIcon className='icons bell' icon={faBell} />
 
           <IconButton aria-label='Show cart items' className='icons cart'>
-            <Badge badgeContent={2} color='primary'>
+            <Badge badgeContent={0} color='success'>
               <ShoppingCart />
             </Badge>
           </IconButton>

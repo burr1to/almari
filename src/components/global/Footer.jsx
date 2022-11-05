@@ -35,45 +35,45 @@ function Footer() {
             </p>
           </div>
           <div className='footer-grid'>
-            <h4>Shop with Us</h4>
+            <h4>Categories</h4>
 
             <ul>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Shop</a>
+                <a href='#'>Clothing</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Shop</a>
+                <a href='#'>Accessories</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Shop</a>
+                <a href='#'>Handicrafts</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Shop</a>
+                <a href='#'>Artwork</a>
               </li>
             </ul>
           </div>
           <div className='footer-grid'>
-            <h4>Sell Your Items</h4>
+            <h4>Shop in Almari</h4>
             <ul>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Shop</a>
+                <a href='#'>Sell your Items</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Shop</a>
+                <a href='#'>Liked Items</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Shop</a>
+                <a href='#'>View Profile</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Shop</a>
+                <a href='#'>Register Account</a>
               </li>
             </ul>
           </div>
@@ -82,19 +82,19 @@ function Footer() {
             <ul>
               <li>
                 <FontAwesomeIcon icon={faLocationDot} />
-                <a href='#'>Shop</a>
+                <a href='#'>Dhulikhel, Kathmandu</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faMobileAlt} />
-                <a href='#'>Shop</a>
+                <a href='#'>+977-2323232323</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faEnvelope} />
-                <a href='#'>Shop</a>
+                <a href='#'>almarigroup@gmail.com</a>
               </li>
               <li>
                 <FontAwesomeIcon icon={faGlobeAsia} />
-                <a href='#'>Shop</a>
+                <a href='#'>almari.com.np</a>
               </li>
             </ul>
           </div>

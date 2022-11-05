@@ -5,38 +5,42 @@
 
 .product-grid {
   padding-top: 50px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   text-align: justify;
   justify-content: center;
-  align-items: flex-start;
-}
-.img-carousel-column {
-  flex: 0.25;
-  border: 1px solid red;
-}
-.img-container {
-  border: 1px solid blue;
-  flex: 1.05;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-}
-.img-for-product {
-  width: 700px !important;
-  height: auto;
-  border-radius: 30px;
 }
 
+.img-container {
+  width: 700px;
+  height: auto;
+  margin: 0 auto;
+}
+/* .img-for-product {
+  width: 600px !important;
+  height: auto;
+  max-height: 700px;
+} */
+.choice {
+  width: 30%;
+}
+.choice h6 {
+  margin-bottom: 10px;
+}
 .info-container {
-  border: 1px solid yellow;
-  flex: 0.75;
+  margin: 0 0 0 30px;
 }
 .basic-info {
   list-style: none;
 }
+
+.company-info {
+}
 .company-info .company-name {
   font-weight: bold;
 }
+
 .basic-info .title {
   font-weight: 200;
   font-size: 42px;
@@ -52,42 +56,50 @@
 .submit-btns > .btn {
   margin: 0 20px 0 0;
 }
-.product-highlights {
+.product-main {
   margin: 30px 0px;
 }
-.product-highlights h2 {
+.product-main h2 {
   font-weight: 200;
   margin: 10px 0px;
 }
 
-.product-highlights ul {
+.product-main ul {
   padding: 0px 20px;
 }
 .product-extra {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 30px 0px;
+  margin: 80px 0px;
 }
 .reviews {
-  flex: 0.7;
-  border: 1px solid black;
+  flex: 0.75;
+  padding-right: 15px;
 }
-.product-des {
-  flex: 0.3;
-  border: 1px solid black;
+.more-shop {
+  flex: 0.25;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: rgb(146, 189, 226);
+}
+
+.meet-your-seller {
+  background-color: white;
+  border-radius: 40px;
+  text-align: center;
+  padding: 20px;
+}
+.meet-your-seller p {
+  text-align: center;
+}
+
+.seller-img {
+  width: 100px !important;
+  height: auto;
+  border-radius: 50%;
 }
 
 .popular-items-individual {
-  margin: 20px 0px;
-}
-
-.size-dropdown {
-}
-
-.choice {
-  width: 30%;
-}
-.choice h6 {
-  margin-bottom: 10px;
+  margin: 140px 0;
 }
