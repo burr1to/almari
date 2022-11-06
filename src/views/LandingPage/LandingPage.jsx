@@ -26,9 +26,7 @@ function LandingPage() {
           </div>
         </Grid>
 
-        <Grid item className='random-items'>
-          test
-        </Grid>
+        <Grid item className='random-items'></Grid>
         <Grid item className='profile-showcase'>
           <p className='landing-text'>Discover our Creators</p>
           <Grid

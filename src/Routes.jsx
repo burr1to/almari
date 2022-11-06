@@ -10,12 +10,13 @@ import CatCircle from "./views/LandingPage/components/CatCircle";
 import Login from "./views/Login/Login";
 import Signup from "./views/Login/Signup";
 import Market from "./components/global/Forms/MarketNavbar";
+import Random from "./components/global/RandomItems";
 
 const Routedpath = () => {
   return (
     <Routes>
       <Route path='/' element={<LandingPage />}></Route>
-      <Route path='/test' element={<ImageSidebar />}></Route>
+      <Route path='/test' element={<Random />}></Route>
       <Route path='/product' element={<IndividualPage />}></Route>
       <Route path='/catalog' element={<Product />}></Route>
       <Route path='/profile' element={<Profile />}></Route>
