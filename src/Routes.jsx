@@ -4,25 +4,21 @@ import IndividualPage from "./views/IndividualItems/Individual";
 import LandingPage from "./views/LandingPage/LandingPage";
 import Catalog from "./views/CatalogPage/CatalogPage";
 import Profile from "./views/ProfilePage/ProfilePage";
-import ImageSidebar from "./components/global/ImageSidebar";
-import Product from "./components/global/Product";
-import CatCircle from "./views/LandingPage/components/CatCircle";
-import Login from "./views/Login/Login";
-import Signup from "./views/Login/Signup";
-import Market from "./components/global/Forms/MarketNavbar";
-import Random from "./components/global/RandomItems";
+import CartItems from "./views/CartItems/CartItems";
+import SingleCart from "./components/global/SingleCart";
+
+import Notification from "./components/global/Notification/Notification";
 
 const Routedpath = () => {
   return (
     <Routes>
       <Route path='/' element={<LandingPage />}></Route>
-      <Route path='/test' element={<Random />}></Route>
+      <Route path='/cart' element={<SingleCart />}></Route>
+      <Route path='/checkout' element={<CartItems />}></Route>
       <Route path='/product' element={<IndividualPage />}></Route>
-      <Route path='/catalog' element={<Product />}></Route>
+      <Route path='/catalog' element={<Catalog />}></Route>
       <Route path='/profile' element={<Profile />}></Route>
-      <Route path='/login' element={<Login />}></Route>
-      <Route path='/signup' element={<Signup />}></Route>
-      <Route path='/market' element={<Market />}></Route>
+      <Route path='/test2' element={<Notification />}></Route>
     </Routes>
   );
 };

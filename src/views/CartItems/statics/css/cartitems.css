@@ -1,0 +1,31 @@
+.cart-container {
+}
+
+.cart-wrapper {
+  padding: 20px;
+}
+
+.cart-title {
+  font-weight: 300;
+  text-align: center;
+}
+.cart-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-bottom {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.top-text-con {
+}
+
+.top-text-span {
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
