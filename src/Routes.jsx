@@ -7,8 +7,6 @@ import Profile from "./views/ProfilePage/ProfilePage";
 import CartItems from "./views/CartItems/CartItems";
 import SingleCart from "./components/global/SingleCart";
 
-import Notification from "./components/global/Notification/Notification";
-
 const Routedpath = () => {
   return (
     <Routes>
@@ -18,7 +16,6 @@ const Routedpath = () => {
       <Route path='/product' element={<IndividualPage />}></Route>
       <Route path='/catalog' element={<Catalog />}></Route>
       <Route path='/profile' element={<Profile />}></Route>
-      <Route path='/test2' element={<Notification />}></Route>
     </Routes>
   );
 };
