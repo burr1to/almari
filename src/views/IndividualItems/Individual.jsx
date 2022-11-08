@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React, { useState, useRef } from "react";
+
 import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
 import Image from "./../../components/global/Image";
@@ -39,12 +39,13 @@ function Individual() {
   ];
 
   const addReview = (newReview) => {
-    newReview.id = uuidv4();
     console.log(newReview);
   };
-  const [btnDisabled, setbtnDisabled] = useState(false);
 
-  const [text, setText] = useState("Follow");
+  const [btnDisabled, setbtnDisabled] = useState();
+  const [btnLiked, setLiked] = useState(false);
+
+  const [text, setText] = useState("Like");
 
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
@@ -60,8 +61,8 @@ function Individual() {
   };
 
   const handleClick = (e) => {
-    setText("Liked");
-    setbtnDisabled(true);
+    setText(!btnLiked ? "Liked" : "Like");
+    setLiked(!btnLiked);
   };
 
   return (
@@ -84,13 +85,17 @@ function Individual() {
                 Hattori Enterprises
               </Link>
               <br />
-              <Button isDisabled={btnDisabled} onClick={handleClick}>
+              <Button
+                version={btnLiked ? "favorite" : "primary"}
+                onClick={handleClick}
+              >
                 {text}
               </Button>
             </div>
 
             <div className='product-main'>
               <form className='choice'>
+                <h6>Quantity: 1</h6>
                 <p>Size</p>
 
                 <Dropdown

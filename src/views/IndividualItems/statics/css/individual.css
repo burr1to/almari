@@ -36,6 +36,13 @@
 }
 
 .company-info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.company-name {
+  text-decoration: none;
+  margin: 0px 10px 0px 0px;
 }
 .company-info .company-name {
   font-weight: bold;
@@ -102,4 +109,8 @@
 
 .popular-items-individual {
   margin: 140px 0;
+}
+
+.liked {
+  background-color: red;
 }

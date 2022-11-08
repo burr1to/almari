@@ -1,7 +1,9 @@
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { Box, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "./../../components/global/Button";
+import "./statics/css/login.css";
 
 const Signup = () => {
   const [inputs, setInputs] = useState({
@@ -38,21 +40,9 @@ const Signup = () => {
               maxHeight: "100%",
             }}
           >
-            <Button
-              disableRipple
-              sx={{
-                padding: "40px 0px 0px 50px ",
-                color: "secondary.main",
-                fontWeight: "medium",
-                fontSize: "24px",
-                "&:hover": {
-                  color: "secondary.dark",
-                  backgroundColor: "transparent",
-                },
-              }}
-            >
-              a l m a r i
-            </Button>
+            <div className='logo-button'>
+              <h3>ALMARI</h3>
+            </div>
             <Typography
               variant='h5'
               fontWeight={"bold"}
@@ -69,101 +59,71 @@ const Signup = () => {
             </Typography>
           </Box>
 
-          <Box flex={1}>
-            <Box
-              sx={{
-                padding: "10px",
-                display: "flex",
-                justifyContent: "flex-end",
-              }}
-            >
-              <Typography
-                variant='caption text'
-                sx={{ padding: "10px 0px 10px 10px", fontSize: "14px" }}
-              >
-                Already have an account?
-              </Typography>
-              <Link to='/login'>
-                <Button
-                  disableRipple
-                  sx={{
-                    color: "brown.main",
-                    textTransform: "none",
-                    fontWeight: "normal",
-                    "&:hover": {
-                      color: "secondary.main",
-                      backgroundColor: "transparent",
-                    },
-                  }}
+          <Box className='sign-in-con' flex={1}>
+            <div className='sign-in-box'>
+              <form onSubmit={handleSubmit}>
+                <Box
+                  margin='auto'
+                  maxWidth='400px'
+                  padding='20px'
+                  display='flex'
+                  flexDirection={"column"}
+                  gap='30px'
                 >
-                  Sign in
-                </Button>
-              </Link>
-            </Box>
-
-            <form onSubmit={handleSubmit}>
-              <Box
-                margin='auto'
-                maxWidth='400px'
-                padding='20px'
-                display='flex'
-                flexDirection={"column"}
-                gap='30px'
-              >
-                <Typography variant='h5' fontWeight={"bold"}>
-                  Sign up to Almari
-                </Typography>
-                <TextField
-                  onChange={handleChange}
-                  name='name'
-                  value={inputs.name}
-                  label='name'
-                  type='name'
-                  required
-                />
-                <TextField
-                  onChange={handleChange}
-                  name='number'
-                  value={inputs.number}
-                  label='number'
-                  type='tel'
-                  required
-                />
-                <TextField
-                  onChange={handleChange}
-                  name='email'
-                  value={inputs.email}
-                  label='email'
-                  type='email'
-                  required
-                />
-                <TextField
-                  onChange={handleChange}
-                  name='password'
-                  value={inputs.password}
-                  label='password'
-                  type='password'
-                  required
-                />
-                <Button
-                  type='submit'
-                  variant='contained'
-                  size='large'
-                  sx={{
-                    width: "50%",
-                    backgroundColor: "brown.main",
-                    textTransform: "none",
-                    boxShadow: "none",
-                    "&:hover": {
-                      backgroundColor: "brown.light",
-                      boxShadow: "none",
-                    },
-                  }}
-                >
-                  Create Account
-                </Button>
-              </Box>
-            </form>
+                  <Typography
+                    style={{ textAlign: "center" }}
+                    variant='h5'
+                    fontWeight={"bold"}
+                  >
+                    Sign up to Almari
+                  </Typography>
+                  <TextField
+                    onChange={handleChange}
+                    name='name'
+                    value={inputs.name}
+                    label='name'
+                    type='name'
+                    required
+                  />
+                  <TextField
+                    onChange={handleChange}
+                    name='number'
+                    value={inputs.number}
+                    label='number'
+                    type='tel'
+                    required
+                  />
+                  <TextField
+                    onChange={handleChange}
+                    name='email'
+                    value={inputs.email}
+                    label='email'
+                    type='email'
+                    required
+                  />
+                  <TextField
+                    onChange={handleChange}
+                    name='password'
+                    value={inputs.password}
+                    label='password'
+                    type='password'
+                    required
+                  />
+                  <Button type='submit' version='tertiary'>
+                    Sign Up
+                  </Button>
+                </Box>
+              </form>
+            </div>
+            <br />
+            <div className='sign-in-txt'>
+              <div className='txt'>Already have an account?</div>
+              <div className='bt'>
+                <Link to='/login'>
+                  <Button version='tertiary'>Log In</Button>
+                </Link>
+              </div>
+            </div>
           </Box>
         </Stack>
       </Box>
