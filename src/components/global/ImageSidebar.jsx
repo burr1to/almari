@@ -10,14 +10,15 @@ const slideStyles = {
 };
 
 function ImageSidebar({ slides }) {
+  console.log(slides[0].img);
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide ? slides[0].img.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
   const goToNext = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
+    const isLastSlide = currentIndex === slides[0].img.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
@@ -26,7 +27,7 @@ function ImageSidebar({ slides }) {
   };
   const slideStylesWidthBackground = {
     ...slideStyles,
-    backgroundImage: `url(${slides[currentIndex].url})`,
+    backgroundImage: `url(${slides[0].img[currentIndex]})`,
   };
 
   return (
@@ -41,7 +42,7 @@ function ImageSidebar({ slides }) {
       </div>
       <div style={slideStylesWidthBackground}></div>
       <div className='dot-con'>
-        {slides.map((slide, slideIndex) => (
+        {slides[0].img.map((slide, slideIndex) => (
           <div
             className='dot'
             key={slideIndex}

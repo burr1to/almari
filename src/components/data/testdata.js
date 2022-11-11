@@ -87,3 +87,60 @@ export const popularProducts = [
     img: "https://images.pexels.com/photos/14270583/pexels-photo-14270583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];
+
+export const products = [
+  {
+    id: 2722,
+    productName: "Black Fur Hoodie with Laces",
+    price: 50,
+    highlights: {
+      color: "blue",
+      size: "XL",
+    },
+    quantity: 2,
+    img: [
+      "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+      "https://images.pexels.com/photos/14270583/pexels-photo-14270583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    ],
+    about:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: 2722,
+    productName: "Black Fur Hoodie with Laces",
+    price: 50,
+    highlights: {
+      color: "blue",
+      size: "XL",
+    },
+    quantity: 2,
+    img: [
+      "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+      "https://images.pexels.com/photos/14270583/pexels-photo-14270583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    ],
+    about:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: 2722,
+    productName: "Black Fur Hoodie with Laces",
+    price: 50,
+    highlights: {
+      color: "blue",
+      size: "XL",
+    },
+    quantity: 2,
+    img: [
+      "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+      "https://images.pexels.com/photos/14270583/pexels-photo-14270583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    ],
+    about:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+];

@@ -6,7 +6,7 @@ import { AccountCircle } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ShoppingCart } from "@mui/icons-material";
 import { Badge } from "@mui/material";
-import { faBell, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 const AppBar = () => {
@@ -57,13 +57,15 @@ const AppBar = () => {
         </Grid>
 
         <Grid item className='notif-icons'>
-          <FontAwesomeIcon className='icons bell' icon={faBell} />
+          <FontAwesomeIcon className='icons heart' icon={faHeart} />
 
-          <IconButton aria-label='Show cart items' className='icons cart'>
-            <Badge badgeContent={0} color='success'>
-              <ShoppingCart />
-            </Badge>
-          </IconButton>
+          <Link className='logo-link' to='/checkout'>
+            <IconButton aria-label='Show cart items' className='icons cart'>
+              <Badge badgeContent={3} color='success'>
+                <ShoppingCart />
+              </Badge>
+            </IconButton>
+          </Link>
 
           <IconButton size='small' className='icons avatar'>
             <AccountCircle fontSize='large' />

@@ -63,6 +63,7 @@ function ProfilePage() {
           </Grid>
           <Grid item className='profile-column-3'>
             <h5>Liked Items</h5>
+            <PopularItemList />
           </Grid>
           <Grid item className='profile-column-4'>
             <h5>Popular Items</h5>

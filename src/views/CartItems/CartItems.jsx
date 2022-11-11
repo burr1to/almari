@@ -19,10 +19,6 @@ function CartItems() {
           <br />
           <div className='cart-bottom'>
             <SingleCart />
-            <SingleCart />
-            <SingleCart />
-            <SingleCart />
-            <SingleCart />
           </div>
         </div>
       </div>

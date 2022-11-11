@@ -1,9 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
 import Image from "./../../components/global/Image";
-import photo from "./../../assets/pexel.jpg";
 import Reviews from "./components/Reviews";
 import PopularItemList from "./../../components/global/PopularItemList";
 import ReviewAdd from "./components/ReviewAdd";
@@ -13,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Dropdown from "./../../components/global/Dropdown";
 import ImageSidebar from "../../components/global/ImageSidebar";
 import { Link } from "react-router-dom";
+import { products } from "./../../components/data/testdata";
 
 function Individual() {
   const sellerphoto =
@@ -71,8 +71,7 @@ function Individual() {
       <div className='individual-page'>
         <div className='product-grid'>
           <div className='img-container'>
-            <ImageSidebar slides={slides} />
-            {/* <Image src={photo2} className='main_image img-for-product' /> */}
+            <ImageSidebar slides={products} />
           </div>
           <div className='info-container'>
             <ul className='basic-info'>

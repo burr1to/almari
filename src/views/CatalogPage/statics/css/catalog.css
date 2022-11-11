@@ -13,9 +13,22 @@
   margin: 10px 0px 0px 10px;
   min-height: 60vh;
   height: 90vh;
-  background-color: #ffd68f;
+}
+
+.catalog-filter-area h6 {
+  margin-bottom: 20px;
 }
 
 .catalog-content-area {
   flex: 0.85;
+}
+
+.category-form {
+}
+
+.catalog-filter-forms {
+  margin: 40px 0;
+}
+.filter-keyword {
+  margin: 0 0 10px 0 !important;
 }
