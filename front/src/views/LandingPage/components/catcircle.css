@@ -1,0 +1,35 @@
+.cat-list {
+  width: 11vw;
+  height: auto;
+  list-style: none;
+  margin-bottom: 35px;
+}
+
+@media screen and (max-width:1100px){
+  .cat-list {
+    width: 14vw;
+  }
+}
+@media screen and (max-width:650px){
+  .cat-list {
+    width: 26vw;
+  }
+}
+.category-image {
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 40px;
+  transition: 0.3s ease;
+}
+.category-image:hover {
+  box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%),
+    0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
+}
+.cat-text {
+  text-align: center;
+  position: relative;
+  font-weight: 200;
+  font-size: 17px;
+  letter-spacing: 1.3px;
+}

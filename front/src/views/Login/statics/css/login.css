@@ -1,0 +1,28 @@
+.logo-button {
+  padding: 40px 0px 0px 50px;
+  font-weight: medium;
+  cursor: pointer;
+  color: rgb(92, 92, 92);
+}
+
+.logo-button:hover {
+}
+
+.sign-in-con {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: space-around;
+}
+.sign-in-txt {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.bt {
+  margin: 10px 0;
+}
+.sign-in-box {
+}

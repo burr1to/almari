@@ -1,0 +1,45 @@
+.profile-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.profile-elements {
+  margin-top: 20px;
+  width: 70%;
+}
+.profile-column-1 {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.image-area {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+}
+.profile-image {
+  width: 200px;
+  height: auto;
+  border-radius: 30px;
+}
+.profile-head {
+  flex: 1.15;
+  padding: 0px 10px;
+}
+
+.profile-socials {
+  flex: 0.45;
+  font-size: 28px;
+  margin: 0px 10px;
+}
+
+.profile-column-2 {
+}
+
+.profile-column-2 h5,
+.profile-column-3 h5,
+.profile-column-4 h5 {
+  text-align: center;
+  margin: 40px 0px;
+}

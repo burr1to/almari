@@ -1,0 +1,33 @@
+.vision-con {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 70%;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.vision-img {
+  flex: 1.2;
+  padding: 0 5px;
+}
+.vision {
+  border-radius: 30px;
+}
+
+.vision-description {
+  flex: 0.8;
+  padding: 0 5px;
+}
+.vision-description .first {
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+.vision-description p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.vision-description .about-us {
+  padding: 5px;
+}
