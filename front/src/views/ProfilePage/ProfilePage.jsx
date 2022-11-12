@@ -1,11 +1,13 @@
 import React from "react";
 import Layout from "./../../components/global/Layout";
 import "./statics/css/profilepage.css";
-import PopularItemList from "./../../components/global/PopularItemList";
+import Popular from "./../../components/global/Popular";
 import { Grid } from "@mui/material";
 import Jett from "./../../assets/jett.jpg";
 import Image from "../../components/global/Image";
 import Button from "./../../components/global/Button";
+import { popularProducts } from "../../components/data/testdata";
+import "./../../components/statics/popular.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -63,11 +65,19 @@ function ProfilePage() {
           </Grid>
           <Grid item className='profile-column-3'>
             <h5>Liked Items</h5>
-            <PopularItemList />
+            <div className='popular-item-list'>
+      {popularProducts.map(
+        (item, index) => index < 5 && <Popular item={item} key={item.key} />
+      )}
+    </div>
           </Grid>
           <Grid item className='profile-column-4'>
             <h5>Popular Items</h5>
-            <PopularItemList />
+            <div className='popular-item-list'>
+      {popularProducts.map(
+        (item, index) => index < 5 && <Popular item={item} key={item.key} />
+      )}
+    </div>
           </Grid>
         </form>
       </Grid>

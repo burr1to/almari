@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import "./statics/css/catalog.css";
 import Layout from "./../../components/global/Layout";
-import CatalogItems from "./../../components/global/Product";
 import Button from "./../../components/global/Button";
 import { Slider } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -11,6 +10,7 @@ import { TextField } from "@mui/material";
 import { popularProducts } from "./../../components/data/testdata";
 import SingleProduct from "./../../components/global/SingleProduct";
 import "./../../components/statics/product.css";
+import { Link } from "react-router-dom";
 //downprice cant be less than upprice make error handle
 
 function valuetext(value) {
@@ -43,6 +43,10 @@ function CatalogPage() {
     console.log(value);
   };
 
+  const handleClick = (e) =>{
+    console.log("ok")
+  }
+
   // const handle = (e) => {
   //   for (let o = 0; o < cat.length; o++) {
   //     if (e.target.value !== cat[o]) {
@@ -51,6 +55,8 @@ function CatalogPage() {
   //   setCat([...cat, e.target.value]);
   //   }
   // };
+const productID = 2;
+  const path = `/product/${productID}`;
 
   return (
     <>
@@ -100,7 +106,9 @@ function CatalogPage() {
               </div>
               <div className='product-con'>
       {popularProducts.map((item) => (
-        <SingleProduct item={item} key={item.id} />
+        
+        <SingleProduct item={item} key={item.id} path = {path} onClick = {handleClick}/>
+        
       ))}
     </div>
             </div>

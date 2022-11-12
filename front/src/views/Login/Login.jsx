@@ -2,9 +2,9 @@ import { Box, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Layout from "./../../components/global/Layout";
 import Button from "./../../components/global/Button";
 import "./statics/css/login.css";
+import back from "./statics/images/back.jpg"
 
 const Login = () => {
   const [inputs, setInputs] = useState({
@@ -29,31 +29,36 @@ const Login = () => {
         p={2}
         sx={{
           display: { xs: "none", sm: "none", md: "block" },
-          backgroundColor: "primary.light",
+          backgroundImage: `url(${back})`,
+          backgroundSize:'cover',
+          backgroundColor:'black',
           maxHeight: "100%",
         }}
       >
-        <div className='logo-button'>
+      </Box>
+        
+      <Box className='sign-in-con' flex={1}>
+      <div className="title-login">
+      <div className='logo-button'>
           <h3>ALMARI</h3>
         </div>
 
         <Typography
           variant='h5'
           fontWeight={"bold"}
-          sx={{ padding: "20px 0px 0px 50px ", color: "primary.dark" }}
+          sx={{ color: "primary.dark" }}
         >
           Discover products made
         </Typography>
         <Typography
           variant='h5'
           fontWeight={"bold"}
-          sx={{ padding: "0px 0px 0px 50px ", color: "primary.dark" }}
+          sx={{ color: "primary.dark" }}
         >
           with love.
         </Typography>
-      </Box>
-
-      <Box className='sign-in-con' flex={1}>
+        </div>
+        
         <div className='sign-in-box'>
           <form onSubmit={handleSubmit}>
             <Box

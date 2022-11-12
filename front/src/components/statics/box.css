@@ -6,10 +6,15 @@
 
 .profile-box-bg {
   /*border: 2px solid red;*/
-  background-color: #cfe1a1;
   border-radius: 10px 10px 0px 0px;
-  width: 320px;
-  height: 200px;
+
+}
+
+.landingpic{
+  border-radius: 10px 10px 0px 0px;
+  width:320px;
+  height:auto;
+
 }
 
 .profile-box-info-box {
@@ -20,17 +25,18 @@
   height: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .profile-box-info {
   display: flex;
-  width: 80%;
-  margin: 0 auto;
-  flex-flow: row nowrap;
-  justify-content: space-around;
+  flex-flow:row nowrap;
+  justify-content: center;
   align-items: center;
+  width:80%;
+
 }
-.profile-box-info text {
+.profile-box-info .text {
 }
 .profile-box-info-avatar {
   text-align: center;

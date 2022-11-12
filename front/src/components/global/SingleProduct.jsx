@@ -7,6 +7,7 @@ import React from "react";
 import "./../statics/product.css";
 import Image from "./Image";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Circle = styled.div`
   width: 200px;
@@ -15,12 +16,19 @@ const Circle = styled.div`
   background-color: white;
   position: absolute;
 `;
-function SingleProduct({ item }) {
+
+
+function SingleProduct({ item, onClick, path}) {
   return (
+    <div className="ok">
+      <Link to = {path}>
     <div className='single-con'>
-      <Circle />
+      <Circle/>
       <Image src={item.img} className='main_image single-product-img' />
-      <div className='info'>
+      
+    </div>
+    </Link>
+    <div className='info'>
         <div className='icon cart'>
           <ShoppingCartOutlined />
         </div>
