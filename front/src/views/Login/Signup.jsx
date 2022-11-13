@@ -1,9 +1,10 @@
 import { Box, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "./../../components/global/Button";
 import "./statics/css/login.css";
+import axios from "axios";
 
 const Signup = () => {
   const [inputs, setInputs] = useState({
@@ -18,9 +19,24 @@ const Signup = () => {
       [e.target.name]: e.target.value,
     }));
   };
-  const handleSubmit = (e) => {
+
+  let navigate = useNavigate();
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(inputs);
+
+    await axios
+      .post("http://localhost:8000/users", inputs)
+      .then((response) => {
+        navigate("/login");
+        console.log("Success");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

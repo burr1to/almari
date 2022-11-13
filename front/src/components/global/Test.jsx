@@ -1,50 +1,56 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
-import { products } from "./../../components/data/testdata";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
-function valuetext(value) {
-  return `${value}°C`;
-}
+export default function BasicSelect() {
+  const [age, setAge] = React.useState({
+    age1: "",
+    age2: "",
+  });
 
-export default function RangeSlider() {
-  const slides = [
-    {
-      url: "  https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "forest",
-    },
-    {
-      url: "https://images.pexels.com/photos/5245865/pexels-photo-5245865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "beach",
-    },
-    {
-      url: "https://images.pexels.com/photos/2775196/pexels-photo-2775196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "boat",
-    },
-    {
-      url: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "forest",
-    },
-  ];
-  const a = 1;
-  const imgArray = console.log(slides);
-  console.log(products[0].img.length);
-
-  const [value, setValue] = React.useState([20, 37]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleChange = (label, event) => {
+    switch (label) {
+      case "age1":
+        setAge({ ...age, age1: event.target.value });
+        console.log(event.target.value);
+        break;
+      case "age2":
+        setAge({ ...age, age2: event.target.value });
+        break;
+    }
   };
 
   return (
-    <Box sx={{ width: 300 }}>
-      <Slider
-        getAriaLabel={() => "Temperature range"}
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay='auto'
-        getAriaValueText={valuetext}
-      />
-    </Box>
+    <>
+      <Box sx={{ minWidth: 120 }}>
+        <Select
+          labelId='demo-simple-select-label'
+          id='demo-simple-select'
+          value={age.age1}
+          label='Age'
+          onChange={handleChange}
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </Box>
+      <Box sx={{ minWidth: 190 }}>
+        <Select
+          labelId='demo-simple-select-label'
+          id='demo-simple-select'
+          value={age.age2}
+          label='Age'
+          onChange={handleChange}
+        >
+          <MenuItem value={120}>Ten</MenuItem>
+          <MenuItem value={220}>Twenty</MenuItem>
+          <MenuItem value={320}>Thirty</MenuItem>
+        </Select>
+      </Box>
+    </>
   );
 }

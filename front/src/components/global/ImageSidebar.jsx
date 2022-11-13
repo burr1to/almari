@@ -10,7 +10,6 @@ const slideStyles = {
 };
 
 function ImageSidebar({ slides }) {
-  console.log(slides[0].img);
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;

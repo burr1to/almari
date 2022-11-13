@@ -29,10 +29,12 @@ function LandingPage() {
         </Grid>
 
         <Grid item className='random-items'>
+          <div className="random-contain">
         {sliderItems.map(item =>(
           <RandomItems item = {item} key = {item.id}/>
 
         ))}
+        </div>
         </Grid>
         <Grid item className='profile-showcase'>
           <p className='landing-text'>Discover our Creators</p>

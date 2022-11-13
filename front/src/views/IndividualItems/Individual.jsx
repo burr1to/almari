@@ -12,37 +12,35 @@ import MenuItem from "@mui/material/MenuItem";
 import Dropdown from "./../../components/global/Dropdown";
 import ImageSidebar from "../../components/global/ImageSidebar";
 import { Link } from "react-router-dom";
-import { products,popularProducts } from "./../../components/data/testdata";
+import { products, popularProducts } from "./../../components/data/testdata";
 import "./../../components/statics/popular.css";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Individual() {
-
   const postID = useParams();
-  console.log(postID.id);
 
   const addReview = (newReview) => {
     console.log(newReview);
   };
 
   const [btnDisabled, setbtnDisabled] = useState();
-  const [btnLiked, setLiked] = useState(false);
-
-  const [text, setText] = useState("Like");
-
+  const [liked, setLiked] = useState(false);
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
 
   const handleChangeSize = (event) => {
+    console.log(event.target.value);
     setSize(event.target.value);
-
   };
   const handleChangeColor = (event) => {
-    setColor(event.target.value);  
+    console.log(event.target.value);
+    setColor(event.target.value);
   };
 
-  const handleClick = (e) => {
-    setText(!btnLiked ? "Liked" : "Like");
-    setLiked(!btnLiked);
+  const handleLike = (e) => {
+    console.log("a");
+    setLiked(!liked);
   };
 
   return (
@@ -65,10 +63,10 @@ function Individual() {
               </Link>
               <br />
               <Button
-                version={btnLiked ? "favorite" : "primary"}
-                onClick={handleClick}
+                onClick={handleLike}
+                version={liked ? "favorite" : "tertiary"}
               >
-                {text}
+                <FontAwesomeIcon className='icons heart' icon={faHeart} />
               </Button>
             </div>
 
@@ -80,6 +78,7 @@ function Individual() {
                 <Dropdown
                   className='product-dropdown'
                   val={size}
+                  label='size'
                   handleChange={handleChangeSize}
                 >
                   <MenuItem value={1}>Small</MenuItem>
@@ -92,6 +91,7 @@ function Individual() {
                 <Dropdown
                   className='product-dropdown'
                   val={color}
+                  label='color'
                   handleChange={handleChangeColor}
                 >
                   <MenuItem value={4}>Red</MenuItem>
@@ -131,12 +131,14 @@ function Individual() {
                 of type and scrambled it to make a type specimen book.
               </p>
             </div>
-            <br/>
+            <br />
             <div className='meet-your-seller'>
-              
               <h5>Meet your Seller</h5>
               <div className='meet-seller-flex-box'>
-                <Image src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='main_image seller-img' />
+                <Image
+                  src='https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                  className='main_image seller-img'
+                />
                 <p>Ellie Goulding</p>
               </div>
               <Button>View Profile</Button>
@@ -147,10 +149,11 @@ function Individual() {
         <div className='popular-items-individual'>
           <h5>See Similar Items like this</h5>
           <div className='popular-item-list'>
-      {popularProducts.map(
-        (item, index) => index < 5 && <Popular item={item} key={item.key} />
-      )}
-    </div>
+            {popularProducts.map(
+              (item, index) =>
+                index < 5 && <Popular item={item} key={item.key} />
+            )}
+          </div>
         </div>
       </div>
     </Layout>

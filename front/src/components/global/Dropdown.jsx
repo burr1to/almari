@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function BasicSelect({
+export default function Dropdown({
   children,
   val,
   handleChange,
@@ -13,7 +13,7 @@ export default function BasicSelect({
   labelName,
 }) {
   const selectStyle = {
-    width: "500px",
+    width: "300px",
   };
   return (
     <Select
@@ -28,4 +28,4 @@ export default function BasicSelect({
   );
 }
 
-BasicSelect.defaultProps = {};
+Dropdown.defaultProps = {};

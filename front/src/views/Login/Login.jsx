@@ -4,12 +4,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./../../components/global/Button";
 import "./statics/css/login.css";
-import back from "./statics/images/back.jpg"
+import back from "./statics/images/back.jpg";
+import axios from "axios";
 
 const Login = () => {
   const [inputs, setInputs] = useState({
-    Email: "",
-    Password: "",
+    username: "",
+    password: "",
   });
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -17,9 +18,28 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(inputs);
+
+    const formData = new FormData();
+
+    formData.append("username", inputs.username);
+    formData.append("password", inputs.password);
+    await axios
+      .post("http://localhost:8000/login", formData)
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("auth_token", response.data.access_token);
+        localStorage.setItem("auth_token_type", response.data.token_type);
+        console.log("Success");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -30,35 +50,34 @@ const Login = () => {
         sx={{
           display: { xs: "none", sm: "none", md: "block" },
           backgroundImage: `url(${back})`,
-          backgroundSize:'cover',
-          backgroundColor:'black',
+          backgroundSize: "cover",
+          backgroundColor: "black",
           maxHeight: "100%",
         }}
-      >
-      </Box>
-        
+      ></Box>
+
       <Box className='sign-in-con' flex={1}>
-      <div className="title-login">
-      <div className='logo-button'>
-          <h3>ALMARI</h3>
+        <div className='title-login'>
+          <div className='logo-button'>
+            <h3>ALMARI</h3>
+          </div>
+
+          <Typography
+            variant='h5'
+            fontWeight={"bold"}
+            sx={{ color: "primary.dark" }}
+          >
+            Discover products made
+          </Typography>
+          <Typography
+            variant='h5'
+            fontWeight={"bold"}
+            sx={{ color: "primary.dark" }}
+          >
+            with love.
+          </Typography>
         </div>
 
-        <Typography
-          variant='h5'
-          fontWeight={"bold"}
-          sx={{ color: "primary.dark" }}
-        >
-          Discover products made
-        </Typography>
-        <Typography
-          variant='h5'
-          fontWeight={"bold"}
-          sx={{ color: "primary.dark" }}
-        >
-          with love.
-        </Typography>
-        </div>
-        
         <div className='sign-in-box'>
           <form onSubmit={handleSubmit}>
             <Box
