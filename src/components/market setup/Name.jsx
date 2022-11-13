@@ -20,6 +20,7 @@ const Name = () => {
               Set a unique name for your shop which helps people find you.
             </Typography>
             <TextField
+            required
               placeholder="Enter your shop name"
               sx={{ width: "100%" }}
             />
