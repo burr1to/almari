@@ -1,20 +1,23 @@
-.add-post-con{
-    display:flex;
-    margin:60px 0;
-    flex-flow:column wrap;
-    justify-content: center;
-    align-items: center;
+.add-post-con {
+  display: flex;
+  margin: 60px 0;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.add-post-form{
-    display:flex;
-    flex-flow:column wrap;
-    justify-content: center;
-    align-items: center;
+.add-post-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.insert-img{
-    display: flex;
-    flex-flow:column wrap;
-    align-items: center;
+.add-post-form .MuiInputBase-root {
+  width: 400px;
+}
+.insert-img {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }

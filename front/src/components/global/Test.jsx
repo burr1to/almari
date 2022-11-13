@@ -1,56 +1,98 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import TextField from "@mui/material/TextField";
 
-export default function BasicSelect() {
-  const [age, setAge] = React.useState({
-    age1: "",
-    age2: "",
-  });
+export default function MultilineTextFields() {
+  const [value, setValue] = React.useState("Controlled");
 
-  const handleChange = (label, event) => {
-    switch (label) {
-      case "age1":
-        setAge({ ...age, age1: event.target.value });
-        console.log(event.target.value);
-        break;
-      case "age2":
-        setAge({ ...age, age2: event.target.value });
-        break;
-    }
+  const handleChange = (event) => {
+    setValue(event.target.value);
   };
 
   return (
-    <>
-      <Box sx={{ minWidth: 120 }}>
-        <Select
-          labelId='demo-simple-select-label'
-          id='demo-simple-select'
-          value={age.age1}
-          label='Age'
+    <Box
+      component='form'
+      sx={{
+        "& .MuiTextField-root": { m: 1, width: "25ch" },
+      }}
+      noValidate
+      autoComplete='off'
+    >
+      <div>
+        <TextField
+          id='outlined-multiline-flexible'
+          label='Multiline'
+          multiline
+          maxRows={4}
+          value={value}
           onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </Box>
-      <Box sx={{ minWidth: 190 }}>
-        <Select
-          labelId='demo-simple-select-label'
-          id='demo-simple-select'
-          value={age.age2}
-          label='Age'
+        />
+        <TextField
+          id='outlined-textarea'
+          label='Multiline Placeholder'
+          placeholder='Placeholder'
+          multiline
+        />
+        <TextField
+          id='outlined-multiline-static'
+          label='Multiline'
+          multiline
+          rows={4}
+          defaultValue='Default Value'
+        />
+      </div>
+      <div>
+        <TextField
+          id='filled-multiline-flexible'
+          label='Multiline'
+          multiline
+          maxRows={4}
+          value={value}
           onChange={handleChange}
-        >
-          <MenuItem value={120}>Ten</MenuItem>
-          <MenuItem value={220}>Twenty</MenuItem>
-          <MenuItem value={320}>Thirty</MenuItem>
-        </Select>
-      </Box>
-    </>
+          variant='filled'
+        />
+        <TextField
+          id='filled-textarea'
+          label='Multiline Placeholder'
+          placeholder='Placeholder'
+          multiline
+          variant='filled'
+        />
+        <TextField
+          id='filled-multiline-static'
+          label='Multiline'
+          multiline
+          rows={4}
+          defaultValue='Default Value'
+          variant='filled'
+        />
+      </div>
+      <div>
+        <TextField
+          id='standard-multiline-flexible'
+          label='Multiline'
+          multiline
+          maxRows={4}
+          value={value}
+          onChange={handleChange}
+          variant='standard'
+        />
+        <TextField
+          id='standard-textarea'
+          label='Multiline Placeholder'
+          placeholder='Placeholder'
+          multiline
+          variant='standard'
+        />
+        <TextField
+          id='standard-multiline-static'
+          label='Multiline'
+          multiline
+          rows={4}
+          defaultValue='Default Value'
+          variant='standard'
+        />
+      </div>
+    </Box>
   );
 }
