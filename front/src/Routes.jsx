@@ -7,9 +7,9 @@ import Profile from "./views/ProfilePage/ProfilePage";
 import CartItems from "./views/CartItems/CartItems";
 import Login from "./views/Login/Login";
 import Signup from "./views/Login/Signup";
-import SingleCart from "./views/CartItems/components/SingleCart";
 import AddPost from "./components/global/Forms/AddPost";
 import Test from "./components/global/Test";
+import EditProfile from "./components/global/Forms/EditProfile";
 
 const Routedpath = () => {
   return (
@@ -19,12 +19,11 @@ const Routedpath = () => {
       <Route path='/login' element={<Login />}></Route>
       <Route path='/signup' element={<Signup />}></Route>
       <Route path='/post' element={<AddPost />}></Route>
-
-      <Route path='/cart' element={<SingleCart />}></Route>
+      <Route path='/profile/edit/:userid' element={<EditProfile />}></Route>
       <Route path='/checkout' element={<CartItems />}></Route>
-      <Route path='/product/:id' element={<IndividualPage />}></Route>
-      <Route path='/catalog' element={<Catalog />}></Route>
-      <Route path='/profile' element={<Profile />}></Route>
+      <Route path='/product/:productid' element={<IndividualPage />}></Route>
+      <Route path='/catalog/:category' element={<Catalog />}></Route>
+      <Route path='/profile/:userid' element={<Profile />}></Route>
     </Routes>
   );
 };

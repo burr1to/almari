@@ -1,29 +1,23 @@
 .logo-button {
-  
   font-weight: medium;
   cursor: pointer;
   color: rgb(0, 0, 0);
-  z-index:1;
+  z-index: 1;
 }
 
 .logo-button:hover {
 }
 
-.title-login{
-  
-  display:flex;
-  flex-flow:column nowrap;
+.title-login {
+  display: flex;
+  flex-flow: column nowrap;
   align-items: flex-start;
-  margin:0 50px;
-
-  
-    
+  margin: 0 50px;
 }
 
 .sign-in-con {
-  
   display: flex;
-  
+
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: space-between;
@@ -39,4 +33,12 @@
   margin: 10px 0;
 }
 .sign-in-box {
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+}
+.confirmed {
+  color: greenyellow !important;
 }

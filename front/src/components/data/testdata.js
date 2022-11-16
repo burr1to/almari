@@ -53,34 +53,37 @@ export const categories = [
 export const discover = [
   {
     id: 1,
-    productImg: "https://images.unsplash.com/photo-1608793733118-ee3f16002251?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80",
+    productImg:
+      "https://images.unsplash.com/photo-1608793733118-ee3f16002251?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80",
     username: "traxex1",
-    profileImg:"#",
-    product :"Mesh Clothing alloo arjun",
+    profileImg: "#",
+    product: "Mesh Clothing",
   },
   {
     id: 2,
-    productImg: "https://images.unsplash.com/photo-1608793733118-ee3f16002251?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80",
+    productImg:
+      "https://images.unsplash.com/photo-1608793733118-ee3f16002251?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80",
     username: "traxex2",
-    profileImg:"#",
-    product :"Arabian Mug",
+    profileImg: "#",
+    product: "Arabian Mug",
   },
   {
     id: 3,
-    productImg: "https://images.unsplash.com/photo-1608793733118-ee3f16002251?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80",
+    productImg:
+      "https://images.unsplash.com/photo-1608793733118-ee3f16002251?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80",
     username: "traxex3",
-    profileImg:"#",
-    product :"Persian Garland",
+    profileImg: "#",
+    product: "Persian Garland",
   },
   {
     id: 4,
-    productImg: "https://images.unsplash.com/photo-1608793733118-ee3f16002251?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80",
+    productImg:
+      "https://images.unsplash.com/photo-1608793733118-ee3f16002251?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80",
     username: "traxex4",
-    profileImg:"#",
-    product :"Blue Ball Furniture",
+    profileImg: "#",
+    product: "Blue Ball Furniture",
   },
-
-]
+];
 export const popularProducts = [
   {
     id: 1,
@@ -125,7 +128,7 @@ export const products = [
     productName: "Black Fur Hoodie with Laces",
     price: 50,
     highlights: {
-      productID:2722,
+      productID: 2722,
       color: "blue",
       size: "XL",
       quantity: 2,

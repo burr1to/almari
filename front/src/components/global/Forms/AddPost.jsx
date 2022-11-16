@@ -10,17 +10,32 @@ import "./../../statics/post.css";
 
 function AddPost() {
   const [inputs, setInputs] = useState({
-    name: "",
+    title: "",
     price: "",
     category: "",
-    about: "",
+    description: "",
     stock: "",
+    post_img: "",
   });
 
-  const [img, setImg] = useState([]);
+  const data = {
+    title: inputs.title,
+    price: parseInt(inputs.price),
+    category: inputs.category,
+    description: inputs.description,
+    stock: parseInt(inputs.stock),
+    post_img: inputs.post_img,
+  };
+
+  const headers = {
+    Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
+    "Content-type": "application/json",
+  };
+
   const handleFile = (e) => {
     let file = e.target.files[0].name;
-    setImg(file);
+    const url = `images/${file}`;
+    setInputs({ ...inputs, post_img: url });
   };
 
   const handleChange = (e) => {
@@ -32,11 +47,18 @@ function AddPost() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputs);
-    console.log(img);
-    // axios({
-    //   url:
-    // })
+    console.log(data);
+    axios
+      .post("http://localhost:8000/posts", data, { headers: headers })
+      .then((response) => {
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <Layout>
@@ -47,8 +69,8 @@ function AddPost() {
         <form className='add-post-form' onSubmit={handleSubmit}>
           Product Name
           <TextField
-            name='name'
-            value={inputs.name}
+            name='title'
+            value={inputs.title}
             label='Name'
             type='text'
             onChange={handleChange}
@@ -59,7 +81,8 @@ function AddPost() {
             name='price'
             value={inputs.price}
             label='Price'
-            type='text'
+            type='number'
+            min='0'
             onChange={handleChange}
           />
           <br />
@@ -71,16 +94,16 @@ function AddPost() {
           >
             <MenuItem value=''>None</MenuItem>
             <MenuItem value={"Clothing"}>Clothing</MenuItem>
-            <MenuItem value={2}>Accessories</MenuItem>
-            <MenuItem value={3}>Handicrafts</MenuItem>
-            <MenuItem value={4}>Furniture</MenuItem>
-            <MenuItem value={5}>Home Decor</MenuItem>
+            <MenuItem value={"Accessories"}>Accessories</MenuItem>
+            <MenuItem value={"Handicrafts"}>Handicrafts</MenuItem>
+            <MenuItem value={"Furniture"}>Furniture</MenuItem>
+            <MenuItem value={"Home Decor"}>Home Decor</MenuItem>
           </Select>
           <br />
           Description
           <TextField
-            name='about'
-            value={inputs.about}
+            name='description'
+            value={inputs.description}
             label='About'
             multiline
             rows={4}
@@ -95,6 +118,7 @@ function AddPost() {
             value={inputs.stock}
             label='Stock'
             type='number'
+            min='0'
             onChange={handleChange}
           />
           <br />

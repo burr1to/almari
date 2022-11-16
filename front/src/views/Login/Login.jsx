@@ -1,7 +1,7 @@
 import { Box, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "./../../components/global/Button";
 import "./statics/css/login.css";
 import back from "./statics/images/back.jpg";
@@ -18,10 +18,10 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
+  let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(inputs);
-
     const formData = new FormData();
 
     formData.append("username", inputs.username);
@@ -36,6 +36,7 @@ const Login = () => {
         setTimeout(() => {
           window.location.reload();
         }, 1000);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -99,17 +100,17 @@ const Login = () => {
               </Typography>
               <TextField
                 onChange={handleChange}
-                name='Email'
-                value={inputs.Email}
-                label='Email'
+                name='username'
+                value={inputs.username}
+                label='Email ID'
                 type='email'
                 required
               />
               <TextField
                 required
                 onChange={handleChange}
-                name='Password'
-                value={inputs.Password}
+                name='password'
+                value={inputs.password}
                 label='Password'
                 type='password'
               />

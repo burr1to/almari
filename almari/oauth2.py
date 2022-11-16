@@ -44,3 +44,33 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     user = db.query(models.Users).filter(models.Users.id == token.id).first()
     return user
 
+def create_verification_token(user:models.Users):
+    to_encode = {
+        "user_id": user.id
+    }
+    from fastapi.encoders import jsonable_encoder
+    print(to_encode)
+    print(jsonable_encoder(user))
+    expire = datetime.utcnow() + timedelta(minutes = ACCESS_TOKEN_EXPIRE_MINUTES)
+    to_encode.update({"exp" : expire, "token_type": 2})
+
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm= ALGORITHM)
+
+    return encoded_jwt
+
+def verify_verification_token(token:str):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        print(payload)
+        user_id:str =  payload.get("user_id")
+        token_type = payload.get("token_type")
+        if user_id is None:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"Invalid or expired Token")
+        if token_type != 2:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"Invalid or expired Token")
+        token_data = schema.Tokendata(id=user_id)
+
+    except JWTError:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"Invalid or expired Token")
+    return token_data
+

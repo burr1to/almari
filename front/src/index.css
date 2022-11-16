@@ -49,17 +49,17 @@ p {
 .btn-primary {
   background-color: #abc270;
   color: #fff;
+  transition: 0.2s ease-in-out;
 }
 
 .btn-secondary {
   background-color: #fec868;
   color: #fff;
+  transition: 0.2s ease-in-out;
 }
 
 .btn-tertiary {
   color: black;
-  border: 1px solid black;
-
   background-color: #fff;
   transition: 0.2s ease-in-out;
 }
@@ -72,6 +72,7 @@ p {
 .btn-brown {
   background-color: #473c33;
   color: #fff;
+  transition: 0.2s ease-in-out;
 }
 .btn-favorite {
   transition: 0.2s ease-in-out;

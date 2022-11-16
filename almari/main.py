@@ -1,7 +1,7 @@
 from fastapi import FastAPI, status
 from .database import engine
 from . import models
-from .routers import login, users, posts
+from .routers import login, users, posts, setup_shop, verification, liked, cart
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -26,3 +26,7 @@ def greeting():
 app.include_router(login.router)
 app.include_router(users.router)
 app.include_router(posts.router)
+app.include_router(setup_shop.router)
+app.include_router(verification.router)
+app.include_router(liked.router)
+app.include_router(cart.router)
