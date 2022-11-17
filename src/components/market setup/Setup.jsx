@@ -2,7 +2,12 @@ import React from 'react'
 
 const Setup = () => {
   return (
-    <div>Setup</div>
+    <div>banner picture/ 
+      profile picture/
+      description about your shop/
+      customization tags  
+
+    </div>
   )
 }
 
