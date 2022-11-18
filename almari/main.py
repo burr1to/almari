@@ -1,9 +1,9 @@
 from fastapi import FastAPI, status
 from .database import engine
 from . import models
-from .routers import login, users, posts, setup_shop, verification, liked, cart
+from .routers import login, users, posts, setup_shop, verification, liked, cart, rating
 from fastapi.middleware.cors import CORSMiddleware
-
+from fastapi.staticfiles import StaticFiles
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -30,3 +30,4 @@ app.include_router(setup_shop.router)
 app.include_router(verification.router)
 app.include_router(liked.router)
 app.include_router(cart.router)
+app.include_router(rating.router)

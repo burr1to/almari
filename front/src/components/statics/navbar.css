@@ -1,5 +1,5 @@
 .navbar-root {
-  background-color: #abc270;
+  background-color: var(--primary);
   height: 80px;
   display: flex;
   justify-content: center;

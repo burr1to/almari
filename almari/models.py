@@ -54,8 +54,20 @@ class Cart(Base):
 
     id = Column(Integer, primary_key = True, nullable = False)
     quantity = Column(Integer, nullable = False)
-    product_id = Column(Integer, ForeignKey("posts.id", ondelete= "CASCADE"), nullable = False, unique = True)
+    product_id = Column(Integer, ForeignKey("posts.id", ondelete= "CASCADE"), nullable = False)
     owner_id = Column(Integer, ForeignKey("users.id", ondelete= "CASCADE"), nullable = False)
     owner = relationship("Users")
     product = relationship("Posts")
-    
+
+class Rating(Base):
+    __tablename__ = "rating"
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    rating = Column(Integer, nullable=False)
+    review = Column(String, nullable=True)
+    product_id = Column(Integer, ForeignKey(
+        "posts.id", ondelete="CASCADE"), nullable=False)
+    owner_id = Column(Integer, ForeignKey(
+        "users.id", ondelete="CASCADE"), nullable=False)
+    owner = relationship("Users")
+    product = relationship("Posts")

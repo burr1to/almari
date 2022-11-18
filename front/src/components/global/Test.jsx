@@ -1,98 +1,74 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+import React from "react";
+import { useState, useEffect } from "react";
+import "./../statics/extra.css";
+import Button from "./Button";
+import axios from "axios";
 
-export default function MultilineTextFields() {
-  const [value, setValue] = React.useState("Controlled");
+function ReviewAdd({ handleAdd }) {
+  const [myData, setData] = useState([]);
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
+  useEffect(() => {
+    axios.get("http://localhost:8000/users/1").then((res) => {
+      setData(res.data);
+    });
+  }, []);
+  console.log(myData);
+  // useEffect(() => {});
+
+  const [review, setText] = useState("");
+  const [btnDisabled, setbtnDisabled] = useState(true);
+  const [rating, setRating] = useState();
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    if (review === "") {
+      setbtnDisabled(true);
+      setMessage(null);
+    } else if (review != "" && review.trim().length <= 10) {
+      setbtnDisabled(true);
+      setMessage("Enter more than 10 characters please!");
+    } else {
+      setbtnDisabled(false);
+      setMessage(null);
+    }
+    setText(e.target.value);
   };
 
+  const formData = new FormData();
+
+  formData.append("review", review);
+  formData.append("rating", rating);
+  formData.append("product_id", 1);
+  formData.append("owner_id", 2);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (review.trim().length > 10) {
+      setText("");
+    }
+  };
   return (
-    <Box
-      component='form'
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
-      }}
-      noValidate
-      autoComplete='off'
-    >
-      <div>
-        <TextField
-          id='outlined-multiline-flexible'
-          label='Multiline'
-          multiline
-          maxRows={4}
-          value={value}
-          onChange={handleChange}
-        />
-        <TextField
-          id='outlined-textarea'
-          label='Multiline Placeholder'
-          placeholder='Placeholder'
-          multiline
-        />
-        <TextField
-          id='outlined-multiline-static'
-          label='Multiline'
-          multiline
-          rows={4}
-          defaultValue='Default Value'
-        />
+    <>
+      <div className='reviewform-wrap'>
+        <form onSubmit={handleSubmit}>
+          <h2>Add a review</h2>
+          NumberRating
+          <div className='input-group'>
+            <input
+              onChange={handleChange}
+              type='text'
+              value={review}
+              placeholder='Write a review'
+            />
+            <Button isDisabled={btnDisabled} type='submit'>
+              Submit
+            </Button>
+          </div>
+          {message && <div className='message'>{message}</div>}
+        </form>
       </div>
-      <div>
-        <TextField
-          id='filled-multiline-flexible'
-          label='Multiline'
-          multiline
-          maxRows={4}
-          value={value}
-          onChange={handleChange}
-          variant='filled'
-        />
-        <TextField
-          id='filled-textarea'
-          label='Multiline Placeholder'
-          placeholder='Placeholder'
-          multiline
-          variant='filled'
-        />
-        <TextField
-          id='filled-multiline-static'
-          label='Multiline'
-          multiline
-          rows={4}
-          defaultValue='Default Value'
-          variant='filled'
-        />
-      </div>
-      <div>
-        <TextField
-          id='standard-multiline-flexible'
-          label='Multiline'
-          multiline
-          maxRows={4}
-          value={value}
-          onChange={handleChange}
-          variant='standard'
-        />
-        <TextField
-          id='standard-textarea'
-          label='Multiline Placeholder'
-          placeholder='Placeholder'
-          multiline
-          variant='standard'
-        />
-        <TextField
-          id='standard-multiline-static'
-          label='Multiline'
-          multiline
-          rows={4}
-          defaultValue='Default Value'
-          variant='standard'
-        />
-      </div>
-    </Box>
+    </>
   );
 }
+
+export default ReviewAdd;

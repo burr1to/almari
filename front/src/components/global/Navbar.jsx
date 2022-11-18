@@ -12,9 +12,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import ProfilePic from "./../../assets/jett.jpg";
+import ProfilePic from "./../../assets/photo.jpg";
 
-const settings = ["Profile", "Setup Your Shop", "Logout"];
+const settings = ["Profile", "Favorites", "Setup Your Shop", "Logout"];
 const AppBar = () => {
   const [log, setLog] = useState(true);
 
@@ -71,14 +71,14 @@ const AppBar = () => {
         </Grid>
 
         <Grid item className='notif-icons'>
-          <Link className='logo-link' to='/liked'>
+          {/* <Link className='logo-link' to='/liked'>
             <IconButton
               aria-label='Show favorite items'
               className='icons heart'
             >
               <Favorite />
             </IconButton>
-          </Link>
+          </Link> */}
           <Link className='logo-link' to='/checkout'>
             <IconButton aria-label='Show cart items' className='icons cart'>
               <Badge badgeContent={3} color='success'>
@@ -93,10 +93,7 @@ const AppBar = () => {
             className='icons avatar'
           >
             {log ? (
-              <Avatar
-                style={{ width: "50px", height: "50px" }}
-                src={ProfilePic}
-              />
+              <Avatar src={ProfilePic} />
             ) : (
               <AccountCircle fontSize='large' />
             )}
@@ -119,6 +116,7 @@ const AppBar = () => {
           >
             {settings.map((setting) => (
               <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <Favorite />
                 <Typography textAlign='center'>{setting}</Typography>
               </MenuItem>
             ))}

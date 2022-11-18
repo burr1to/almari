@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
@@ -16,13 +16,17 @@ import { products, popularProducts } from "./../../components/data/testdata";
 import "./../../components/statics/popular.css";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 
 function Individual() {
-  const postID = useParams();
+  const [myData, setData] = useState([]);
 
-  const addReview = (newReview) => {
-    console.log(newReview);
-  };
+  useEffect(() => {
+    axios.get("http://localhost:8000/users/1").then((res) => {
+      setData(res.data);
+    });
+  }, []);
+  console.log(myData);
 
   const [btnDisabled, setbtnDisabled] = useState();
   const [liked, setLiked] = useState(false);
@@ -114,7 +118,7 @@ function Individual() {
           <div className='reviews'>
             <Reviews data={TestData} />
             <br />
-            <ReviewAdd handleAdd={addReview} />
+            <ReviewAdd user={myData.name} key={myData.email} />
           </div>
           <div className='more-shop'>
             <div className='product-description'>

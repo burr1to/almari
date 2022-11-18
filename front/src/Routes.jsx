@@ -10,7 +10,7 @@ import Signup from "./views/Login/Signup";
 import AddPost from "./components/global/Forms/AddPost";
 import Test from "./components/global/Test";
 import EditProfile from "./components/global/Forms/EditProfile";
-
+import ReviewAdd from "./views/IndividualItems/components/ReviewAdd";
 const Routedpath = () => {
   return (
     <Routes>

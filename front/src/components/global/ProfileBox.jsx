@@ -23,6 +23,8 @@ function ProfileBox({ user, productimage, name }) {
         className='box-bg'
         style={{
           backgroundImage: `url(${productimage})`,
+
+          opacity: "1",
           width: "320px",
           height: "200px",
           backgroundSize: "cover",

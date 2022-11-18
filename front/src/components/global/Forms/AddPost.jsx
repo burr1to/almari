@@ -9,13 +9,15 @@ import Button from "./../Button";
 import "./../../statics/post.css";
 
 function AddPost() {
+  const [selectImage, setSelectedImage] = useState();
+  const [tempImage, setTempImage] = useState();
+
   const [inputs, setInputs] = useState({
     title: "",
     price: "",
     category: "",
     description: "",
     stock: "",
-    post_img: "",
   });
 
   const data = {
@@ -24,18 +26,20 @@ function AddPost() {
     category: inputs.category,
     description: inputs.description,
     stock: parseInt(inputs.stock),
-    post_img: inputs.post_img,
   };
 
   const headers = {
     Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
-    "Content-type": "application/json",
+    "Content-Type": "application/json",
   };
 
   const handleFile = (e) => {
-    let file = e.target.files[0].name;
-    const url = `images/${file}`;
-    setInputs({ ...inputs, post_img: url });
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = () => {
+      setTempImage(reader.result);
+    };
+    setSelectedImage(e.target.files[0]);
   };
 
   const handleChange = (e) => {
@@ -44,12 +48,19 @@ function AddPost() {
       [e.target.name]: e.target.value,
     }));
   };
+  const formData = new FormData();
 
-  const handleSubmit = (e) => {
+  formData.append("title", data.title);
+  formData.append("price", data.price);
+  formData.append("category", data.category);
+  formData.append("description", data.description);
+  formData.append("stock", data.stock);
+  formData.append("post_img", selectImage);
+  const handleSubmit = async (e) => {
+    console.log(formData);
     e.preventDefault();
-    console.log(data);
-    axios
-      .post("http://localhost:8000/posts", data, { headers: headers })
+    await axios
+      .post("http://localhost:8000/posts", formData, { headers: headers })
       .then((response) => {
         setTimeout(() => {
           window.location.reload();
@@ -66,7 +77,11 @@ function AddPost() {
         <h6>Add a post to Almari</h6>
         <br />
 
-        <form className='add-post-form' onSubmit={handleSubmit}>
+        <form
+          className='add-post-form'
+          onSubmit={handleSubmit}
+          enctype='multipart/form-data'
+        >
           Product Name
           <TextField
             name='title'
@@ -123,10 +138,16 @@ function AddPost() {
           />
           <br />
           <div className='insert-img'>
-            <h6>Insert Image</h6>
+            <h6>Insert Images</h6>
 
             <br />
-            <input type='file' name='files' onChange={handleFile} />
+            <input
+              accept='image/*'
+              type='file'
+              name='files'
+              onChange={handleFile}
+              multiple
+            />
           </div>
           <br />
           <Button type='submit'>Add Post</Button>

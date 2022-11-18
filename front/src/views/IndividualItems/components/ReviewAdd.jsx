@@ -1,20 +1,21 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./../../../components/statics/extra.css";
 import Button from "./../../../components/global/Button";
 import NumberRating from "./NumberRating";
+import axios from "axios";
 
 function ReviewAdd({ handleAdd }) {
-  const [text, setText] = useState("");
+  const [review, setText] = useState("");
   const [btnDisabled, setbtnDisabled] = useState(true);
   const [rating, setRating] = useState();
   const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
-    if (text === "") {
+    if (review === "") {
       setbtnDisabled(true);
       setMessage(null);
-    } else if (text != "" && text.trim().length <= 10) {
+    } else if (review != "" && review.trim().length <= 10) {
       setbtnDisabled(true);
       setMessage("Enter more than 10 characters please!");
     } else {
@@ -24,15 +25,16 @@ function ReviewAdd({ handleAdd }) {
     setText(e.target.value);
   };
 
+  const formData = new FormData();
+
+  formData.append("review", review);
+  formData.append("rating", rating);
+  formData.append("product_id", 1);
+  formData.append("owner_id", 2);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim().length > 10) {
-      const newReview = {
-        text,
-        rating,
-      };
-
-      handleAdd(newReview);
+    if (review.trim().length > 10) {
       setText("");
     }
   };
@@ -46,7 +48,7 @@ function ReviewAdd({ handleAdd }) {
             <input
               onChange={handleChange}
               type='text'
-              value={text}
+              value={review}
               placeholder='Write a review'
             />
             <Button isDisabled={btnDisabled} type='submit'>

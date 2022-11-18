@@ -23,30 +23,27 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .box-icon {
   cursor: pointer;
   z-index: 1;
-  width: 60px !important;
-  height: 60px !important;
-  top: -30px;
-  left: 40%;
-  position: absolute;
+  width: 70px !important;
+  height: 70px !important;
 }
 .box-info {
   width: 85%;
   margin: 0 auto;
-  text-align: center;
 }
 
 .box-info .avatar {
-  text-align: center;
+  top: -30px;
+  left: 40%;
+  position: absolute;
 }
 
 .box-info .text {
   position: relative;
-  text-align: center !important;
-
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;

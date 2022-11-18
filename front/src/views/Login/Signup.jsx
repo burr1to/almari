@@ -51,19 +51,19 @@ const Signup = () => {
     console.log(inputs);
     e.preventDefault();
 
-    // await axios
-    //   .post("http://localhost:8000/users", inputs)
-    //   .then((response) => {
-    //     navigate("/login");
-    //     console.log("Success");
-    //     setTimeout(() => {
-    //       window.location.reload();
-    //     }, 1500);
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    await axios
+      .post("http://localhost:8000/users", inputs)
+      .then((response) => {
+        navigate("/login");
+        console.log("Success");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

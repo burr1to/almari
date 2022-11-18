@@ -22,14 +22,21 @@ function CatalogPage() {
 
   const [cat, setCat] = useState("");
 
+  const [filter, setFilter] = useState({
+    value: [20, 370],
+    key: "",
+    cat: "",
+  });
+
   const handleSlider = (e, newValue) => {
     setValue(newValue);
   };
   const handleChange = (e, newValue) => {
-    setKey((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
+    if (e.target.name === "value") {
+      setValue(newValue);
+    } else if (e.target.name === "key") {
+      setKey(e.target.value);
+    }
   };
 
   const handleDropdown = (e) => {
