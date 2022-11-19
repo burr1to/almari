@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+
 function NumberRating({ select }) {
   const [selected, setSelected] = useState(5);
   const handleChange = (e) => {

@@ -4,11 +4,13 @@ import "./../../../components/statics/extra.css";
 function SingleReview({ item }) {
   return (
     <div className='review-single'>
-      {" "}
-      <div className='review-count'>Rating: {item.rating}</div>
+      <div className='review-count'>
+        Rating: <span>{item.rating}</span>
+      </div>
+      <div className='review-user'>burrito</div>
+      <br />
       <div className='text-display'>
-        Text: <br />
-        {item.text}
+        <p>{item.text}</p>
       </div>
     </div>
   );

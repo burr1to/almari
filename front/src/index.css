@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
 
 :root {
-  --primary: #afbdcc;
-  --secondary:
+  --primary: #818181;
+  --primary-dark:#333333;
+  --secondary: #8bcc37;
   --tertiary:
   --favorite:var(--primary)
 }
@@ -54,13 +55,13 @@ p {
 }
 
 .btn-primary {
-  background-color: #abc270;
+  background-color: var(--primary);
   color: #fff;
   transition: 0.2s ease-in-out;
 }
 
 .btn-secondary {
-  background-color: #fec868;
+  background-color: var(--secondary);
   color: #fff;
   transition: 0.2s ease-in-out;
 }

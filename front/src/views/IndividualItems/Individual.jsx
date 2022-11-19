@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
 import Image from "./../../components/global/Image";
-import Reviews from "./components/Reviews";
 import Popular from "./../../components/global/Popular";
 import ReviewAdd from "./components/ReviewAdd";
 import Button from "../../components/global/Button";
@@ -14,9 +13,10 @@ import ImageSidebar from "../../components/global/ImageSidebar";
 import { Link } from "react-router-dom";
 import { products, popularProducts } from "./../../components/data/testdata";
 import "./../../components/statics/popular.css";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Favorite } from "@mui/icons-material";
 import axios from "axios";
+import SingleReview from "./components/SingleReview";
+import "./../../components/statics/extra.css";
 
 function Individual() {
   const [myData, setData] = useState([]);
@@ -70,7 +70,7 @@ function Individual() {
                 onClick={handleLike}
                 version={liked ? "favorite" : "tertiary"}
               >
-                <FontAwesomeIcon className='icons heart' icon={faHeart} />
+                <Favorite />
               </Button>
             </div>
 
@@ -116,9 +116,16 @@ function Individual() {
         </div>
         <div className='product-extra'>
           <div className='reviews'>
-            <Reviews data={TestData} />
-            <br />
-            <ReviewAdd user={myData.name} key={myData.email} />
+            <div className='reviews-con'>
+              <h5>0 Shop Reviews</h5>
+              <p>Average Rating: N/A</p>
+              <br />
+              <div className='review-list'>
+                {TestData.map((singledata) => (
+                  <SingleReview key={singledata.id} item={singledata} />
+                ))}
+              </div>
+            </div>
           </div>
           <div className='more-shop'>
             <div className='product-description'>
@@ -128,27 +135,24 @@ function Individual() {
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book.
-                <br />
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
               </p>
             </div>
             <br />
             <div className='meet-your-seller'>
               <h5>Meet your Seller</h5>
-              <div className='meet-seller-flex-box'>
-                <Image
-                  src='https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                  className='main_image seller-img'
-                />
-                <p>Ellie Goulding</p>
-              </div>
+
+              <Image
+                src='https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                className='main_image seller-img'
+              />
+              <p>Ellie Goulding</p>
+              <br />
               <Button>View Profile</Button>
             </div>
           </div>
         </div>
+        <br />
+        <ReviewAdd id={myData.id} user={myData.name} key={myData.email} />
 
         <div className='popular-items-individual'>
           <h5>See Similar Items like this</h5>

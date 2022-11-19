@@ -86,9 +86,10 @@
 }
 .more-shop {
   flex: 0.25;
-  padding: 40px;
+  padding: 30px;
+  min-height: 700px;
   border-radius: 20px;
-  background-color: rgb(146, 189, 226);
+  background-color: var(--primary);
 }
 
 .meet-your-seller {
@@ -113,4 +114,26 @@
 
 .liked {
   background-color: red;
+}
+
+.review-list {
+}
+
+.review-single {
+  background-color: var(--secondary);
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+}
+
+.review-user {
+  color: black;
+}
+
+.review-count span {
+  font-weight: 700;
+}
+
+.text-display p {
+  font-size: 14px;
 }

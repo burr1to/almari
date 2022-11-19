@@ -5,7 +5,7 @@ import Button from "./../../../components/global/Button";
 import NumberRating from "./NumberRating";
 import axios from "axios";
 
-function ReviewAdd({ handleAdd }) {
+function ReviewAdd() {
   const [review, setText] = useState("");
   const [btnDisabled, setbtnDisabled] = useState(true);
   const [rating, setRating] = useState();
@@ -25,16 +25,39 @@ function ReviewAdd({ handleAdd }) {
     setText(e.target.value);
   };
 
-  const formData = new FormData();
+  const productID = 1;
 
-  formData.append("review", review);
-  formData.append("rating", rating);
-  formData.append("product_id", 1);
-  formData.append("owner_id", 2);
+  const headers = {
+    Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
+  };
 
-  const handleSubmit = (e) => {
+  // const formData = new FormData();
+  // formData.append("review", review);
+  // formData.append("rating", rating);
+  // formData.append("product_id", productID);
+  // formData.append("owner_id", 1);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const data = {
+      review: review,
+      rating: rating,
+      product_id: productID,
+      owner_id: 1,
+    };
+    console.log(data);
     if (review.trim().length > 10) {
+      await axios
+        .post(`http://localhost:8000/rating/${productID}`, data, {
+          headers: headers,
+        })
+        .then((response) => {
+          console.log(response);
+          console.log("Success");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       setText("");
     }
   };
@@ -42,7 +65,7 @@ function ReviewAdd({ handleAdd }) {
     <>
       <div className='reviewform-wrap'>
         <form onSubmit={handleSubmit}>
-          <h2>Add a review</h2>
+          <h4>Add a review</h4>
           <NumberRating select={(rating) => setRating(rating)} />
           <div className='input-group'>
             <input

@@ -112,4 +112,3 @@ class RatingOut(RatingBase):
     id: int
     owner_id: int
     product_id: int
-    

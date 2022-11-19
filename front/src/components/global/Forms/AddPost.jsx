@@ -30,7 +30,6 @@ function AddPost() {
 
   const headers = {
     Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
-    "Content-Type": "application/json",
   };
 
   const handleFile = (e) => {
@@ -55,7 +54,7 @@ function AddPost() {
   formData.append("category", data.category);
   formData.append("description", data.description);
   formData.append("stock", data.stock);
-  formData.append("post_img", selectImage);
+  formData.append("file", selectImage);
   const handleSubmit = async (e) => {
     console.log(formData);
     e.preventDefault();

@@ -6,7 +6,7 @@
 .main {
   color: white;
   width: 100%;
-  background-color: #abc270;
+  background-color: var(--primary);
 }
 
 .footer-con {
@@ -52,7 +52,7 @@
 
 .copy {
   margin-top: 10px;
-  background-color: #6e7b4e;
+  background-color: var(--primary-dark);
   color: white;
   height: 50px;
   display: flex;
