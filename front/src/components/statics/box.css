@@ -19,11 +19,8 @@
   width: 320px;
   border-radius: 0px 0px 10px 10px;
   background-color: rgb(255, 255, 255);
-  height: 130px;
+  height: auto;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .box-icon {
   cursor: pointer;
@@ -32,19 +29,14 @@
   height: 70px !important;
 }
 .box-info {
-  width: 85%;
-  margin: 0 auto;
 }
 
 .box-info .avatar {
-  top: -30px;
-  left: 40%;
-  position: absolute;
 }
 
 .box-info .text {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  padding: 15px;
+}
+
+.box-img {
 }

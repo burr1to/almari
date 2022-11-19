@@ -4,6 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
 import Image from "./Image";
 import { Grid } from "@mui/material";
+
 //need to find a way to make hte profile box sizes dynamic. aile non responsive hunxa
 //cause width and height are hardcoded into react
 function ProfileBox({ user, productimage, name }) {
@@ -11,6 +12,8 @@ function ProfileBox({ user, productimage, name }) {
     console.log("ok");
   };
   const description = `${name} by ${user}`;
+
+  const replacedImg = productimage.replace(",", "");
   return (
     <Grid
       container
@@ -22,8 +25,7 @@ function ProfileBox({ user, productimage, name }) {
       <div
         className='box-bg'
         style={{
-          backgroundImage: `url(${productimage})`,
-
+          backgroundImage: `url("http://${replacedImg}")`,
           opacity: "1",
           width: "320px",
           height: "200px",

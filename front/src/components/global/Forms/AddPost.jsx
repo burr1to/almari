@@ -1,16 +1,16 @@
 import React from "react";
 import "./../../statics/forms.css";
 import Layout from "./../Layout";
-import { FormGroup, FormControlLabel } from "@mui/material";
+
 import axios from "axios";
-import { Box, TextField, Checkbox, Select, MenuItem } from "@mui/material";
+import { TextField, Select, MenuItem } from "@mui/material";
 import { useState } from "react";
 import Button from "./../Button";
+import Preview from "../Preview";
 import "./../../statics/post.css";
 
 function AddPost() {
   const [selectImage, setSelectedImage] = useState();
-  const [tempImage, setTempImage] = useState();
 
   const [inputs, setInputs] = useState({
     title: "",
@@ -33,11 +33,6 @@ function AddPost() {
   };
 
   const handleFile = (e) => {
-    let reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () => {
-      setTempImage(reader.result);
-    };
     setSelectedImage(e.target.files[0]);
   };
 
@@ -148,6 +143,8 @@ function AddPost() {
               multiple
             />
           </div>
+          <br />
+          <Preview />
           <br />
           <Button type='submit'>Add Post</Button>
         </form>

@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import ReactFileReader from "react-file-reader";
+// import ReactFileReader from "react-file-reader";
 
 const Stock = () => {
   const [url, setUrl] = useState("/images/upload.png");
@@ -33,26 +33,17 @@ const Stock = () => {
         paddingBottom={"100px"}
       >
         <Box marginBottom={2}>
-          <Typography
-            marginTop={3}
-            marginBottom={2}
-            variant="h4"
-            color={"brown.main"}
-          >
+          <Typography marginTop={3} marginBottom={2} variant='h4' color='red'>
             Add your products
           </Typography>
-          <Typography color="grey">
-            Add photos and details about your item.
-          </Typography>
+          <Typography>Add photos and details about your item.</Typography>
         </Box>
         <Box
           p={3}
           sx={{ border: 1, borderColor: "lightgrey", borderRadius: "3px" }}
         >
-          <Typography variant="h6" color={"brown.main"}>
-            Photo
-          </Typography>
-          <Typography color="grey" variant="body1" sx={{ fontSize: "14px" }}>
+          <Typography variant='h6'>Photo</Typography>
+          <Typography variant='body1' sx={{ fontSize: "14px" }}>
             Add a photo so the buyer can see what they are getting.
           </Typography>
           <Box
@@ -65,11 +56,10 @@ const Stock = () => {
           >
             <Box flex={0.75}>
               <Typography
-                variant="body1"
+                variant='body1'
                 sx={{
                   fontSize: "14px",
                   fontWeight: "bold",
-                  color: "brown.light",
                 }}
               >
                 Tips for your photo
@@ -79,61 +69,54 @@ const Stock = () => {
                 marginBottom={"20px"}
                 sx={{
                   fontSize: "12px",
-                  color: "grey",
                 }}
               >
-                Use photo to show your items most important <br/>qualities.
+                Use photo to show your items most important <br />
+                qualities.
                 <br />
                 <br />• Use natural light and no flash.
                 <br />• Show the item being held, worn, or used.
                 <br />• Shoot against a clean, simple background.
               </Typography>
-              <ReactFileReader
-            fileTypes={[".png", ".jpg"]}
-            base64={true}
-            handleFiles={handleFiles}
-          >
-            <Button
-              variant="contained"
-              color="brown"
-              sx={{
-                textTransform: "none",
-                boxShadow: "none",
-                "&:hover": {
-                  backgroundColor: "brown.light",
+              {/* <ReactFileReader
+                fileTypes={[".png", ".jpg"]}
+                base64={true}
+                handleFiles={handleFiles}
+              > */}
+              <Button
+                variant='contained'
+                sx={{
+                  textTransform: "none",
                   boxShadow: "none",
-                },
-              }}
-            >
-              Upload
-            </Button>
-          </ReactFileReader>
+                  "&:hover": {
+                    boxShadow: "none",
+                  },
+                }}
+              >
+                Upload
+              </Button>
+              {/* </ReactFileReader> */}
             </Box>
-            <Box flex= {2}>
-            <Box 
-            component="img"
-            sx={{
-              height: 280,
-              width: 280,
-              maxHeight: { xs: 250, md: 280 },
-              maxWidth: { xs: 250, md: 280 },
-              borderRadius: "8px",
-              objectFit: "cover",
-            }}
-            src={url}
-            alt="shop profile picture Placeholder"
-          />
-          </Box>
+            <Box flex={2}>
+              <Box
+                component='img'
+                sx={{
+                  height: 280,
+                  width: 280,
+                  maxHeight: { xs: 250, md: 280 },
+                  maxWidth: { xs: 250, md: 280 },
+                  borderRadius: "8px",
+                  objectFit: "cover",
+                }}
+                src={url}
+                alt='shop profile picture Placeholder'
+              />
+            </Box>
           </Box>
         </Box>
-        <Box
-          p={3}
-          sx={{ border: 1, borderColor: "lightgrey", borderRadius: "3px" }}
-        >
-          <Typography variant="h6" color={"brown.main"}>
-            Listing Details
-          </Typography>
-          <Typography color="grey" variant="body1" sx={{ fontSize: "14px" }}>
+        <Box p={3} sx={{ border: 1, borderRadius: "3px" }}>
+          <Typography variant='h6'>Listing Details</Typography>
+          <Typography variant='body1' sx={{ fontSize: "14px" }}>
             Tell the world all about your item and why they’ll love it.
           </Typography>
           <Box
@@ -146,11 +129,10 @@ const Stock = () => {
           >
             <Box flex={0.75}>
               <Typography
-                variant="body1"
+                variant='body1'
                 sx={{
                   fontSize: "14px",
                   fontWeight: "bold",
-                  color: "brown.light",
                 }}
               >
                 Title*
@@ -158,7 +140,6 @@ const Stock = () => {
               <Typography
                 sx={{
                   fontSize: "12px",
-                  color: "grey",
                 }}
               >
                 Include keywords that buyers would use to search for your item.{" "}
@@ -178,11 +159,10 @@ const Stock = () => {
           >
             <Box flex={0.75}>
               <Typography
-                variant="body1"
+                variant='body1'
                 sx={{
                   fontSize: "14px",
                   fontWeight: "bold",
-                  color: "brown.light",
                 }}
               >
                 Category*
@@ -190,7 +170,6 @@ const Stock = () => {
               <Typography
                 sx={{
                   fontSize: "12px",
-                  color: "grey",
                 }}
               >
                 Adding category will help more shoppers find you.
@@ -198,14 +177,14 @@ const Stock = () => {
             </Box>
             <Box flex={2}>
               <Select
-                id="shopCategory"
+                id='shopCategory'
                 value={category}
                 onChange={handleChange}
                 sx={{ width: "100%" }}
               >
-                <MenuItem value="Art">Art</MenuItem>
-                <MenuItem value="Printing">Printing</MenuItem>
-                <MenuItem value="Handicraft">Handicraft</MenuItem>
+                <MenuItem value='Art'>Art</MenuItem>
+                <MenuItem value='Printing'>Printing</MenuItem>
+                <MenuItem value='Handicraft'>Handicraft</MenuItem>
               </Select>
             </Box>
           </Box>
@@ -219,11 +198,10 @@ const Stock = () => {
           >
             <Box flex={0.75}>
               <Typography
-                variant="body1"
+                variant='body1'
                 sx={{
                   fontSize: "14px",
                   fontWeight: "bold",
-                  color: "brown.light",
                 }}
               >
                 Description*
@@ -231,7 +209,6 @@ const Stock = () => {
               <Typography
                 sx={{
                   fontSize: "12px",
-                  color: "grey",
                 }}
               >
                 Start with a brief overview that describes your item’s finest
@@ -243,12 +220,8 @@ const Stock = () => {
             </Box>
           </Box>
         </Box>
-        <Box
-          p={3}
-          paddingBottom="2px"
-          sx={{ border: 1, borderColor: "lightgrey", borderRadius: "3px" }}
-        >
-          <Typography variant="h6" color={"brown.main"}>
+        <Box p={3} paddingBottom='2px' sx={{ border: 1, borderRadius: "3px" }}>
+          <Typography variant='h6' color={"brown"}>
             Inventory and Pricing
           </Typography>
           <Box
@@ -261,11 +234,10 @@ const Stock = () => {
           >
             <Box flex={0.75}>
               <Typography
-                variant="body1"
+                variant='body1'
                 sx={{
                   fontSize: "14px",
                   fontWeight: "bold",
-                  color: "brown.light",
                 }}
               >
                 Price*
@@ -273,7 +245,6 @@ const Stock = () => {
               <Typography
                 sx={{
                   fontSize: "12px",
-                  color: "grey",
                 }}
               >
                 Remember to factor in the costs of materials, labour, <br /> and
@@ -285,7 +256,7 @@ const Stock = () => {
                 required
                 InputProps={{
                   startAdornment: (
-                    <InputAdornment position="start">रु</InputAdornment>
+                    <InputAdornment position='start'>रु</InputAdornment>
                   ),
                 }}
                 sx={{ width: "25%" }}
@@ -302,11 +273,10 @@ const Stock = () => {
           >
             <Box flex={0.75}>
               <Typography
-                variant="body1"
+                variant='body1'
                 sx={{
                   fontSize: "14px",
                   fontWeight: "bold",
-                  color: "brown.light",
                 }}
               >
                 Stock*
@@ -314,7 +284,6 @@ const Stock = () => {
               <Typography
                 sx={{
                   fontSize: "12px",
-                  color: "grey",
                 }}
               >
                 Add the total quantity you have of the item.

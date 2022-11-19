@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import "./statics/css/catalog.css";
 import Layout from "./../../components/global/Layout";
 import Button from "./../../components/global/Button";
@@ -7,26 +7,42 @@ import { popularProducts } from "./../../components/data/testdata";
 import SingleProduct from "./../../components/global/SingleProduct";
 import "./../../components/statics/product.css";
 import Dropdown from "./../../components/global/Dropdown";
-
+import axios from "axios";
+import { AppContext } from "../../utils/Context";
+import { useEffect } from "react";
 //downprice cant be less than upprice make error handle
-
 function valuetext(value) {
   let scaledValue = value;
-
+  // axios.get("localhost:8000/category/${}/");
   return `$ ${scaledValue}`;
 }
 function CatalogPage() {
+  const [data, setData] = useState([]);
+  const catalogcat = useContext(AppContext);
+  const category = "Clothing";
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/posts/catalog/${category}`)
+      .then((response) => {
+        console.log(response);
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const [value, setValue] = useState([20, 370]);
 
   const [key, setKey] = useState("");
 
   const [cat, setCat] = useState("");
 
-  const [filter, setFilter] = useState({
-    value: [20, 370],
-    key: "",
-    cat: "",
-  });
+  // const [filter, setFilter] = useState({
+  //   value: [20, 370],
+  //   key: "",
+  //   cat: "",
+  // });
 
   const handleSlider = (e, newValue) => {
     setValue(newValue);
@@ -50,9 +66,6 @@ function CatalogPage() {
   const handleClick = (e) => {
     console.log("ok");
   };
-
-  const productID = 2;
-  const path = `/product/${productID}`;
 
   return (
     <>
@@ -98,14 +111,15 @@ function CatalogPage() {
             </div>
             <div className='catalog-content-area'>
               <div className='title-area'>
-                <h3>Category</h3>
+                <h3>{catalogcat}</h3>
               </div>
               <div className='product-con'>
-                {popularProducts.map((item) => (
+                {data.map((item) => (
                   <SingleProduct
-                    item={item}
+                    productImg={item.post_img}
+                    ownerID={item.owner_id}
                     key={item.id}
-                    path={path}
+                    productID={item.id}
                     onClick={handleClick}
                   />
                 ))}

@@ -8,20 +8,26 @@ const Name = () => {
         <form>
           <Box
             justifyContent={"center"}
-            maxWidth="450px"
+            maxWidth='450px'
             maxHeight={"75%"}
-            paddingTop="70px"
-            display="flex"
+            paddingTop='70px'
+            display='flex'
             flexDirection={"column"}
-            gap="25px"
+            gap='25px'
           >
-            <Typography textAlign={"center"} variant ="h4" sx={{color:"brown.main"}}>Name Your Shop</Typography>
+            <Typography
+              textAlign={"center"}
+              variant='h4'
+              sx={{ color: "brown.main" }}
+            >
+              Name Your Shop
+            </Typography>
             <Typography>
               Set a unique name for your shop which helps people find you.
             </Typography>
             <TextField
-            required
-              placeholder="Enter your shop name"
+              required
+              placeholder='Enter your shop name'
               sx={{ width: "100%" }}
             />
           </Box>

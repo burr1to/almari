@@ -6,7 +6,7 @@ import "./../statics/navbar.css";
 import "./../statics/footer.css";
 import "./../statics/layout.css";
 
-const DashboardLayout = ({ children, navbar = <NavBar /> }) => {
+const DashboardLayout = ({ children, navbar = <NavBar />, data }) => {
   return (
     <Grid className='Layout-Container' container direction='column'>
       <Grid item className='Layout-Navbar'>

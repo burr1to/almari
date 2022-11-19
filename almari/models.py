@@ -50,7 +50,7 @@ class Shops(Base):
 
     id = Column(Integer, primary_key=True, nullable=False)
     shop_name = Column(String, nullable=False, unique=True)
-    shop_location = Column(String, nullable=False)
+    shop_category = Column(String, nullable=False)
     shop_description = Column(String, nullable=True)
     profile_picture = Column(String, nullable=False)
     created_at = Column(
@@ -101,6 +101,9 @@ class Rating(Base):
     )
     owner_id = Column(
         Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False
+    )
+    rated_at = Column(
+        TIMESTAMP(timezone=True), nullable=False, server_default=text("now()")
     )
     owner = relationship("Users")
     product = relationship("Posts")

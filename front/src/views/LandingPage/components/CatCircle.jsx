@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "./../../../components/global/Image";
-import "./catcircle.css";
+import "./../statics/css/catcircle.css";
 
 function CatCircle({ item }) {
   return (
     <div className='cat-list'>
-      <Image src={item.img} className='main_image category-image' />
+      <Image src={item.img} addStyles='category-image' />
       <div className='cat-text'>{item.title}</div>
     </div>
   );

@@ -135,7 +135,7 @@ def update_post(
 @router.get("/", status_code=status.HTTP_200_OK, response_model=List[schema.PostOut])
 def getAllPosts(
     search: Optional[str] = "",
-    limit: int = 5,
+    limit: int = 6,
     skip: int = 0,
     db: Session = Depends(database.get_db),
 ):
@@ -160,3 +160,21 @@ def getOnePost(id: int, db: Session = Depends(database.get_db)):
             detail=f"The post with id {id} not found",
         )
     return post
+
+
+@router.get(
+    "/catalog/{category}",
+    status_code=status.HTTP_200_OK,
+    response_model=List[schema.CategoryOut],
+)
+def getPostByCategory(category: str, db: Session = Depends(database.get_db)):
+    post = db.query(models.Posts).filter(models.Posts.category == category).all()
+    if not post:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"No {category} category found.",
+        )
+    return post
+
+
+# owner_id, product_id, post_img,

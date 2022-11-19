@@ -5,12 +5,12 @@
   margin-bottom: 35px;
 }
 
-@media screen and (max-width:1100px){
+@media screen and (max-width: 1100px) {
   .cat-list {
     width: 14vw;
   }
 }
-@media screen and (max-width:650px){
+@media screen and (max-width: 650px) {
   .cat-list {
     width: 26vw;
   }

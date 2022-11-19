@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
 import Image from "./../../components/global/Image";
 import Popular from "./../../components/global/Popular";
 import ReviewAdd from "./components/ReviewAdd";
 import Button from "../../components/global/Button";
-import TestData from "./../../components/data/test.json";
 import MenuItem from "@mui/material/MenuItem";
 import Dropdown from "./../../components/global/Dropdown";
 import ImageSidebar from "../../components/global/ImageSidebar";
@@ -15,7 +13,6 @@ import { products, popularProducts } from "./../../components/data/testdata";
 import "./../../components/statics/popular.css";
 import { Favorite } from "@mui/icons-material";
 import axios from "axios";
-import SingleReview from "./components/SingleReview";
 import "./../../components/statics/extra.css";
 
 function Individual() {
@@ -28,7 +25,6 @@ function Individual() {
   }, []);
   console.log(myData);
 
-  const [btnDisabled, setbtnDisabled] = useState();
   const [liked, setLiked] = useState(false);
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
@@ -105,9 +101,7 @@ function Individual() {
               </form>
             </div>
             <div className='submit-btns'>
-              <Button type='submit' isDisabled={btnDisabled}>
-                Add to Cart
-              </Button>
+              <Button type='submit'>Add to Cart</Button>
               <Button type='submit' version='secondary'>
                 Buy it Now
               </Button>
@@ -121,9 +115,10 @@ function Individual() {
               <p>Average Rating: N/A</p>
               <br />
               <div className='review-list'>
-                {TestData.map((singledata) => (
+                {/* {TestData.map((singledata) => (
                   <SingleReview key={singledata.id} item={singledata} />
-                ))}
+                ))} */}
+                <p>1</p>
               </div>
             </div>
           </div>
@@ -143,7 +138,7 @@ function Individual() {
 
               <Image
                 src='https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                className='main_image seller-img'
+                addStyles='seller-img'
               />
               <p>Ellie Goulding</p>
               <br />
@@ -157,10 +152,10 @@ function Individual() {
         <div className='popular-items-individual'>
           <h5>See Similar Items like this</h5>
           <div className='popular-item-list'>
-            {popularProducts.map(
+            {/* {popularProducts.map(
               (item, index) =>
                 index < 5 && <Popular item={item} key={item.key} />
-            )}
+            )} */}
           </div>
         </div>
       </div>

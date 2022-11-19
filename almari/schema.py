@@ -57,9 +57,18 @@ class PostOut(PostBase):
     post_img: str
 
 
+class CategoryOut(BaseModel):
+    id: int
+    post_img: str
+    owner_id: int
+
+    class Config:  # converts sequel alchemy model into pydantic model
+        orm_mode = True
+
+
 class SetupShop(BaseModel):
     shop_name: str
-    shop_location: str
+    shop_category: str
     shop_description: str
 
 
@@ -97,7 +106,7 @@ class CartOut(CartBase):
     id: int
     owner_id: int
     product_id: int
-    product: PostBase
+    product: PostOut
 
 
 class RatingBase(BaseModel):
@@ -112,3 +121,4 @@ class RatingOut(RatingBase):
     id: int
     owner_id: int
     product_id: int
+    rated_at: datetime

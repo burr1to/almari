@@ -27,26 +27,31 @@ export const categories = [
     id: 1,
     img: "https://images.pexels.com/photos/8146450/pexels-photo-8146450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Clothing",
+    url: "/catalog/clothing",
   },
   {
     id: 2,
     img: "https://images.pexels.com/photos/7478602/pexels-photo-7478602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Decoration",
+    url: "/catalog/decoration",
   },
   {
     id: 3,
     img: "https://images.pexels.com/photos/7448412/pexels-photo-7448412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Handicrafts",
+    url: "/catalog/handicrafts",
   },
   {
     id: 4,
     img: "https://images.pexels.com/photos/4451667/pexels-photo-4451667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Furniture",
+    url: "/catalog/furniture",
   },
   {
     id: 5,
     img: "https://images.pexels.com/photos/62689/pexels-photo-62689.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Accessories",
+    url: "/catalog/accessories",
   },
 ];
 

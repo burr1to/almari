@@ -1,17 +1,13 @@
-import {
-  Stepper,
-  Step,
-  StepLabel,
-  Typography,
-  Button,
-  Box,
-} from "@mui/material";
+import { Stepper, Step, StepLabel, Typography, Box } from "@mui/material";
+
+import Button from "./../Button";
 import React, { useState } from "react";
 import Name from "./Name";
 import Setup from "./Setup";
 import Stock from "./Stock";
 import Customization from "./Customization";
 
+const obj = {};
 const steps = [
   "Name your shop",
   "Set up your shop",
@@ -37,11 +33,7 @@ const MarketNavbar = () => {
 
   return (
     <div>
-      <Box
-        bgcolor="#fff"
-        paddingBottom="20px"
-        sx={{ borderBottom: 1, borderColor: "lightgrey" }}
-      >
+      <Box paddingBottom='20px' sx={{ borderBottom: 1 }}>
         <Button
           disableRipple
           sx={{
@@ -49,7 +41,6 @@ const MarketNavbar = () => {
             fontWeight: "medium",
             fontSize: "32px",
             "&:hover": {
-              color: "primary.light",
               backgroundColor: "transparent",
             },
           }}
@@ -62,12 +53,8 @@ const MarketNavbar = () => {
               key={step}
               completed={completed[index]}
               sx={{
-                "& .MuiStepLabel-root .Mui-active": {
-                  color: "brown.light",
-                },
-                "& .MuiStepLabel-root .Mui-completed": {
-                  color: "brown.main",
-                },
+                "& .MuiStepLabel-root .Mui-active": {},
+                "& .MuiStepLabel-root .Mui-completed": {},
               }}
             >
               <StepLabel>{step}</StepLabel>
@@ -83,7 +70,6 @@ const MarketNavbar = () => {
             <Box>{stepDesciption[activeStep]}</Box>
             <Box
               sx={{
-                bgcolor:"#fff",
                 width: "98vw",
                 display: "flex",
                 justifyContent: "flex-end",
@@ -91,18 +77,15 @@ const MarketNavbar = () => {
                 position: "fixed",
                 bottom: 0,
                 borderTop: 1,
-                borderTopColor: "lightgrey",
               }}
             >
               <Button
                 onClick={handleNext}
-                variant="contained"
-                color="brown"
+                version='primary'
                 sx={{
                   textTransform: "none",
                   boxShadow: "none",
                   "&:hover": {
-                    backgroundColor: "brown.light",
                     boxShadow: "none",
                   },
                 }}

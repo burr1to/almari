@@ -6,9 +6,7 @@ import Button from "../../../components/global/Button";
 
 const ProductName = styled.span``;
 
-const handleDelete = (e,id)=>{
-  
-}
+const handleDelete = (e, id) => {};
 const ProductID = styled.span``;
 const Quantity = styled.span``;
 
@@ -30,42 +28,44 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-function SingleCart() {
-  const category = "category";
-  const test =
-    "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png";
+function SingleCart({ data }) {
+  const replacedImg = `http://${data.product.post_img.replace(",", " ")}`;
   return (
     <div className='single-cart'>
-      <Button version = "close">X</Button>
+      <Button version='close'>X</Button>
       <div className='single-cart-info'>
         <div className='cart-product'>
           <div className='product-detail'>
-            <Image src={test} className='main_image show-img' />
-
+            <div className='img-con'>
+              <Image src={replacedImg} className='main_image show-img' />
+            </div>
             <div className='description'>
               <ProductName>
-                <b>Product: </b>Product Name
+                <b>Product: </b>
+                {data.product.title}
               </ProductName>
               <ProductID>
-                <b>Product ID: </b>1232434
+                <b>Product ID: </b>
+                {data.product_id}
               </ProductID>
               <ProductCategory>
                 <b>Category: </b>
-                {category}
+                {data.product.category}
               </ProductCategory>
               <Quantity>
-                <b>Quantity: </b>1 pieces
+                <b>Quantity: </b>
+                {data.quantity}
               </Quantity>
-              {category === "category" && <ProductColor color='black' />}
+              {/* {data.product.category === "" && <ProductColor color='black' />}
               {category === "category" && (
                 <ProductSize>
                   <b>Size:</b> 37.5
                 </ProductSize>
-              )}
+              )} */}
             </div>
           </div>
 
-          <div className='price-details'>$50</div>
+          {/* <div className='price-details'>NPR {data.product.price}</div> */}
         </div>
         <Hr />
       </div>
@@ -80,14 +80,9 @@ function SingleCart() {
           <SummaryItemPrice>$5.90</SummaryItemPrice>
         </div>
         <div className='summary-item'>
-          <SummaryItemText>Discount</SummaryItemText>
-          <SummaryItemPrice>$0</SummaryItemPrice>
-        </div>
-        <div className='summary-item'>
           <SummaryItemText>Total</SummaryItemText>
           <SummaryItemPrice>$85.5</SummaryItemPrice>
         </div>
-       
       </div>
     </div>
   );

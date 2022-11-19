@@ -8,11 +8,12 @@ import CartItems from "./views/CartItems/CartItems";
 import Login from "./views/Login/Login";
 import Signup from "./views/Login/Signup";
 import AddPost from "./components/global/Forms/AddPost";
-import Test from "./components/global/Test";
+import Test from "./components/global/Preview";
 import EditProfile from "./components/global/Forms/EditProfile";
 import Setup from "./components/global/Forms/Setup";
 import Name from "./components/global/Forms/Name";
 import Stock from "./components/global/Forms/Stock";
+import Market from "./components/global/Forms/MarketNavbar";
 const Routedpath = () => {
   return (
     <Routes>
@@ -22,9 +23,16 @@ const Routedpath = () => {
       <Route path='/name' element={<Name />}></Route>
       <Route path='/setup' element={<Setup />}></Route>
       <Route path='/stock' element={<Stock />}></Route>
+      <Route path='/market' element={<Market />}></Route>
 
       {/* 
       Selling portion routes */}
+
+      {/* Testing route */}
+      <Route path='/test' element={<Test />}></Route>
+
+      {/* 
+      Buying portion routes */}
 
       <Route path='/' element={<LandingPage />}></Route>
       <Route path='/login' element={<Login />}></Route>
@@ -35,6 +43,9 @@ const Routedpath = () => {
       <Route path='/product/:productid' element={<IndividualPage />}></Route>
       <Route path='/catalog/:category' element={<Catalog />}></Route>
       <Route path='/profile/:userid' element={<Profile />}></Route>
+
+      {/* 
+      Buying portion routes */}
     </Routes>
   );
 };

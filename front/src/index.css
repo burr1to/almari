@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
 
 :root {
-  --primary: #818181;
-  --primary-dark:#333333;
+  --primary: #cf6363;
+  --primary-dark: #e04a4a;
   --secondary: #8bcc37;
-  --tertiary:
-  --favorite:var(--primary)
+  --tertiary: black;
+  --favorite: var(--primary);
 }
 
 html {

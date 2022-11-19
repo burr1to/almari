@@ -16,6 +16,7 @@ import ProfilePic from "./../../assets/photo.jpg";
 
 const settings = ["Profile", "Favorites", "Setup Your Shop", "Logout"];
 const AppBar = () => {
+  const index = 1;
   const [log, setLog] = useState(true);
 
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -58,9 +59,16 @@ const AppBar = () => {
             <Link className='nav-links' to='/home'>
               Buy
             </Link>
-            <Link className='nav-links' to='/home'>
-              Sell
-            </Link>
+            {index === 1 ? (
+              <Link className='nav-links' to='/home'>
+                Setup
+              </Link>
+            ) : (
+              <Link className='nav-links' to='/home'>
+                Sell
+              </Link>
+            )}
+
             <Link className='nav-links' to='/home'>
               Support
             </Link>

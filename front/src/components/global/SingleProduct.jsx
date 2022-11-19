@@ -17,18 +17,17 @@ const Circle = styled.div`
   position: absolute;
 `;
 
-
-function SingleProduct({ item, onClick, path}) {
+function SingleProduct({ productImg, ownerID, productID }) {
+  const replacedImg = `http://${productImg.replace(",", " ")}`;
   return (
-    <div className="ok">
-      <Link to = {path}>
-    <div className='single-con'>
-      <Circle/>
-      <Image src={item.img} className='main_image single-product-img' />
-      
-    </div>
-    </Link>
-    <div className='info'>
+    <div className='ok'>
+      <Link to='#'>
+        <div className='single-con'>
+          <Circle />
+          <Image src={replacedImg} addStyles='single-product-img' />
+        </div>
+      </Link>
+      <div className='info'>
         <div className='icon cart'>
           <ShoppingCartOutlined />
         </div>
