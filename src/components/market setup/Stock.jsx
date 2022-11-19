@@ -7,13 +7,17 @@ import {
   TextField,
   InputAdornment,
   Button,
+  Switch,
+  FormControlLabel,
 } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import ReactFileReader from "react-file-reader";
+import Customization from "./Customization";
 
 const Stock = () => {
   const [url, setUrl] = useState("/images/upload.png");
+  const [isChecked, setIsChecked] = useState(false);
   const handleFiles = (files) => {
     console.log(files);
     setUrl(files.base64);
@@ -82,48 +86,49 @@ const Stock = () => {
                   color: "grey",
                 }}
               >
-                Use photo to show your items most important <br/>qualities.
+                Use photo to show your items most important <br />
+                qualities.
                 <br />
                 <br />• Use natural light and no flash.
                 <br />• Show the item being held, worn, or used.
                 <br />• Shoot against a clean, simple background.
               </Typography>
               <ReactFileReader
-            fileTypes={[".png", ".jpg"]}
-            base64={true}
-            handleFiles={handleFiles}
-          >
-            <Button
-              variant="contained"
-              color="brown"
-              sx={{
-                textTransform: "none",
-                boxShadow: "none",
-                "&:hover": {
-                  backgroundColor: "brown.light",
-                  boxShadow: "none",
-                },
-              }}
-            >
-              Upload
-            </Button>
-          </ReactFileReader>
+                fileTypes={[".png", ".jpg"]}
+                base64={true}
+                handleFiles={handleFiles}
+              >
+                <Button
+                  variant="contained"
+                  color="brown"
+                  sx={{
+                    textTransform: "none",
+                    boxShadow: "none",
+                    "&:hover": {
+                      backgroundColor: "brown.light",
+                      boxShadow: "none",
+                    },
+                  }}
+                >
+                  Upload
+                </Button>
+              </ReactFileReader>
             </Box>
-            <Box flex= {2}>
-            <Box 
-            component="img"
-            sx={{
-              height: 280,
-              width: 280,
-              maxHeight: { xs: 250, md: 280 },
-              maxWidth: { xs: 250, md: 280 },
-              borderRadius: "8px",
-              objectFit: "cover",
-            }}
-            src={url}
-            alt="shop profile picture Placeholder"
-          />
-          </Box>
+            <Box flex={2}>
+              <Box
+                component="img"
+                sx={{
+                  height: 280,
+                  width: 280,
+                  maxHeight: { xs: 250, md: 280 },
+                  maxWidth: { xs: 250, md: 280 },
+                  borderRadius: "8px",
+                  objectFit: "cover",
+                }}
+                src={url}
+                alt="shop profile picture Placeholder"
+              />
+            </Box>
           </Box>
         </Box>
         <Box
@@ -324,6 +329,36 @@ const Stock = () => {
               <TextField required sx={{ width: "25%" }} />
             </Box>
           </Box>
+        </Box>
+        <Box
+          p={3}
+          sx={{ border: 1, borderColor: "lightgrey", borderRadius: "3px" }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="h6" color={"brown.main"}>
+              Customization
+            </Typography>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={isChecked}
+                  onChange={() => setIsChecked(!isChecked)}
+                />
+              }
+              labelPlacement="start" label={isChecked ? "On" : "Off"}
+            />
+          </Box>
+          <Typography color="grey" variant="body1" sx={{ fontSize: "14px" }}>
+            Add descriptions,prices, and collect information for the products
+            that you personalize.
+          </Typography>
+          {isChecked && <Box> <Customization/> </Box>}
         </Box>
       </Grid>
     </div>

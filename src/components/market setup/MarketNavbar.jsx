@@ -2,7 +2,6 @@ import {
   Stepper,
   Step,
   StepLabel,
-  Typography,
   Button,
   Box,
 } from "@mui/material";
@@ -10,15 +9,14 @@ import React, { useState } from "react";
 import Name from "./Name";
 import Setup from "./Setup";
 import Stock from "./Stock";
-import Customization from "./Customization";
+import Completed from "./Completed";
 
 const steps = [
   "Name your shop",
   "Set up your shop",
   "Stock your shop",
-  "Set up for customization",
 ];
-const stepDesciption = [<Name />, <Setup />, <Stock />, <Customization />];
+const stepDesciption = [<Name />, <Setup />, <Stock />,];
 
 const MarketNavbar = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -77,7 +75,7 @@ const MarketNavbar = () => {
       </Box>
       <div>
         {allStepsCompleted ? (
-          <Typography> All Steps Completed</Typography>
+          <Completed/>
         ) : (
           <>
             <Box>{stepDesciption[activeStep]}</Box>
