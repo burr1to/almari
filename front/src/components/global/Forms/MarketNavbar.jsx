@@ -38,7 +38,8 @@ const MarketNavbar = () => {
   return (
     <div>
       <Box
-        paddingBottom='20px'
+        bgcolor="#fff"
+        paddingBottom="20px"
         sx={{ borderBottom: 1, borderColor: "lightgrey" }}
       >
         <Button
@@ -48,7 +49,7 @@ const MarketNavbar = () => {
             fontWeight: "medium",
             fontSize: "32px",
             "&:hover": {
-              //   color: "primary.light",
+              color: "primary.light",
               backgroundColor: "transparent",
             },
           }}
@@ -82,6 +83,7 @@ const MarketNavbar = () => {
             <Box>{stepDesciption[activeStep]}</Box>
             <Box
               sx={{
+                bgcolor:"#fff",
                 width: "98vw",
                 display: "flex",
                 justifyContent: "flex-end",
@@ -94,8 +96,8 @@ const MarketNavbar = () => {
             >
               <Button
                 onClick={handleNext}
-                variant='contained'
-                // color='brown'
+                variant="contained"
+                color="brown"
                 sx={{
                   textTransform: "none",
                   boxShadow: "none",

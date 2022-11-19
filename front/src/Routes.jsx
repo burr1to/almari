@@ -10,12 +10,23 @@ import Signup from "./views/Login/Signup";
 import AddPost from "./components/global/Forms/AddPost";
 import Test from "./components/global/Test";
 import EditProfile from "./components/global/Forms/EditProfile";
-import SingleReview from "./views/IndividualItems/components/SingleReview";
+import Setup from "./components/global/Forms/Setup";
+import Name from "./components/global/Forms/Name";
+import Stock from "./components/global/Forms/Stock";
 const Routedpath = () => {
   return (
     <Routes>
+      {/* 
+      Selling portion routes */}
+
+      <Route path='/name' element={<Name />}></Route>
+      <Route path='/setup' element={<Setup />}></Route>
+      <Route path='/stock' element={<Stock />}></Route>
+
+      {/* 
+      Selling portion routes */}
+
       <Route path='/' element={<LandingPage />}></Route>
-      <Route path='/test' element={<SingleReview />}></Route>
       <Route path='/login' element={<Login />}></Route>
       <Route path='/signup' element={<Signup />}></Route>
       <Route path='/post' element={<AddPost />}></Route>

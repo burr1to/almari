@@ -31,12 +31,6 @@ function ReviewAdd() {
     Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
   };
 
-  // const formData = new FormData();
-  // formData.append("review", review);
-  // formData.append("rating", rating);
-  // formData.append("product_id", productID);
-  // formData.append("owner_id", 1);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
