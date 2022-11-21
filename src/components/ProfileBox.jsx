@@ -1,9 +1,8 @@
 import React from "react";
-import "./../statics/box.css";
-import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
-import Image from "./Image";
 import { Grid } from "@mui/material";
+import "./statics/box.css"
+
 //need to find a way to make hte profile box sizes dynamic. aile non responsive hunxa
 //cause width and height are hardcoded into react
 function ProfileBox({ user, productimage, name }) {

@@ -1,8 +1,12 @@
-import { Delete, Upload } from "@mui/icons-material";
+import { Upload } from "@mui/icons-material";
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
+import ProfileBox from "./ProfileBox";
 
 const Shop = () => {
+
+
+
   return (
     <div>
       <Grid
@@ -22,7 +26,7 @@ const Shop = () => {
             borderRadius: "10px",
             display: "flex",
             position: "sticky",
-            top:"30px",
+            top:"10px",
             flexDirection: "column",
           }}
         >
@@ -98,21 +102,12 @@ const Shop = () => {
               Upload a product
             </Button>
           </Box>
-          <Button
-              disableRipple
-              startIcon={<Delete />}
-              sx={{
-                display:"flex",
-                alignContent:"flex-end",
-                
-                "&:hover": {
-                  color: "primary.light",
-                  backgroundColor: "transparent",
-                },
-              }}
-            >
-              Delete a product
-            </Button>
+          <Box sx={{display:"flex", direction:"column"}}>
+
+            <ProfileBox/>
+            <ProfileBox/>
+
+          </Box>
           
           
         </Box>
