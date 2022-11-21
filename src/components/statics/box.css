@@ -1,0 +1,51 @@
+.box-con {
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%),
+      0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
+  }
+  
+  .box-bg {
+    border-radius: 10px 10px 0px 0px;
+  }
+  
+  .landingpic {
+    border-radius: 10px 10px 0px 0px;
+    width: 260px;
+    height: auto;
+  }
+  
+  .box-info-box {
+    width: 320px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgb(255, 255, 255);
+    height: 130px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .box-icon {
+    cursor: pointer;
+    z-index: 1;
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .box-info {
+    width: 85%;
+    margin: 0 auto;
+  }
+  
+  .box-info .avatar {
+    top: -30px;
+    left: 40%;
+    position: absolute;
+  }
+  
+  .box-info .text {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  

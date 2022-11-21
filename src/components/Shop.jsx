@@ -1,4 +1,4 @@
-import { Upload } from "@mui/icons-material";
+import { Delete, Upload } from "@mui/icons-material";
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
 
@@ -98,6 +98,22 @@ const Shop = () => {
               Upload a product
             </Button>
           </Box>
+          <Button
+              disableRipple
+              startIcon={<Delete />}
+              sx={{
+                display:"flex",
+                alignContent:"flex-end",
+                
+                "&:hover": {
+                  color: "primary.light",
+                  backgroundColor: "transparent",
+                },
+              }}
+            >
+              Delete a product
+            </Button>
+          
           
         </Box>
       </Grid>
