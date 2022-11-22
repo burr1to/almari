@@ -1,7 +1,6 @@
 import React from "react";
 import "./../../statics/forms.css";
 import Layout from "./../Layout";
-
 import axios from "axios";
 import { TextField, Select, MenuItem } from "@mui/material";
 import { useState } from "react";
@@ -10,7 +9,7 @@ import Preview from "../Preview";
 import "./../../statics/post.css";
 
 function AddPost() {
-  const [selectImage, setSelectedImage] = useState();
+  const [selectImage, setSelectedImage] = useState("");
 
   const [inputs, setInputs] = useState({
     title: "",
@@ -34,6 +33,7 @@ function AddPost() {
 
   const handleFile = (e) => {
     setSelectedImage(e.target.files[0]);
+    console.log(e.target.files);
   };
 
   const handleChange = (e) => {
@@ -50,15 +50,14 @@ function AddPost() {
   formData.append("description", data.description);
   formData.append("stock", data.stock);
   formData.append("file", selectImage);
-  const handleSubmit = async (e) => {
-    console.log(formData);
+  const handleSubmit = (e) => {
     e.preventDefault();
-    await axios
-      .post("http://localhost:8000/posts", formData, { headers: headers })
+    console.log(selectImage);
+    console.log(formData);
+
+    axios
+      .post("http://localhost:8000/posts/", formData, { headers: headers })
       .then((response) => {
-        setTimeout(() => {
-          window.location.reload();
-        }, 1500);
         console.log(response);
       })
       .catch((error) => {
@@ -144,7 +143,6 @@ function AddPost() {
             />
           </div>
           <br />
-          <Preview />
           <br />
           <Button type='submit'>Add Post</Button>
         </form>

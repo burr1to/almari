@@ -13,7 +13,8 @@
 }
 
 .img-container {
-  width: 700px;
+  flex: 0.7;
+  width: 400px;
   height: auto;
   margin: 0 auto;
 }
@@ -30,6 +31,7 @@
 }
 .info-container {
   margin: 0 0 0 30px;
+  flex: 0.3;
 }
 .basic-info {
   list-style: none;
@@ -39,6 +41,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  text-decoration: none;
 }
 .company-name {
   text-decoration: none;
@@ -50,11 +53,12 @@
 
 .basic-info .title {
   font-weight: 200;
-  font-size: 42px;
+  font-size: 30px;
 }
 .basic-info .price {
-  font-weight: 100;
-  font-size: 30px;
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 24px;
 }
 .description {
   margin: 15px 0px;

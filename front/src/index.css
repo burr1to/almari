@@ -2,10 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
 
 :root {
-  --primary: #cf6363;
-  --primary-dark: #e04a4a;
+  --primary: #abc270;
+  --primary-light: #cfe1a1;
+  --primary-dark: #6e7b4e;
   --secondary: #8bcc37;
+  --secondary-light:
+  --secondary-dark:
   --tertiary: black;
+  --tertiary-light:
+  --tertiary-dark: black;
   --favorite: var(--primary);
 }
 
@@ -52,6 +57,7 @@ p {
   padding: 0 20px;
   height: 40px;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .btn-primary {
@@ -76,7 +82,13 @@ p {
 
   color: white;
 }
-
+.btn-logo {
+  font-weight: medium;
+  font-size: 40px;
+}
+.btn-logo:hover {
+  color: var(--primary-light);
+}
 .btn-brown {
   background-color: #473c33;
   color: #fff;

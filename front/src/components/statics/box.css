@@ -29,13 +29,23 @@
   height: 70px !important;
 }
 .box-info {
+  height: 120px;
 }
 
 .box-info .avatar {
+  position: absolute;
+  bottom: 40px;
+  left: 40%;
 }
 
 .box-info .text {
-  padding: 15px;
+  display: flex;
+  flex-flow: wrap;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 35px 15px 20px 15px;
 }
 
 .box-img {

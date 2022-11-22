@@ -3,6 +3,8 @@ import "./statics/css/cartitems.css";
 import Button from "./../../components/global/Button";
 import Layout from "./../../components/global/Layout";
 import SingleCart from "./components/SingleCart";
+import { Grid } from "@mui/material";
+import ProfileBox from "../../components/global/ProfileBox";
 import axios from "axios";
 function CartItems() {
   const [data, setData] = useState({});
@@ -34,12 +36,53 @@ function CartItems() {
             <Button version='primary'>Checkout Now</Button>
           </div>
           <br />
-          <div className='cart-bottom'>
-            {data.map((item) => (
-              <SingleCart key={item.id} data={item} />
-            ))}
-          </div>
+          {Object.keys(data).length === 0 ? (
+            <div
+              style={{
+                textAlign: "center",
+              }}
+            >
+              <p
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                No items in cart!
+              </p>
+              <br />
+              <Button>Shop more</Button>
+            </div>
+          ) : (
+            <div className='cart-bottom'>
+              {data.map((item) => (
+                <SingleCart key={item.id} data={item} />
+              ))}
+            </div>
+          )}
         </div>
+      </div>
+      <div className='profile-showcase'>
+        <p className='landing-text'>Discover our Creators</p>
+        <Grid
+          container
+          direction='row'
+          justifyContent='center'
+          alignItems='center'
+        >
+          {/* {data.map(
+            (item, index) =>
+              index < 4 && (
+                <Grid item>
+                  <ProfileBox
+                    user={item.owner.name}
+                    productimage={item.post_img}
+                    key={item.id}
+                    name={item.title}
+                  />
+                </Grid>
+              )
+          )} */}
+        </Grid>
       </div>
     </Layout>
   );

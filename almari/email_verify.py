@@ -48,7 +48,7 @@ async def send_verification_email(user: models.Users) -> None:
         template_str = f.read()
     verification_token = create_verification_token(user)
     # server_host = settings.frontend_url_base
-    link = f"http://localhost:8000/verification/?token={verification_token}"
+    link = f"http://localhost:3000/login/?token={verification_token}"
     send_email(
         email_to=user.email,
         subject_template=subject,

@@ -2,21 +2,25 @@ import { Grid } from "@mui/material";
 import { useRef, useState } from "react";
 import "../statics/navbar.css";
 import IconButton from "@mui/material/IconButton";
-import { AccountCircle } from "@mui/icons-material";
-import { ShoppingCart, Menu, Favorite } from "@mui/icons-material";
+import {
+  ShoppingCart,
+  Menu,
+  AccountCircle,
+  LogoutOutlined,
+  Settings,
+} from "@mui/icons-material";
 import { Badge } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
 import MenuList from "@mui/material/Menu";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import ProfilePic from "./../../assets/photo.jpg";
 
-const settings = ["Profile", "Favorites", "Setup Your Shop", "Logout"];
 const AppBar = () => {
   const index = 1;
+
   const [log, setLog] = useState(true);
 
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -25,8 +29,12 @@ const AppBar = () => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = (e) => {
     setAnchorElUser(null);
+  };
+
+  const handleLogout = (e) => {
+    console.log("Logout");
   };
 
   const navRef = useRef();
@@ -34,6 +42,7 @@ const AppBar = () => {
   const showCategories = () => {
     navRef.current.classList.toggle("responsive");
   };
+
   return (
     <div className='navbar-root'>
       <Grid
@@ -41,10 +50,8 @@ const AppBar = () => {
         className='grid-nav'
         direction='row'
         alignItems='center'
-        justifyContent='space-between'
+        justifyContent='space-around'
       >
-        <Menu className='icons nav-button' onClick={showCategories} />
-
         <Grid item className='logo'>
           <Link className='logo-link' to='/'>
             ALMARI
@@ -56,44 +63,40 @@ const AppBar = () => {
             <Link className='nav-links' to='/'>
               Home
             </Link>
-            <Link className='nav-links' to='/home'>
+            <Link className='nav-links' to='/catalog'>
               Buy
             </Link>
-            {index === 1 ? (
-              <Link className='nav-links' to='/home'>
-                Setup
-              </Link>
-            ) : (
-              <Link className='nav-links' to='/home'>
-                Sell
-              </Link>
-            )}
 
-            <Link className='nav-links' to='/home'>
+            <Link className='nav-links' to='/stock'>
+              Sell
+            </Link>
+
+            <Link className='nav-links' to='/support'>
               Support
             </Link>
           </nav>
         </Grid>
-        <Grid item className='searching'>
-          <SearchBar />
-        </Grid>
 
         <Grid item className='notif-icons'>
-          {/* <Link className='logo-link' to='/liked'>
-            <IconButton
-              aria-label='Show favorite items'
-              className='icons heart'
-            >
-              <Favorite />
-            </IconButton>
-          </Link> */}
-          <Link className='logo-link' to='/checkout'>
-            <IconButton aria-label='Show cart items' className='icons cart'>
-              <Badge badgeContent={3} color='success'>
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
-          </Link>
+          <Grid
+            container
+            direction='row'
+            alignItems='center'
+            justifyContent='center'
+          >
+            <Grid item>
+              <Menu className='icons nav-button' onClick={showCategories} />
+            </Grid>
+            <Grid item>
+              <Link className='logo-link' to='/checkout'>
+                <IconButton className='icons cart'>
+                  <Badge badgeContent={5} color='success'>
+                    <ShoppingCart />
+                  </Badge>
+                </IconButton>
+              </Link>
+            </Grid>
+          </Grid>
 
           <IconButton
             onClick={handleOpenUserMenu}
@@ -107,7 +110,7 @@ const AppBar = () => {
             )}
           </IconButton>
           <MenuList
-            sx={{ mt: "55px" }}
+            sx={{ mt: "55px", textAlign: "center" }}
             id='menu-appbar'
             anchorEl={anchorElUser}
             anchorOrigin={{
@@ -122,12 +125,18 @@ const AppBar = () => {
             open={Boolean(anchorElUser)}
             onClose={handleCloseUserMenu}
           >
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Favorite />
-                <Typography textAlign='center'>{setting}</Typography>
-              </MenuItem>
-            ))}
+            <div className='list'>
+              <AccountCircle />
+              <MenuItem>Profile</MenuItem>
+            </div>
+            <div className='list'>
+              <Settings />
+              <MenuItem>Setup</MenuItem>
+            </div>
+            <div className='list'>
+              <LogoutOutlined />
+              <MenuItem onClick={handleLogout}>Logout</MenuItem>
+            </div>
           </MenuList>
         </Grid>
       </Grid>

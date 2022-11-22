@@ -25,6 +25,8 @@ const Signup = () => {
     if (e.target.name === "confirm") {
       if (e.target.value !== inputs.password) {
         setError("Confirm your password!!");
+        setDisabled(true);
+        confirm.current.classList.remove("confirmed");
         setInputs((prevState) => ({
           ...prevState,
           [e.target.name]: e.target.value,

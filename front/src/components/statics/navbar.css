@@ -9,34 +9,19 @@
 }
 
 .grid-nav {
-  width: 85% !important;
-}
-
-.nav-button {
-  display: none;
-  padding: 5px;
-  background: transparent;
-  opacity: 0;
-  border: none;
-  outline: none;
+  width: 100% !important;
 }
 
 .logo {
   cursor: pointer;
   font-size: 32px;
-  letter-spacing: 1.5px;
+  letter-spacing: 3px;
   text-align: center;
+  font-weight: bold;
 }
 .logo-link {
   text-decoration: none;
   color: white;
-}
-
-.searching {
-  flex: 0.7;
-}
-
-.categories {
 }
 
 nav {
@@ -44,9 +29,9 @@ nav {
 }
 nav > .nav-links {
   margin: 0 2rem;
-
   text-decoration: none;
   color: white;
+  font-size: 20px;
 }
 .notif-icons {
   display: flex;
@@ -54,25 +39,33 @@ nav > .nav-links {
   align-items: center;
 }
 
+.nav-button {
+  opacity: 0;
+  display: none !important;
+  font-size: 30px !important;
+}
+
 .notif-icons .icons {
   margin: 0px 8px !important;
   transition: 0.3s ease-in-out;
   color: white;
   font-size: 22px;
-  border: none;
-  outline: none;
 }
 .notif-icons .avatar {
   margin-left: 40px !important;
 }
 
+.list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 8px 0 15px;
+}
+
 @media only screen and (max-width: 600px) {
   .logo {
     text-align: center;
-  }
-  .searching {
-    transition: 0.2s ease-in-out;
-    display: none;
   }
 }
 
@@ -87,20 +80,21 @@ nav > .nav-links {
 
 @media only screen and (max-width: 1202px) {
   .nav-button {
-    display: inline;
+    display: inline !important;
     opacity: 1;
   }
 
   nav {
     position: fixed;
-    top: 0;
+    top: 50px;
     left: 0;
-    height: 35%;
+    height: auto;
     width: 100%;
     transform: translateY(10vh);
     visibility: hidden;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.3s ease-in-out;
   }
   nav > .nav-links {
     margin: 1.5rem 0;

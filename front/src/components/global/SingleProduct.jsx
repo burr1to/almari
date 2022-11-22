@@ -19,9 +19,10 @@ const Circle = styled.div`
 
 function SingleProduct({ productImg, ownerID, productID }) {
   const replacedImg = `http://${productImg.replace(",", " ")}`;
+  const path = `/product/${productID}`;
   return (
     <div className='ok'>
-      <Link to='#'>
+      <Link to={path}>
         <div className='single-con'>
           <Circle />
           <Image src={replacedImg} addStyles='single-product-img' />

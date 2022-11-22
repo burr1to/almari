@@ -93,6 +93,8 @@ class Like(BaseModel):
 
 class CartBase(BaseModel):
     quantity: int
+    color: str
+    size: str
 
     class Config:
         orm_mode = True
@@ -122,3 +124,20 @@ class RatingOut(RatingBase):
     owner_id: int
     product_id: int
     rated_at: datetime
+
+
+class ProfileBase(BaseModel):
+    id: int
+    facebook_url: str
+    instagram_url: str
+    bio: str
+    pp: str
+    user_id: int
+    twitter: str
+
+
+class ProfileOut(ProfileBase):
+    owner: ReturnUser
+
+    class Config:
+        orm_mode = True

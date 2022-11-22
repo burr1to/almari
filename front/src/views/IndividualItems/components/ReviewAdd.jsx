@@ -15,7 +15,7 @@ function ReviewAdd() {
     if (review === "") {
       setbtnDisabled(true);
       setMessage(null);
-    } else if (review != "" && review.trim().length <= 10) {
+    } else if (review !== "" && review.trim().length <= 10) {
       setbtnDisabled(true);
       setMessage("Enter more than 10 characters please!");
     } else {

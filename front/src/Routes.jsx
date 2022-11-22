@@ -14,6 +14,8 @@ import Setup from "./components/global/Forms/Setup";
 import Name from "./components/global/Forms/Name";
 import Stock from "./components/global/Forms/Stock";
 import Market from "./components/global/Forms/MarketNavbar";
+import Render from "./components/global/Renders/Render";
+import Customization from "./components/global/Forms/Customization";
 const Routedpath = () => {
   return (
     <Routes>
@@ -24,6 +26,7 @@ const Routedpath = () => {
       <Route path='/setup' element={<Setup />}></Route>
       <Route path='/stock' element={<Stock />}></Route>
       <Route path='/market' element={<Market />}></Route>
+      <Route path='/custom' element={<Customization />}></Route>
 
       {/* 
       Selling portion routes */}
@@ -46,6 +49,12 @@ const Routedpath = () => {
 
       {/* 
       Buying portion routes */}
+
+      {/* 
+      Render portion routes */}
+      <Route path='/render' element={<Render />}></Route>
+      {/* 
+      Render portion routes */}
     </Routes>
   );
 };

@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import Layout from "./../../components/global/Layout";
 import "./statics/css/individual.css";
 import Image from "./../../components/global/Image";
-import Popular from "./../../components/global/Popular";
 import ReviewAdd from "./components/ReviewAdd";
 import Button from "../../components/global/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Dropdown from "./../../components/global/Dropdown";
 import ImageSidebar from "../../components/global/ImageSidebar";
 import { Link } from "react-router-dom";
-import { products, popularProducts } from "./../../components/data/testdata";
+import { products } from "./../../components/data/testdata";
 import "./../../components/statics/popular.css";
 import { Favorite } from "@mui/icons-material";
 import axios from "axios";
@@ -17,31 +16,32 @@ import "./../../components/statics/extra.css";
 
 function Individual() {
   const [myData, setData] = useState([]);
-
+  const [owner, setOwner] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8000/users/1").then((res) => {
+    const path = document.location.pathname.split("/")[2];
+
+    axios.get(`http://localhost:8000/posts/${path}`).then((res) => {
       setData(res.data);
+      setOwner(res.data.owner);
     });
   }, []);
-  console.log(myData);
 
   const [liked, setLiked] = useState(false);
   const [size, setSize] = useState("");
-  const [color, setColor] = useState("");
 
   const handleChangeSize = (event) => {
     console.log(event.target.value);
     setSize(event.target.value);
-  };
-  const handleChangeColor = (event) => {
-    console.log(event.target.value);
-    setColor(event.target.value);
   };
 
   const handleLike = (e) => {
     console.log("a");
     setLiked(!liked);
   };
+
+  const profileLink = `/users/${myData.owner_id}`;
+
+  const UpperTitle = myData.title;
 
   return (
     <Layout>
@@ -53,13 +53,13 @@ function Individual() {
           </div>
           <div className='info-container'>
             <ul className='basic-info'>
-              <li className='title'>Clothing Store</li>
-              <li className='price'>$20</li>
+              <li className='title'>{UpperTitle}</li>
+              <li className='price'>NPR {myData.price}</li>
             </ul>
             <br />
             <div className='company-info'>
-              <Link to='/profile' className='company-name'>
-                Hattori Enterprises
+              <Link to={profileLink} className='company-name'>
+                {owner.name}
               </Link>
               <br />
               <Button
@@ -87,17 +87,6 @@ function Individual() {
                 </Dropdown>
 
                 <p>Color</p>
-
-                <Dropdown
-                  className='product-dropdown'
-                  val={color}
-                  label='color'
-                  handleChange={handleChangeColor}
-                >
-                  <MenuItem value={4}>Red</MenuItem>
-                  <MenuItem value={5}>Blue</MenuItem>
-                  <MenuItem value={6}>Yellow</MenuItem>
-                </Dropdown>
               </form>
             </div>
             <div className='submit-btns'>

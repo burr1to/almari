@@ -1,15 +1,14 @@
-import { React, useState, useContext } from "react";
+import { React, useState } from "react";
 import "./statics/css/catalog.css";
 import Layout from "./../../components/global/Layout";
 import Button from "./../../components/global/Button";
 import { TextField, MenuItem, Slider } from "@mui/material";
-import { popularProducts } from "./../../components/data/testdata";
 import SingleProduct from "./../../components/global/SingleProduct";
 import "./../../components/statics/product.css";
 import Dropdown from "./../../components/global/Dropdown";
 import axios from "axios";
-import { AppContext } from "../../utils/Context";
 import { useEffect } from "react";
+
 //downprice cant be less than upprice make error handle
 function valuetext(value) {
   let scaledValue = value;
@@ -18,14 +17,25 @@ function valuetext(value) {
 }
 function CatalogPage() {
   const [data, setData] = useState([]);
-  const catalogcat = useContext(AppContext);
-  const category = "Clothing";
+
+  const [word, setWord] = useState("");
+
   useEffect(() => {
+    const path = document.location.pathname.split("/")[2];
+    const capital = document.location.pathname
+      .split("/")[2]
+      .charAt(0)
+      .toUpperCase();
+
+    const newPath = capital + path.slice(1);
+    setWord(newPath);
     axios
-      .get(`http://localhost:8000/posts/catalog/${category}`)
+      .get(`http://localhost:8000/posts/catalog/${newPath}`)
       .then((response) => {
-        console.log(response);
         setData(response.data);
+        console.log(response.data);
+
+        return newPath;
       })
       .catch((error) => {
         console.log(error);
@@ -35,14 +45,7 @@ function CatalogPage() {
   const [value, setValue] = useState([20, 370]);
 
   const [key, setKey] = useState("");
-
   const [cat, setCat] = useState("");
-
-  // const [filter, setFilter] = useState({
-  //   value: [20, 370],
-  //   key: "",
-  //   cat: "",
-  // });
 
   const handleSlider = (e, newValue) => {
     setValue(newValue);
@@ -100,7 +103,7 @@ function CatalogPage() {
                 <TextField
                   hiddenLabel
                   onChange={handleChange}
-                  name='keyword'
+                  name='key'
                   value={key}
                   type='text'
                   className='filter-keyword'
@@ -111,7 +114,7 @@ function CatalogPage() {
             </div>
             <div className='catalog-content-area'>
               <div className='title-area'>
-                <h3>{catalogcat}</h3>
+                <h3>{word}</h3>
               </div>
               <div className='product-con'>
                 {data.map((item) => (

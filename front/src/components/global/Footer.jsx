@@ -1,27 +1,22 @@
 import React from "react";
+import { useEffect } from "react";
 import "./../statics/footer.css";
 import { Grid } from "@mui/material";
-
-
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faB,
   faChevronRight,
   faEnvelope,
-  faFaceAngry,
   faGlobeAsia,
   faLocationDot,
   faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebook,
-  faGithub,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <div className='footer'>
       <div className='main'>
@@ -42,19 +37,27 @@ function Footer() {
             <ul>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Clothing</a>
+                <Link to='/catalog/clothing' onClick={handleClick}>
+                  Clothing
+                </Link>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Accessories</a>
+                <Link to='/catalog/accessories' onClick={handleClick}>
+                  Accessories
+                </Link>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Handicrafts</a>
+                <Link to='/catalog/handicrafts' onClick={handleClick}>
+                  Handicrafts
+                </Link>
               </li>
               <li>
                 <FontAwesomeIcon icon={faChevronRight} />
-                <a href='#'>Artwork</a>
+                <Link to='/catalog/furniture' onClick={handleClick}>
+                  Furniture
+                </Link>
               </li>
             </ul>
           </div>

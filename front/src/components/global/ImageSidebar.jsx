@@ -1,13 +1,7 @@
 import React from "react";
 import "./../statics/image.css";
 import { useState } from "react";
-
-const slideStyles = {
-  width: "100%",
-  height: "100%",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
+import Image from "./Image";
 
 function ImageSidebar({ slides }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,10 +18,10 @@ function ImageSidebar({ slides }) {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
-  const slideStylesWidthBackground = {
-    ...slideStyles,
-    backgroundImage: `url(${slides[0].img[currentIndex]})`,
-  };
+  // const slideStylesWidthBackground = {
+  //   ...slideStyles,
+  //   backgroundImage: `url(${slides[0].img[currentIndex]})`,
+  // };
 
   return (
     <div className='slider'>
@@ -39,7 +33,9 @@ function ImageSidebar({ slides }) {
           ❱
         </div>
       </div>
-      <div style={slideStylesWidthBackground}></div>
+      <div className='image-product'>
+        <Image addStyles='product-img-side' src={slides[0].img[currentIndex]} />
+      </div>
       <div className='dot-con'>
         {slides[0].img.map((slide, slideIndex) => (
           <div

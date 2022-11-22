@@ -66,18 +66,18 @@ function ProfilePage() {
           <Grid item className='profile-column-3'>
             <h5>Liked Items</h5>
             <div className='popular-item-list'>
-      {popularProducts.map(
+              {/* {popularProducts.map(
         (item, index) => index < 5 && <Popular item={item} key={item.key} />
-      )}
-    </div>
+      )} */}
+            </div>
           </Grid>
           <Grid item className='profile-column-4'>
             <h5>Popular Items</h5>
             <div className='popular-item-list'>
-      {popularProducts.map(
+              {/* {popularProducts.map(
         (item, index) => index < 5 && <Popular item={item} key={item.key} />
-      )}
-    </div>
+      )} */}
+            </div>
           </Grid>
         </form>
       </Grid>

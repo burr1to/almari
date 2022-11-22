@@ -1,13 +1,21 @@
 import { Box, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./../../components/global/Button";
 import "./statics/css/login.css";
 import back from "./statics/images/back.jpg";
 import axios from "axios";
+import { UserContext } from "../../utils/UserContext";
+import { useEffect } from "react";
 
 const Login = () => {
+  const [verified, setVerified] = useState(null);
+
+  //to check verified o r not, need userID which can be taken from context
+  // useEffect(() => {
+  //   axios.get()
+  // });
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -27,15 +35,12 @@ const Login = () => {
     formData.append("username", inputs.username);
     formData.append("password", inputs.password);
     await axios
-      .post("http://localhost:8000/login", formData)
+      .post("http://localhost:8000/login/", formData)
       .then((response) => {
-        console.log(response);
         localStorage.setItem("auth_token", response.data.access_token);
         localStorage.setItem("auth_token_type", response.data.token_type);
+
         console.log("Success");
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
         navigate("/");
       })
       .catch((error) => {

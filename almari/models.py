@@ -88,6 +88,8 @@ class Cart(Base):
     )
     owner = relationship("Users")
     product = relationship("Posts")
+    color = Column(String, nullable=False)
+    size = Column(String, nullable=False)
 
 
 class Rating(Base):
@@ -107,3 +109,18 @@ class Rating(Base):
     )
     owner = relationship("Users")
     product = relationship("Posts")
+
+
+class Profile(Base):
+    __tablename__ = "profile"
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    facebook_url = Column(String, nullable=True)
+    instagram_url = Column(String, nullable=True)
+    twitter = Column(String, nullable=True)
+    bio = Column(String, nullable=True)
+    pp = Column(String, nullable=True)
+    user_id = Column(
+        Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False
+    )
+    owner = relationship("Users")

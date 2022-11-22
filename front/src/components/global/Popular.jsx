@@ -8,7 +8,9 @@ function Popular({ item, image }) {
   return (
     <>
       <div className='popular-item-box'>
-        <Image addStyles='popular-item-img' src={replacedImg} />
+        <div className='img-box'>
+          <Image addStyles='popular-item-img' src={replacedImg} />
+        </div>
         <div className='popular-item-tag'>{item.title}</div>
       </div>
     </>

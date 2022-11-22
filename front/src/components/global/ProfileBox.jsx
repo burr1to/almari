@@ -43,7 +43,6 @@ function ProfileBox({ user, productimage, name }) {
             />
           </div>
           <div className='box-info text'>
-            <br />
             <p>{description}</p>
           </div>
         </div>

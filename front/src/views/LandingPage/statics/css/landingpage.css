@@ -1,7 +1,5 @@
-
-
 .explore-categories {
- max-height:450px;
+  max-height: 450px;
 }
 .explore-categories p {
   text-align: center;
@@ -22,29 +20,20 @@
 }
 
 .random-items {
-  
-  
 }
 
-.random-contain{
-  width:80%;
+.random-contain {
+  width: 80%;
   display: flex;
-  margin:0 auto;
-  position: relative; 
-  
+  margin: 0 auto;
+  position: relative;
 }
-/* .search-area {
-  margin: 100px 0 60px 0 !important;
-} */
-.landing-content {
-}
+
 .profile-showcase {
-  margin:25px 0 !important;
-  
+  margin: 25px 0 !important;
 }
 
 .profile-showcase .MuiGrid-item {
- 
   padding: 10px;
 }
 

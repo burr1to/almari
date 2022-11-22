@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-// import ReactFileReader from "react-file-reader";
+import ReactFileReader from "react-file-reader";
 
 const Setup = () => {
   const [url, setUrl] = useState("/images/face.png");
@@ -35,10 +35,17 @@ const Setup = () => {
         paddingBottom={"100px"}
       >
         <Box marginBottom={2}>
-          <Typography marginTop={3} marginBottom={2} variant='h4'>
+          <Typography
+            marginTop={3}
+            marginBottom={2}
+            variant='h4'
+            color={"brown.main"}
+          >
             Create your shop
           </Typography>
-          <Typography>Add photos and details for your shop.</Typography>
+          <Typography color='grey'>
+            Add photos and details for your shop.
+          </Typography>
         </Box>
 
         <Box
@@ -50,7 +57,7 @@ const Setup = () => {
             justifyContent: "center",
             alignItems: "center",
             border: 1,
-
+            borderColor: "lightgrey",
             borderRadius: "3px",
           }}
         >
@@ -69,28 +76,35 @@ const Setup = () => {
           />
           <Typography>✨Add a shop profile picture✨</Typography>
 
-          {/* <ReactFileReader
+          <ReactFileReader
             fileTypes={[".png", ".jpg"]}
             base64={true}
             handleFiles={handleFiles}
-          > */}
-          <Button
-            variant='contained'
-            sx={{
-              textTransform: "none",
-              boxShadow: "none",
-              "&:hover": {
-                boxShadow: "none",
-              },
-            }}
           >
-            Upload
-          </Button>
-          {/* </ReactFileReader> */}
+            <Button
+              variant='contained'
+              color='brown'
+              sx={{
+                textTransform: "none",
+                boxShadow: "none",
+                "&:hover": {
+                  backgroundColor: "brown.light",
+                  boxShadow: "none",
+                },
+              }}
+            >
+              Upload
+            </Button>
+          </ReactFileReader>
         </Box>
-        <Box p={3} sx={{ border: 1, borderRadius: "3px" }}>
-          <Typography variant='h6'>Describe Your Shop</Typography>
-          <Typography variant='body1' sx={{ fontSize: "14px" }}>
+        <Box
+          p={3}
+          sx={{ border: 1, borderColor: "lightgrey", borderRadius: "3px" }}
+        >
+          <Typography variant='h6' color={"brown.main"}>
+            Describe Your Shop
+          </Typography>
+          <Typography color='grey' variant='body1' sx={{ fontSize: "14px" }}>
             Tell the world about what you create and sell.
           </Typography>
           <Box
@@ -107,6 +121,7 @@ const Setup = () => {
                 sx={{
                   fontSize: "14px",
                   fontWeight: "bold",
+                  color: "brown.light",
                 }}
               >
                 Description*
@@ -114,6 +129,7 @@ const Setup = () => {
               <Typography
                 sx={{
                   fontSize: "12px",
+                  color: "grey",
                 }}
               >
                 Start with a brief overview that describes your shop.
@@ -126,9 +142,14 @@ const Setup = () => {
             </Box>
           </Box>
         </Box>
-        <Box p={3} sx={{ border: 1, borderRadius: "3px" }}>
-          <Typography variant='h6'>Category</Typography>
-          <Typography variant='body1' sx={{ fontSize: "14px" }}>
+        <Box
+          p={3}
+          sx={{ border: 1, borderColor: "lightgrey", borderRadius: "3px" }}
+        >
+          <Typography variant='h6' color={"brown.main"}>
+            Category
+          </Typography>
+          <Typography color='grey' variant='body1' sx={{ fontSize: "14px" }}>
             Select a category that best describes what you sell.
           </Typography>
           <Box
@@ -145,6 +166,7 @@ const Setup = () => {
                 sx={{
                   fontSize: "14px",
                   fontWeight: "bold",
+                  color: "brown.light",
                 }}
               >
                 Category*
@@ -152,6 +174,7 @@ const Setup = () => {
               <Typography
                 sx={{
                   fontSize: "12px",
+                  color: "grey",
                 }}
               >
                 Categorizing your shop will help more shoppers find you.
