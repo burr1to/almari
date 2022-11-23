@@ -9,14 +9,17 @@ import Dropdown from "./../../components/global/Dropdown";
 import ImageSidebar from "../../components/global/ImageSidebar";
 import { Link } from "react-router-dom";
 import { products } from "./../../components/data/testdata";
-import "./../../components/statics/popular.css";
 import { Favorite } from "@mui/icons-material";
 import axios from "axios";
+import { SketchPicker } from "react-color";
+
+import "./../../components/statics/popular.css";
 import "./../../components/statics/extra.css";
 
 function Individual() {
   const [myData, setData] = useState([]);
   const [owner, setOwner] = useState([]);
+  const [ratings, setRatings] = useState([]);
   useEffect(() => {
     const path = document.location.pathname.split("/")[2];
 
@@ -28,6 +31,7 @@ function Individual() {
 
   const [liked, setLiked] = useState(false);
   const [size, setSize] = useState("");
+  const [col, setCol] = useState("#ffffff");
 
   const handleChangeSize = (event) => {
     console.log(event.target.value);
@@ -37,6 +41,10 @@ function Individual() {
   const handleLike = (e) => {
     console.log("a");
     setLiked(!liked);
+  };
+
+  const handleColor = (color, e) => {
+    setCol(color);
   };
 
   const profileLink = `/users/${myData.owner_id}`;
@@ -87,6 +95,7 @@ function Individual() {
                 </Dropdown>
 
                 <p>Color</p>
+                <SketchPicker color={col} onChange={handleColor} />
               </form>
             </div>
             <div className='submit-btns'>

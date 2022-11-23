@@ -4,6 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
 import Image from "./Image";
 import { Grid } from "@mui/material";
+import RandomUser from "./../../assets/user1.png";
 
 //need to find a way to make hte profile box sizes dynamic. aile non responsive hunxa
 //cause width and height are hardcoded into react
@@ -39,7 +40,7 @@ function ProfileBox({ user, productimage, name }) {
               onClick={handleClick}
               className='box-icon'
               alt='#'
-              src='#'
+              src={RandomUser}
             />
           </div>
           <div className='box-info text'>

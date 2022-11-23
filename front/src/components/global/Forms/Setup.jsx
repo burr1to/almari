@@ -10,9 +10,9 @@ import {
 import React from "react";
 import { useState } from "react";
 import ReactFileReader from "react-file-reader";
-
+import UserGirl from "./../../../assets/user2.png";
 const Setup = () => {
-  const [url, setUrl] = useState("/images/face.png");
+  const [url, setUrl] = useState(UserGirl);
 
   const handleFiles = (files) => {
     console.log(files);

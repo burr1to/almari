@@ -79,14 +79,14 @@ function LandingPage() {
           </div>
         </Grid>
 
-        <Grid item className='search-area'>
+        {/* <Grid item className='search-area'>
           <SearchBar
             onChange={handleSearchChange}
             onClick={handleSearchClick}
             value={search}
           />
           <SearchArea />
-        </Grid>
+        </Grid> */}
 
         <Grid item className='random-items'>
           <div className='random-contain'>
