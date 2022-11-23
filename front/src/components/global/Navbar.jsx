@@ -10,13 +10,11 @@ import {
   Settings,
 } from "@mui/icons-material";
 import { Badge } from "@mui/material";
-import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
 import MenuList from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, useNavigate } from "react-router-dom";
-import SearchBar from "./SearchBar";
-import ProfilePic from "./../../assets/photo.jpg";
+import { Link } from "react-router-dom";
+import UserDefault from "./../../assets/user2.png";
 
 const AppBar = () => {
   const index = 1;
@@ -103,11 +101,7 @@ const AppBar = () => {
             size='small'
             className='icons avatar'
           >
-            {log ? (
-              <Avatar src={ProfilePic} />
-            ) : (
-              <AccountCircle fontSize='large' />
-            )}
+            <Avatar src={UserDefault} fontSize='large' />
           </IconButton>
           <MenuList
             sx={{ mt: "55px", textAlign: "center" }}
@@ -127,15 +121,39 @@ const AppBar = () => {
           >
             <div className='list'>
               <AccountCircle />
-              <MenuItem>Profile</MenuItem>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                }}
+                to='/profile/1'
+              >
+                <MenuItem>Profile</MenuItem>
+              </Link>
             </div>
             <div className='list'>
               <Settings />
-              <MenuItem>Setup</MenuItem>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                }}
+                to='/'
+              >
+                <MenuItem>Setup</MenuItem>
+              </Link>
             </div>
             <div className='list'>
               <LogoutOutlined />
-              <MenuItem onClick={handleLogout}>Logout</MenuItem>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                }}
+                to='/'
+              >
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+              </Link>
             </div>
           </MenuList>
         </Grid>

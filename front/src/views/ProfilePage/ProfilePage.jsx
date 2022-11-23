@@ -3,11 +3,12 @@ import Layout from "./../../components/global/Layout";
 import "./statics/css/profilepage.css";
 import Popular from "./../../components/global/Popular";
 import { Grid } from "@mui/material";
-import Jett from "./../../assets/jett.jpg";
+import ProfileDefault from "./../../assets/user1.png";
 import Image from "../../components/global/Image";
 import Button from "./../../components/global/Button";
 import { popularProducts } from "../../components/data/testdata";
 import "./../../components/statics/popular.css";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -29,7 +30,7 @@ function ProfilePage() {
         <form method='' className='profile-elements'>
           <Grid item className='profile-column-1'>
             <div className='image-area'>
-              <Image src={Jett} alt='hmm' className='profile-image' />
+              <Image src={ProfileDefault} alt='hmm' className='profile-image' />
             </div>
             <div className='profile-head'>
               <h5>Sanskar Singh</h5>
@@ -41,7 +42,9 @@ function ProfilePage() {
                 text ever since the 1500s,
               </p>
               <br />
-              <Button>Edit Profile</Button>
+              <Link to='/edit/1'>
+                <Button>Edit Profile</Button>
+              </Link>
             </div>
             <div className='profile-socials'>
               <ul>

@@ -12,6 +12,7 @@ import { products } from "./../../components/data/testdata";
 import { Favorite } from "@mui/icons-material";
 import axios from "axios";
 import { SketchPicker } from "react-color";
+import Reviews from "./components/Reviews";
 
 import "./../../components/statics/popular.css";
 import "./../../components/statics/extra.css";
@@ -26,8 +27,23 @@ function Individual() {
     axios.get(`http://localhost:8000/posts/${path}`).then((res) => {
       setData(res.data);
       setOwner(res.data.owner);
+
+      function getRating() {
+        axios
+          .get(`http://localhost:8000/rating/${res.data.id}`)
+          .then((response) => {
+            setRatings(response.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+
+      getRating();
     });
   }, []);
+
+  // getRating();
 
   const [liked, setLiked] = useState(false);
   const [size, setSize] = useState("");
@@ -108,17 +124,7 @@ function Individual() {
         </div>
         <div className='product-extra'>
           <div className='reviews'>
-            <div className='reviews-con'>
-              <h5>0 Shop Reviews</h5>
-              <p>Average Rating: N/A</p>
-              <br />
-              <div className='review-list'>
-                {/* {TestData.map((singledata) => (
-                  <SingleReview key={singledata.id} item={singledata} />
-                ))} */}
-                <p>1</p>
-              </div>
-            </div>
+            <Reviews data={ratings} />
           </div>
           <div className='more-shop'>
             <div className='product-description'>

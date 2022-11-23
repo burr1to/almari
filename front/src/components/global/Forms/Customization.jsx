@@ -12,7 +12,12 @@ import React from "react";
 
 const Customization = () => {
   return (
-    <div>
+    <div
+      style={{
+        width: "95%",
+        margin: "0 auto",
+      }}
+    >
       <Grid container direction={"column"} gap={"20px"}>
         <Box marginTop={4} marginBottom={2}>
           <Divider />

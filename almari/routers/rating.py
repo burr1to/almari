@@ -51,3 +51,16 @@ def update_rating(
     query.update(updated_item.dict(), synchronize_session=False)
     db.commit()
     return query.first()
+
+
+@router.get(
+    "/{product_id}",
+    status_code=status.HTTP_200_OK,
+    response_model=List[schema.RatingOut],
+)
+def getAllItems(
+    product_id: int,
+    db: Session = Depends(database.get_db),
+):
+    items = db.query(models.Rating).filter(models.Rating.product_id == product_id).all()
+    return items

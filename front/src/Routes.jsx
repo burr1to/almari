@@ -10,9 +10,6 @@ import Signup from "./views/Login/Signup";
 import AddPost from "./components/global/Forms/AddPost";
 import Test from "./components/global/Preview";
 import EditProfile from "./components/global/Forms/EditProfile";
-import Setup from "./components/global/Forms/Setup";
-import Name from "./components/global/Forms/Name";
-import Stock from "./components/global/Forms/Stock";
 import Market from "./components/global/Forms/MarketNavbar";
 import Render from "./components/global/Renders/Render";
 import Customization from "./components/global/Forms/Customization";
@@ -22,9 +19,6 @@ const Routedpath = () => {
       {/* 
       Selling portion routes */}
 
-      <Route path='/name' element={<Name />}></Route>
-      <Route path='/setup' element={<Setup />}></Route>
-      <Route path='/stock' element={<Stock />}></Route>
       <Route path='/market' element={<Market />}></Route>
       <Route path='/custom' element={<Customization />}></Route>
 
@@ -41,7 +35,7 @@ const Routedpath = () => {
       <Route path='/login' element={<Login />}></Route>
       <Route path='/signup' element={<Signup />}></Route>
       <Route path='/post' element={<AddPost />}></Route>
-      <Route path='/profile/edit/:userid' element={<EditProfile />}></Route>
+      <Route path='/edit/:userid' element={<EditProfile />}></Route>
       <Route path='/checkout' element={<CartItems />}></Route>
       <Route path='/product/:productid' element={<IndividualPage />}></Route>
       <Route path='/catalog/:category' element={<Catalog />}></Route>
