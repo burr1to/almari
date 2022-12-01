@@ -8,6 +8,7 @@ import secrets
 from fastapi.staticfiles import StaticFiles
 from PIL import Image
 import shutil
+from almari.oauth2 import get_current_user
 
 router = APIRouter(
     prefix="/users",
@@ -41,6 +42,14 @@ def get_user(id: int, db: Session = Depends(database.get_db)):
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"User with id {id} does not exists. ",
         )
+    return user
+
+
+@router.get("/me/", response_model=schema.ReturnUser)
+def get_me(
+    user: models.Users = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
     return user
 
 

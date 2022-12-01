@@ -6,20 +6,22 @@ import ReviewAdd from "./components/ReviewAdd";
 import Button from "../../components/global/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Dropdown from "./../../components/global/Dropdown";
-import ImageSidebar from "../../components/global/ImageSidebar";
-import { Link } from "react-router-dom";
-import { products } from "./../../components/data/testdata";
+import ImageSidebar from "./components/ImageSidebar";
+import { Link, useNavigate } from "react-router-dom";
 import { Favorite } from "@mui/icons-material";
 import axios from "axios";
 import { SketchPicker } from "react-color";
 import Reviews from "./components/Reviews";
-
 import "./../../components/statics/popular.css";
 import "./../../components/statics/extra.css";
+import UserBoy from "./../../assets/user1.png";
 
 function Individual() {
-  const [myData, setData] = useState([]);
+  const navigate = useNavigate();
+  const [myData, setData] = useState({});
   const [owner, setOwner] = useState([]);
+
+  const [img, setImg] = useState([]);
   const [ratings, setRatings] = useState([]);
   useEffect(() => {
     const path = document.location.pathname.split("/")[2];
@@ -27,6 +29,7 @@ function Individual() {
     axios.get(`http://localhost:8000/posts/${path}`).then((res) => {
       setData(res.data);
       setOwner(res.data.owner);
+      setImg(res.data.post_img.split(","));
 
       function getRating() {
         axios
@@ -43,7 +46,13 @@ function Individual() {
     });
   }, []);
 
-  // getRating();
+  const handleViewProfile = () => {
+    navigate(`/profile/${myData.owner_id}`);
+  };
+
+  const profileLink = `/users/${myData.owner_id}`;
+
+  const UpperTitle = myData.title;
 
   const [liked, setLiked] = useState(false);
   const [size, setSize] = useState("");
@@ -63,9 +72,30 @@ function Individual() {
     setCol(color);
   };
 
-  const profileLink = `/users/${myData.owner_id}`;
+  const [count, setCount] = useState(0);
 
-  const UpperTitle = myData.title;
+  const headers = {
+    Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
+  };
+
+  const handleCart = (e) => {
+    const data = {
+      color: col,
+      size: size,
+      quantity: 1,
+    };
+    axios
+      .post(`http://localhost:8000/cart/${myData.id}`, data, {
+        headers: headers,
+      })
+      .then((res) => {
+        console.log(res);
+        console.log("Success");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <Layout>
@@ -73,7 +103,7 @@ function Individual() {
       <div className='individual-page'>
         <div className='product-grid'>
           <div className='img-container'>
-            <ImageSidebar slides={products} />
+            <ImageSidebar images={img} />
           </div>
           <div className='info-container'>
             <ul className='basic-info'>
@@ -88,34 +118,70 @@ function Individual() {
               <br />
               <Button
                 onClick={handleLike}
-                version={liked ? "favorite" : "tertiary"}
+                version={liked ? "favorite" : "favoriteoff"}
               >
-                <Favorite />
+                <div className='favorite'>
+                  <Favorite />
+                </div>
               </Button>
             </div>
 
             <div className='product-main'>
               <form className='choice'>
-                <h6>Quantity: 1</h6>
+                <span>Quantity</span>
+                <div className='quantity'>
+                  <p
+                    style={{
+                      cursor: "pointer",
+                    }}
+                    className='increase'
+                    onClick={() => {
+                      setCount(count + 1);
+                    }}
+                  >
+                    +
+                  </p>
+                  <p
+                    style={{
+                      cursor: "pointer",
+                    }}
+                    className='decrease'
+                    onClick={() => {
+                      setCount(count - 1);
+                    }}
+                  >
+                    -
+                  </p>
+                </div>
                 <p>Size</p>
-
                 <Dropdown
                   className='product-dropdown'
                   val={size}
                   label='size'
                   handleChange={handleChangeSize}
                 >
-                  <MenuItem value={1}>Small</MenuItem>
-                  <MenuItem value={2}>Medium</MenuItem>
-                  <MenuItem value={3}>Large</MenuItem>
+                  <MenuItem value={"XS"}>Extra Small</MenuItem>
+                  <MenuItem value={"S"}>Small</MenuItem>
+                  <MenuItem value={"M"}>Medium</MenuItem>
+                  <MenuItem value={"L"}>Large</MenuItem>
+                  <MenuItem value={"XL"}>X Large</MenuItem>
+                  <MenuItem value={"XXL"}>XX Large</MenuItem>
                 </Dropdown>
 
-                <p>Color</p>
+                <p
+                  style={{
+                    marginTop: "20px",
+                  }}
+                >
+                  Color
+                </p>
                 <SketchPicker color={col} onChange={handleColor} />
               </form>
             </div>
             <div className='submit-btns'>
-              <Button type='submit'>Add to Cart</Button>
+              <Button type='submit' onClick={handleCart}>
+                Add to Cart
+              </Button>
               <Button type='submit' version='secondary'>
                 Buy it Now
               </Button>
@@ -129,29 +195,21 @@ function Individual() {
           <div className='more-shop'>
             <div className='product-description'>
               <h6>About this Item</h6>
-              <p className='description'>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
+              <p>{myData.description}</p>
             </div>
             <br />
             <div className='meet-your-seller'>
               <h5>Meet your Seller</h5>
-
-              <Image
-                src='https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                addStyles='seller-img'
-              />
-              <p>Ellie Goulding</p>
               <br />
-              <Button>View Profile</Button>
+              <Image src={UserBoy} addStyles='seller-img' />
+              <p>{owner.name}</p>
+              <br />
+              <Button onClick={handleViewProfile}>View Profile</Button>
             </div>
           </div>
         </div>
         <br />
-        <ReviewAdd id={myData.id} user={myData.name} key={myData.email} />
+        <ReviewAdd reviewData={myData} key={myData.email} />
 
         <div className='popular-items-individual'>
           <h5>See Similar Items like this</h5>

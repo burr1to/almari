@@ -1,8 +1,9 @@
-.logo-button {
+.logo-button h3 {
   font-weight: medium;
   cursor: pointer;
   color: rgb(0, 0, 0);
   z-index: 1;
+  letter-spacing: 3px;
 }
 
 .logo-button:hover {
@@ -40,5 +41,5 @@
   text-align: center;
 }
 .confirmed {
-  color: greenyellow !important;
+  color: rgb(131, 186, 47) !important;
 }

@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 import "../statics/navbar.css";
 import IconButton from "@mui/material/IconButton";
 import {
@@ -15,14 +15,17 @@ import MenuList from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import UserDefault from "./../../assets/user2.png";
+import { UserContext } from "../../utils/UserContext";
 
 const AppBar = () => {
-  const index = 1;
+  const logStatus = localStorage.getItem("is_logged");
 
-  const [log, setLog] = useState(true);
+  const userData = useContext(UserContext);
+
+  const userID = userData[0].data.id;
+  const userPath = `/profile/${userID}`;
 
   const [anchorElUser, setAnchorElUser] = useState(null);
-
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -32,7 +35,12 @@ const AppBar = () => {
   };
 
   const handleLogout = (e) => {
-    console.log("Logout");
+    if (logStatus === "true") {
+      localStorage.removeItem("auth_token");
+      localStorage.removeItem("auth_token_type");
+      localStorage.removeItem("user");
+      localStorage.setItem("is_logged", false);
+    }
   };
 
   const navRef = useRef();
@@ -65,7 +73,7 @@ const AppBar = () => {
               Buy
             </Link>
 
-            <Link className='nav-links' to='/stock'>
+            <Link className='nav-links' to='/post'>
               Sell
             </Link>
 
@@ -126,7 +134,7 @@ const AppBar = () => {
                   textDecoration: "none",
                   color: "black",
                 }}
-                to='/profile/1'
+                to={userPath}
               >
                 <MenuItem>Profile</MenuItem>
               </Link>
@@ -138,23 +146,38 @@ const AppBar = () => {
                   textDecoration: "none",
                   color: "black",
                 }}
-                to='/'
+                to='/market'
               >
                 <MenuItem>Setup</MenuItem>
               </Link>
             </div>
-            <div className='list'>
-              <LogoutOutlined />
-              <Link
-                style={{
-                  textDecoration: "none",
-                  color: "black",
-                }}
-                to='/'
-              >
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
-              </Link>
-            </div>
+            {logStatus === "true" ? (
+              <div className='list'>
+                <LogoutOutlined />
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                  }}
+                  to='/login'
+                >
+                  <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                </Link>
+              </div>
+            ) : (
+              <div className='list'>
+                <LogoutOutlined />
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                  }}
+                  to='/login'
+                >
+                  <MenuItem onClick={handleLogout}>Log In</MenuItem>
+                </Link>
+              </div>
+            )}
           </MenuList>
         </Grid>
       </Grid>

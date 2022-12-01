@@ -122,6 +122,7 @@ class RatingBase(BaseModel):
 class RatingOut(RatingBase):
     id: int
     owner_id: int
+    owner: ReturnUser
     product_id: int
     rated_at: datetime
 
@@ -141,3 +142,10 @@ class ProfileOut(ProfileBase):
 
     class Config:
         orm_mode = True
+
+
+class LoginRet(BaseModel):
+
+    access_token: str
+    token_type: str
+    user: ReturnUser

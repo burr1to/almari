@@ -1,19 +1,18 @@
 import React from "react";
 import Layout from "./../../components/global/Layout";
 import "./statics/css/profilepage.css";
-import Popular from "./../../components/global/Popular";
+import { useContext } from "react";
+
 import { Grid } from "@mui/material";
 import ProfileDefault from "./../../assets/user1.png";
 import Image from "../../components/global/Image";
 import Button from "./../../components/global/Button";
-import { popularProducts } from "../../components/data/testdata";
 import "./../../components/statics/popular.css";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faGithub,
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
@@ -50,9 +49,6 @@ function ProfilePage() {
               <ul>
                 <li>
                   <FontAwesomeIcon icon={faFacebook} />
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faGithub} />
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faInstagram} />

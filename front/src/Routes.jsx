@@ -9,10 +9,12 @@ import Login from "./views/Login/Login";
 import Signup from "./views/Login/Signup";
 import AddPost from "./components/global/Forms/AddPost";
 import Test from "./components/global/Preview";
-import EditProfile from "./components/global/Forms/EditProfile";
+import EditProfile from "./views/ProfilePage/forms/EditProfile";
 import Market from "./components/global/Forms/MarketNavbar";
 import Render from "./components/global/Renders/Render";
 import Customization from "./components/global/Forms/Customization";
+import ImageSidebar from "./views/IndividualItems/components/ImageSidebar";
+import Shop from "./views/ProfilePage/SellerPage";
 const Routedpath = () => {
   return (
     <Routes>
@@ -21,12 +23,13 @@ const Routedpath = () => {
 
       <Route path='/market' element={<Market />}></Route>
       <Route path='/custom' element={<Customization />}></Route>
+      <Route path='/profile/sell' element={<Shop />}></Route>
 
       {/* 
       Selling portion routes */}
 
       {/* Testing route */}
-      <Route path='/test' element={<Test />}></Route>
+      <Route path='/test' element={<ImageSidebar />}></Route>
 
       {/* 
       Buying portion routes */}

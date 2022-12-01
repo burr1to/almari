@@ -11,7 +11,6 @@ import React from "react";
 import { useState } from "react";
 import Button from "./../Button";
 import axios from "axios";
-import Layout from "./../Layout";
 import Image from "./../Image";
 import "./../../statics/preview.css";
 import "./../../statics/post.css";
@@ -99,14 +98,15 @@ const Post = () => {
 
     selectedImages.map((item) => {
       formData.append("file", item);
+      return 0;
     });
     e.preventDefault();
     await axios
       .post("http://localhost:8000/posts/", formData, { headers: headers })
       .then((response) => {
-        // setTimeout(() => {
-        //   window.location.reload();
-        // }, 1500);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
         console.log(response);
       })
       .catch((error) => {

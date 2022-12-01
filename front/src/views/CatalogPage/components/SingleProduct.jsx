@@ -1,13 +1,13 @@
 import {
   FavoriteBorderOutlined,
-  SearchOutlined,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import React from "react";
-import "./../statics/product.css";
-import Image from "./Image";
+import "./../../../components/statics/product.css";
+import Image from "../../../components/global/Image";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Circle = styled.div`
   width: 200px;
@@ -18,7 +18,11 @@ const Circle = styled.div`
 `;
 
 function SingleProduct({ productImg, ownerID, productID }) {
-  const replacedImg = `http://${productImg.replace(",", " ")}`;
+  const handleLiked = (e) => {
+    console.log();
+  };
+  const replacedImg = `http://${productImg.split(",")[0]}`;
+
   const path = `/product/${productID}`;
   return (
     <div className='ok'>
@@ -29,11 +33,8 @@ function SingleProduct({ productImg, ownerID, productID }) {
         </div>
       </Link>
       <div className='info'>
-        <div className='icon cart'>
-          <ShoppingCartOutlined />
-        </div>
         <div className='icon favorite'>
-          <FavoriteBorderOutlined />
+          <FavoriteBorderOutlined onClick={handleLiked} />
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import Button from "./../../../components/global/Button";
 import NumberRating from "./NumberRating";
 import axios from "axios";
 
-function ReviewAdd() {
+function ReviewAdd({ reviewData }) {
   const [review, setText] = useState("");
   const [btnDisabled, setbtnDisabled] = useState(true);
   const [rating, setRating] = useState();
@@ -25,8 +25,6 @@ function ReviewAdd() {
     setText(e.target.value);
   };
 
-  const productID = 1;
-
   const headers = {
     Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
   };
@@ -36,13 +34,15 @@ function ReviewAdd() {
     const data = {
       review: review,
       rating: rating,
-      product_id: productID,
-      owner_id: 1,
+      product_id: reviewData.id,
+      owner_id: reviewData.owner_id,
     };
+
     console.log(data);
+
     if (review.trim().length > 10) {
       await axios
-        .post(`http://localhost:8000/rating/${productID}`, data, {
+        .post(`http://localhost:8000/rating/${reviewData.id}`, data, {
           headers: headers,
         })
         .then((response) => {
@@ -55,6 +55,7 @@ function ReviewAdd() {
       setText("");
     }
   };
+
   return (
     <>
       <div className='reviewform-wrap'>

@@ -6,7 +6,6 @@ import Button from "./../../components/global/Button";
 import "./statics/css/login.css";
 import back from "./statics/images/back2.jpg";
 import axios from "axios";
-import { red } from "@mui/material/colors";
 
 const Signup = () => {
   let navigate = useNavigate();
@@ -21,6 +20,11 @@ const Signup = () => {
     password: "",
     confirm: "",
   });
+
+  const handleLogo = (e) => {
+    navigate("/");
+  };
+
   const handleChange = (e) => {
     if (e.target.name === "confirm") {
       if (e.target.value !== inputs.password) {
@@ -58,9 +62,9 @@ const Signup = () => {
       .then((response) => {
         navigate("/login");
         console.log("Success");
-        setTimeout(() => {
-          window.location.reload();
-        }, 1500);
+
+        navigate("/login");
+
         console.log(response);
       })
       .catch((error) => {
@@ -85,20 +89,22 @@ const Signup = () => {
         <Box className='sign-in-con' flex={1}>
           <div className='title-login'>
             <div className='logo-button'>
-              <h3>ALMARI</h3>
+              <h3 onClick={handleLogo}>ALMARI</h3>
             </div>
 
             <Typography
               variant='h5'
+              letterSpacing='3px'
               fontWeight={"bold"}
-              sx={{ color: "primary.dark" }}
+              sx={{ color: "primary.main" }}
             >
               Discover products made
             </Typography>
             <Typography
               variant='h5'
+              letterSpacing='3px'
               fontWeight={"bold"}
-              sx={{ color: "primary.dark" }}
+              sx={{ color: "primary.main" }}
             >
               with love.
             </Typography>
@@ -164,7 +170,7 @@ const Signup = () => {
                 <p className='error-msg' ref={confirm}>
                   {error}
                 </p>
-                <Button type='submit' version='tertiary' isDisabled={disabled}>
+                <Button type='submit' version='primary' isDisabled={disabled}>
                   Sign Up
                 </Button>
               </Box>

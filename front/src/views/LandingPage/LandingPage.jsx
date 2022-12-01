@@ -8,7 +8,7 @@ import Popular from "../../components/global/Popular";
 import "./statics/css/landingpage.css";
 import { categories, sliderItems } from "./../../components/data/testdata.js";
 import { Grid } from "@mui/material";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import RandomItems from "../../components/global/RandomItems";
 import "./../../components/statics/popular.css";
 import axios from "axios";
@@ -79,14 +79,14 @@ function LandingPage() {
           </div>
         </Grid>
 
-        {/* <Grid item className='search-area'>
+        <Grid item className='search-area'>
           <SearchBar
             onChange={handleSearchChange}
             onClick={handleSearchClick}
             value={search}
           />
-          <SearchArea />
-        </Grid> */}
+          <SearchArea filter={filter} />
+        </Grid>
 
         <Grid item className='random-items'>
           <div className='random-contain'>

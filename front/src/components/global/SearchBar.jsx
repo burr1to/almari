@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./../statics/search.css";
 import { IconButton } from "@mui/material";
-
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SearchBar({ placeholder, onChange, onClick, value }) {

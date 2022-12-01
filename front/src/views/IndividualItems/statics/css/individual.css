@@ -18,11 +18,7 @@
   height: auto;
   margin: 0 auto;
 }
-/* .img-for-product {
-  width: 600px !important;
-  height: auto;
-  max-height: 700px;
-} */
+
 .choice {
   width: 30%;
 }
@@ -46,6 +42,9 @@
 .company-name {
   text-decoration: none;
   margin: 0px 10px 0px 0px;
+  color: black;
+  letter-spacing: 0.7px;
+  font-weight: bold;
 }
 .company-info .company-name {
   font-weight: bold;
@@ -53,15 +52,13 @@
 
 .basic-info .title {
   font-weight: 200;
-  font-size: 30px;
+  font-size: 34px;
+  word-wrap: break-word;
 }
 .basic-info .price {
   font-weight: bold;
   color: var(--primary);
   font-size: 24px;
-}
-.description {
-  margin: 15px 0px;
 }
 
 .submit-btns > .btn {
@@ -91,9 +88,22 @@
 .more-shop {
   flex: 0.25;
   padding: 30px;
-  min-height: 700px;
+  min-height: 800px;
+  max-width: 500px;
+
   border-radius: 20px;
   background-color: var(--primary);
+}
+
+.product-description {
+  min-height: 400px;
+}
+
+.product-description p {
+  line-break: auto;
+  margin: 30px 5px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .meet-your-seller {
@@ -101,6 +111,9 @@
   border-radius: 40px;
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }
 .meet-your-seller p {
   text-align: center;
@@ -120,9 +133,6 @@
   background-color: red;
 }
 
-.review-list {
-}
-
 .review-single {
   background-color: var(--secondary);
   padding: 20px;
@@ -140,4 +150,9 @@
 
 .text-display p {
   font-size: 14px;
+}
+
+.favorite {
+  display: flex;
+  align-items: center;
 }

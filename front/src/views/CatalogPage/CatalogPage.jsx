@@ -3,7 +3,7 @@ import "./statics/css/catalog.css";
 import Layout from "./../../components/global/Layout";
 import Button from "./../../components/global/Button";
 import { TextField, MenuItem, Slider } from "@mui/material";
-import SingleProduct from "./../../components/global/SingleProduct";
+import SingleProduct from "./components/SingleProduct";
 import "./../../components/statics/product.css";
 import Dropdown from "./../../components/global/Dropdown";
 import axios from "axios";
@@ -87,18 +87,7 @@ function CatalogPage() {
                   onChange={handleSlider}
                   valueLabelDisplay='auto'
                 />
-                <h6>Categories</h6>
-                <Dropdown
-                  className='category-dropdown'
-                  val={cat}
-                  handleChange={handleDropdown}
-                >
-                  <MenuItem value={"Clothing"}>Clothing</MenuItem>
-                  <MenuItem value={"Accessories"}>Accessories</MenuItem>
-                  <MenuItem value={"Handicrafts"}>Handicrafts</MenuItem>
-                  <MenuItem value={"Decorations"}>Decorations</MenuItem>
-                  <MenuItem value={"Furniture"}>Furniture</MenuItem>
-                </Dropdown>
+                <br />
                 <h6>Keyword</h6>
                 <TextField
                   hiddenLabel

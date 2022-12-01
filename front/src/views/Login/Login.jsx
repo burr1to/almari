@@ -7,15 +7,11 @@ import "./statics/css/login.css";
 import back from "./statics/images/back.jpg";
 import axios from "axios";
 import { UserContext } from "../../utils/UserContext";
-import { useEffect } from "react";
-
 const Login = () => {
-  const [verified, setVerified] = useState(null);
+  let [Userdata, setUserdata] = useContext(UserContext);
 
-  //to check verified o r not, need userID which can be taken from context
-  // useEffect(() => {
-  //   axios.get()
-  // });
+  let navigate = useNavigate();
+
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -26,7 +22,9 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
-  let navigate = useNavigate();
+  const handleLogo = (e) => {
+    navigate("/");
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(inputs);
@@ -39,8 +37,11 @@ const Login = () => {
       .then((response) => {
         localStorage.setItem("auth_token", response.data.access_token);
         localStorage.setItem("auth_token_type", response.data.token_type);
-
+        localStorage.setItem("is_logged", true);
+        setUserdata(response.data.user);
+        console.log(response.data);
         console.log("Success");
+
         navigate("/");
       })
       .catch((error) => {
@@ -65,20 +66,22 @@ const Login = () => {
       <Box className='sign-in-con' flex={1}>
         <div className='title-login'>
           <div className='logo-button'>
-            <h3>ALMARI</h3>
+            <h3 onClick={handleLogo}>ALMARI</h3>
           </div>
 
           <Typography
             variant='h5'
             fontWeight={"bold"}
-            sx={{ color: "primary.dark" }}
+            letterSpacing='3px'
+            sx={{ color: "primary.main" }}
           >
             Discover products made
           </Typography>
           <Typography
             variant='h5'
+            letterSpacing='3px'
             fontWeight={"bold"}
-            sx={{ color: "primary.dark" }}
+            sx={{ color: "primary.main" }}
           >
             with love.
           </Typography>
@@ -119,7 +122,7 @@ const Login = () => {
                 label='Password'
                 type='password'
               />
-              <Button type='submit' version='tertiary'>
+              <Button type='submit' version='primary'>
                 Sign In
               </Button>
             </Box>

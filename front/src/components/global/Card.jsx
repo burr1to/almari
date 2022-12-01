@@ -1,24 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
-function Card({ children, reverse }) {
+import "./../statics/extra.css";
+import { Grid } from "@mui/material";
+import Image from "./Image";
+import customImg from "./../../assets/vision.jpg";
+
+function Card() {
   return (
-    <div
-      className='card'
-      style={{
-        backgroundColor: reverse ? "rgba(0,0,0,0.4)" : "#fff",
-        color: reverse ? "#fff" : "#000",
-      }}
+    <Grid
+      container
+      direction='row'
+      justifyContent='flex-start'
+      alignItems='center'
     >
-      {children}
-    </div>
+      <Grid item>
+        <Image src={customImg} addStyles='custom-img' />
+      </Grid>
+      <Grid item>Item Name</Grid>
+    </Grid>
   );
 }
-Card.defaultProps = {
-  reverse: false,
-};
 
-Card.propTypes = {
-  reverse: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-};
 export default Card;

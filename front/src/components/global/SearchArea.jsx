@@ -1,17 +1,13 @@
 import axios from "axios";
+import "./../statics/search.css";
 import React, { useEffect, useState } from "react";
+import Card from "./Card";
 
-function SearchArea(id) {
+function SearchArea({ filter }) {
   return (
-    <>
-      <div
-        style={{
-          height: "50vh",
-          border: "1px solid black",
-          width: "600px",
-        }}
-      ></div>
-    </>
+    <div className='search-field'>
+      <Card>a</Card>
+    </div>
   );
 }
 

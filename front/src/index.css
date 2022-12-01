@@ -2,16 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
 
 :root {
-  --primary: #abc270;
-  --primary-light: #cfe1a1;
-  --primary-dark: #6e7b4e;
+  --primary: #8677d1;
+  --primary-light: #a294e7;
+  --primary-dark: #4f4580;
   --secondary: #8bcc37;
   --secondary-light:
   --secondary-dark:
   --tertiary: black;
   --tertiary-light:
   --tertiary-dark: black;
-  --favorite: var(--primary);
+  --favorite: rgb(194, 64, 64);
 }
 
 html {
@@ -50,25 +50,7 @@ p {
   text-align: justify;
 }
 
-.card {
-  background-color: #fff;
-  color: #333;
-  border-radius: 15px;
-  padding: 40px 50px;
-  margin: 30px 0;
-  position: relative;
-}
 
-.card.reverse {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-}
-
-.card h2 {
-  font-size: 25px;
-  font-weight: 600;
-  text-align: center;
-}
 
 
 .btn {
@@ -117,8 +99,14 @@ p {
 }
 .btn-favorite {
   transition: 0.2s ease-in-out;
-  background-color: rgb(194, 64, 64);
+  background-color:var(--favorite);
   color: white;
+}
+
+.btn-favoriteoff{
+  transition: 0.2s ease-in-out;
+  background-color: rgb(181, 181, 181);
+  color: rgb(255, 255, 255);
 }
 
 .btn-close {
