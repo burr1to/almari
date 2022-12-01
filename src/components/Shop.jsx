@@ -1,7 +1,6 @@
 import { Upload } from "@mui/icons-material";
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
-import ProfileBox from "./ProfileBox";
 
 const Shop = () => {
 
@@ -104,8 +103,7 @@ const Shop = () => {
           </Box>
           <Box sx={{display:"flex", direction:"column"}}>
 
-            <ProfileBox/>
-            <ProfileBox/>
+           
 
           </Box>
           
